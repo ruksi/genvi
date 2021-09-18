@@ -1,0 +1,149 @@
+---
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+env:
+  NO_VENV: 1  # enable running `make` commands outside of a virtual environment
+
+jobs:
+
+  lint:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+        python-version:
+          - '3.7'
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+          cache-dependency-path: '**/requirements*.*'
+      - name: Install Python dependencies
+        run: make dev-python
+      - name: Install pre-commit hooks
+        run: make dev-hooks
+      - name: Run lint
+        run: make lint
+
+  test:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          # - macos-latest
+          # - windows-latest
+        python-version:
+          - '3.7'
+          - '3.8'
+          - '3.9'
+          - '3.10'
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+          cache-dependency-path: '**/requirements*.*'
+      - name: Install Python dependencies
+        run: make dev-python
+      - name: Run tests
+        run: make test
+
+  test-outdated:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+        python-version:
+          - '3.7'
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+          cache-dependency-path: '**/requirements*.*'
+      - name: Install valid but outdated Python dependencies
+        run: make dev-python dev-python-outdated
+      - name: Run tests
+        run: make test
+
+  build:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+        python-version:
+          - '3.7'
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+          cache-dependency-path: '**/requirements*.*'
+      - name: Install Python dependencies
+        run: make dev-python
+      - name: Build package
+        run: make build
+      - name: Install package from wheel
+        run: pip install dist/*.whl
+      - name: Smoke test console interface (wheel)
+        run: myproject -h
+      - name: Uninstall wheel
+        run: make uninstall
+      - name: Install package as editable
+        run: make install
+      - name: Smoke test console interface (editable)
+        run: myproject -h
+      - name: Uninstall editable
+        run: make uninstall
+# -->
+  convert:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+        python-version:
+          - '3.7'
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+          cache-dependency-path: '**/requirements*.*'
+      - name: Convert the template to a project
+        run: make package="artproject" author="Arthur" email="arthur@example.com"
+      - name: Install Python dependencies
+        run: make dev-python
+      - name: Run tests
+        run: make test
+      - name: Install package
+        run: make install
+      - name: Smoke test console interface
+        run: artproject -h
+# <--

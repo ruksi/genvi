@@ -1,0 +1,99 @@
+[build-system]
+requires = [
+    'setuptools>=62.6', # supports requirements `file:` in `setup.cfg`
+    'wheel',
+]
+build-backend = 'setuptools.build_meta'
+
+[tool.black]
+line-length = 88
+preview = true  # enable experimental `black` rules, most notably string splitting
+skip-string-normalization = true
+
+[tool.isort]
+profile = 'black'
+
+[tool.mypy]
+# Strict mode (mypy 0.961) enables the following flags:
+#  --check-untyped-defs
+#  --disallow-any-generics
+#  --disallow-incomplete-defs
+#  --disallow-subclassing-any
+#  --disallow-untyped-calls
+#  --disallow-untyped-decorators
+#  --disallow-untyped-defs
+#  --no-implicit-optional
+#  --no-implicit-reexport
+#  --strict-concatenate
+#  --strict-equality
+#  --warn-redundant-casts
+#  --warn-return-any
+#  --warn-unused-configs
+#  --warn-unused-ignores
+strict = true
+disallow_any_decorated = true
+disallow_any_explicit = true
+disallow_any_expr = false        # individual expressions can be Any
+disallow_any_unimported = true   # make sure types from dependencies get resolved
+disallow_subclassing_any = true
+ignore_missing_imports = false
+show_error_codes = true
+warn_unreachable = true
+
+[tool.pylint.master]
+
+[tool.pylint.messages_control]
+max-line-length = 88
+disable = [  # https://pylint.pycqa.org/en/latest/user_guide/messages/messages_overview.html
+    'missing-class-docstring',
+    'missing-function-docstring',
+    'missing-module-docstring',
+    'too-few-public-methods',
+    'abstract-class-instantiated',  # duplicate with mypy:abstract
+]
+
+[tool.pylint.reports]
+output-format = 'colorized'
+reports = false  # don't show full report for each file...
+score = false    # don't show score if ran for each file...
+
+[tool.pylint.basic]
+docstring-min-length = 5
+good-names = [
+    '_',
+]
+bad-names = [
+    'foo',
+    'bar',
+]
+
+[tool.pylint.format]
+max-line-length = 88
+max-module-lines = 1000
+single-line-class-stmt = false
+single-line-if-stmt = false
+
+[tool.pytest.ini_options]
+norecursedirs = ['.*']
+python_files = ['test_*.py', '*_test.py']
+python_functions = ['test_*']
+filterwarnings = ['error']  # turn warnings into errors
+
+[tool.coverage.run]
+branch = true
+source = ['.']
+omit = [
+    '*/site-packages/*',
+    '*/tests/*',
+    '*_test.py',
+    'test_*.py',
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    'pragma: no cover',
+    'def __repr__',
+    'if __name__ == .__main__.:',
+    'raise NotImplementedError',
+    'import',
+]

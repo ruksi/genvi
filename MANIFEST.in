@@ -1,0 +1,4 @@
+global-exclude tests/* */tests/* *_test.py
+include */py.typed
+include LICENSE
+include requirements.in

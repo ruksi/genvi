@@ -1,0 +1,110 @@
+
+# `$name`
+
+## Development
+
+Setup development environment:
+
+```bash
+make venv
+source venv/bin/activate
+make dev
+```
+
+Check code style, complexity and vulnerabilities:
+
+```bash
+make lint
+```
+
+Run tests:
+
+```bash
+make test
+```
+
+Add new dependencies:
+
+```bash
+# edit `requirements.in`
+# and/or edit `requirements-dev.in`
+make update
+make dev lint test
+```
+
+Upgrade existing dependencies to the latest version:
+
+```bash
+make upgrade
+make dev lint test
+```
+
+### PyCharm Integrations
+
+The following PyCharm integrations make development flow smoother by giving errors
+interactively while developing and makes it easy to jump to specific error locations.
+
+Bring `flake8` lint highlights to PyCharm:
+
+* Figure out where the `flake8-for-pycharm` executable is e.g.
+
+  ```bash
+  which flake8_pycharm.py
+  # e.g. /projects/$name/venv/bin/flake8_pycharm.py
+  ```
+
+* Install **Pylint** plugin to PyCharm using the marketplace
+* Configure `Settings > Pylint`:
+  * Path to Pylint executable: *`flake8_pycharm.py` full path*
+  * Path to pylintrc: */projects/$name/setup.cfg* (i.e. `flake8` config)
+
+Bring `mypy` type checks to PyCharm:
+
+* Install **Mypy** plugin to PyCharm using the marketplace
+  * Not the *Mypy (Official)*, that is outdated and inferior
+* Configure `Settings > Mypy`:
+  * Path to Mypy executable: */projects/$name/venv/bin/mypy* (should detect)
+  * Arguments: *--install-types --scripts-are-modules*
+
+## Testing Guidelines
+
+* Keep unit tests (`*_test.py`) near the target
+  e.g. `model.py` should be accompanied by `model_test.py`.
+* Keep other tests (`test_*.py`) and utilities in `tests/` directories
+  e.g. `api/tests/test_integration.py`.
+* Project root `tests/` can contain global testing configuration and utilities.
+* None of the above are included in distribution builds or test coverage.
+
+## Distribution
+
+Release a new version:
+
+```bash
+# major (breaking changes)
+# minor (new features but compatible)
+# patch (other improvements and fixes)
+make version bump=minor
+make build
+make publish
+```
+
+Resolve build issues about outdated dependency conflicts:
+
+```bash
+# edit `requirements.in` version specifications
+make update dev-python dev-python-outdated
+# repeat until you get no conflicts
+```
+
+## Production
+
+Setup production environment:
+
+```bash
+NO_VENV=1 make prod
+
+# or, if a virtual environment is wanted
+make venv
+source venv/bin/activate
+make prod
+```
