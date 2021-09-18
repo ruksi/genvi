@@ -1,0 +1,8 @@
+# these dependencies are also used as distribution requirements (`install_requires`)
+# so be extra careful to list __as broad version requirements as possible__ in here
+# if planning to distribute the project through PyPI / `pip`
+#
+# the oldest valid versions are also tested by the CI so make sure you choose carefully
+# e.g. use `requests>2` instead of `requests` if you don't want to get `requests==0.2.0`
+# from 2011.
+typing_extensions>=4.3,<5

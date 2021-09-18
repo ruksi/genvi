@@ -1,0 +1,10 @@
+# Dependabot is an automated dependency updater built into GitHub
+
+version: 2
+updates:
+
+  # Check for updates to GitHub Actions
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'daily'

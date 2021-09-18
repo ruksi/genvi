@@ -1,0 +1,43 @@
+-r requirements.txt
+packaging
+pip-tools
+pre-commit
+
+# testing
+pytest
+pytest-cov
+pytest-mock
+pytest-randomly
+
+# type checking
+mypy
+
+# linting
+# flake8-cognitive-complexity    # avoid complex code blocks
+# flake8-functions-names         # avoid complex function names
+# flake8-quotes                  # prefer single-quotes but avoid escaping
+# flake8-use-fstring             # prefer f-strings over %/.format
+darglint                       # check docstring with `darglint`
+flake8                         # a lint framework including basic checks
+flake8-annotations-complexity  # avoid complex type annotations
+flake8-bandit                  # avoid security vulnerabilities with `bandit`
+flake8-broken-line             # avoid backslashes to split lines
+flake8-bugbear                 # avoid code design issues
+flake8-builtins                # avoid shadowing builtin terms
+flake8-comprehensions          # avoid silly comprehensions
+flake8-docstrings              # check docstrings with `pydocstyle`
+flake8-eradicate               # avoid commented-out code
+flake8-expression-complexity   # avoid complex expressions
+flake8-for-pycharm==0.3.2      # get `flake8` errors to PyCharm IDE
+flake8-functions               # avoid lengthy or otherwise large functions
+flake8-print                   # avoid print-statements
+flake8-pylint                  # get `pylint` errors to `flake8`
+flake8-pytest-style            # avoid inconsistent unit tests
+flake8-return                  # avoid inconsistent function returns
+flake8-rst-docstrings          # check rst markup in docstrings with `docutils`
+flake8-tidy-imports            # keep your imports a bit more tidy
+pep8-naming                    # follow PEP-8 naming conventions
+
+# the following are only needed if you distribute the built package through PyPI / `pip`
+build
+twine
