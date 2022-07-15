@@ -1,9 +1,23 @@
 # About
 
-`genvi` is a simple tool to start new, extendable and maintainable Python projects.
+`genvi` is a tool to start new Python projects.
 
 It doesn't have versioning as it's expected to be used
 in a fire-and-forget fashion; generate the Python project and code on.
+
+There isn't much anything special about `genvi`, it's just another Python project
+template among many others. Different strokes for different folks. Maybe except
+that `genvi` is brutally sadistic regarding linting and contribution
+requirements :smiling_imp:
+
+## Alternatives
+
+Some project templates you probably want to use instead of `genvi`:
+
+* <https://github.com/cjolowicz/cookiecutter-hypermodern-python>
+* <https://github.com/rochacbruno/python-project-template>
+* <https://github.com/wemake-services/wemake-python-package>
+* <https://github.com/wemake-services/wemake-django-template>
 
 ## FAQ
 
