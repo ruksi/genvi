@@ -12,6 +12,7 @@ env:
 
 jobs:
 
+
   lint:
     strategy:
       matrix:
@@ -21,8 +22,9 @@ jobs:
           - '3.7'
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Python ${{ matrix.python-version }}
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
@@ -30,10 +32,18 @@ jobs:
           cache-dependency-path: '**/requirements*.*'
       - name: Install Python dependencies
         run: make dev-python
+      - name: Save cache base key for Python
+        run: echo "PY=$(python -VV | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV
+      - name: Use pre-commit hook cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
       - name: Install pre-commit hooks
         run: make dev-hooks
       - name: Run lint
         run: make lint
+
 
   test:
     strategy:
@@ -50,8 +60,9 @@ jobs:
           - '3.10'
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Python ${{ matrix.python-version }}
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
@@ -68,6 +79,7 @@ jobs:
           path: .coverage.*
           if-no-files-found: ignore
 
+
   coverage:
     needs: test
     strategy:
@@ -78,8 +90,9 @@ jobs:
           - '3.7'
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Python ${{ matrix.python-version }}
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
@@ -99,6 +112,7 @@ jobs:
           path: htmlcov
         if: ${{ failure() }}
 
+
   test-outdated:
     strategy:
       matrix:
@@ -108,8 +122,9 @@ jobs:
           - '3.7'
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Python ${{ matrix.python-version }}
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
@@ -120,6 +135,7 @@ jobs:
       - name: Run tests
         run: make test
 
+
   build:
     strategy:
       matrix:
@@ -129,8 +145,9 @@ jobs:
           - '3.7'
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Python ${{ matrix.python-version }}
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
@@ -138,19 +155,21 @@ jobs:
           cache-dependency-path: '**/requirements*.*'
       - name: Install Python dependencies
         run: make dev-python
-      - name: Build package
+
+      - name: Build package (wheel)
         run: make build
-      - name: Install package from wheel
+      - name: Install package (wheel)
         run: pip install dist/*.whl
-      - name: Smoke test console interface (wheel)
+      - name: Run console smoke test (wheel)
         run: myproject -h
-      - name: Uninstall wheel
+      - name: Uninstall (wheel)
         run: make uninstall
-      - name: Install package as editable
+
+      - name: Install package (editable)
         run: make install
-      - name: Smoke test console interface (editable)
+      - name: Run console smoke test (editable)
         run: myproject -h
-      - name: Uninstall editable
+      - name: Uninstall (editable)
         run: make uninstall
 # -->
   convert:
@@ -162,8 +181,9 @@ jobs:
           - '3.7'
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Python ${{ matrix.python-version }}
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
