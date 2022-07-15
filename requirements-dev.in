@@ -13,10 +13,6 @@ pytest-randomly
 mypy
 
 # linting
-# flake8-cognitive-complexity    # avoid complex code blocks
-# flake8-functions-names         # avoid complex function names
-# flake8-quotes                  # prefer single-quotes but avoid escaping
-# flake8-use-fstring             # prefer f-strings over %/.format
 darglint                       # check docstring with `darglint`
 flake8                         # a lint framework including basic checks
 flake8-annotations-complexity  # avoid complex type annotations
