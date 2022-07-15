@@ -42,13 +42,17 @@ Borderline __evil__.
 
 Each new project is configured with:
 
+:black_cat: `black` as the code style, single quoted
+<br/>
 :hook: sadistic `pre-commit hooks` to enforce conventions
 <br/>
-:magic_wand: automagical `GitHub actions` to verify pull requests
+:magic_wand: automagical `GitHub actions` to verify incoming pull requests
 <br/>
 :mage: bewitching testing setup with `pytest` with 100% coverage requirement
 <br/>
-:black_cat: occult project management though `make` for development
+:eight_pointed_black_star: occult project management though `make` for development
+<br/>
+:infinity: plethora of 20+ design and type checkers like `flake8`, `pylint` and `mypy`
 
 If you want a more concrete example of a `genvi` project, you are looking at one.
 `genvi` itself follows the same rules and uses the same tools. Behind the scenes,
