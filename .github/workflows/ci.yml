@@ -8,26 +8,21 @@ on:
     branches: [master, main]
 
 env:
-  NO_VENV: 1  # enable running `make` commands outside of a virtual environment
+  NO_VENV: 1                  # enable running `make` commands outside of a virtual environment
+  LOWEST_PYTHON_VERSION: 3.7
 
 jobs:
 
 
   lint:
-    strategy:
-      matrix:
-        os:
-          - ubuntu-latest
-        python-version:
-          - '3.7'
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Install Python ${{ matrix.python-version }}
+      - name: Install Python ${{ env.LOWEST_PYTHON_VERSION }}
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ env.LOWEST_PYTHON_VERSION }}
           cache: 'pip'
           cache-dependency-path: '**/requirements*.*'
       - name: Install Python dependencies
@@ -80,20 +75,14 @@ jobs:
 
   coverage:
     needs: test
-    strategy:
-      matrix:
-        os:
-          - ubuntu-latest
-        python-version:
-          - '3.7'
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Install Python ${{ matrix.python-version }}
+      - name: Install Python ${{ env.LOWEST_PYTHON_VERSION }}
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ env.LOWEST_PYTHON_VERSION }}
       - run: python -m pip install --upgrade coverage[toml]
       - uses: actions/download-artifact@v3
         with:
@@ -112,20 +101,14 @@ jobs:
 
 
   test-outdated:
-    strategy:
-      matrix:
-        os:
-          - ubuntu-latest
-        python-version:
-          - '3.7'
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Install Python ${{ matrix.python-version }}
+      - name: Install Python ${{ env.LOWEST_PYTHON_VERSION }}
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ env.LOWEST_PYTHON_VERSION }}
           cache: 'pip'
           cache-dependency-path: '**/requirements*.*'
       - name: Install valid but outdated Python dependencies
@@ -135,20 +118,14 @@ jobs:
 
 
   build:
-    strategy:
-      matrix:
-        os:
-          - ubuntu-latest
-        python-version:
-          - '3.7'
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Install Python ${{ matrix.python-version }}
+      - name: Install Python ${{ env.LOWEST_PYTHON_VERSION }}
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ env.LOWEST_PYTHON_VERSION }}
           cache: 'pip'
           cache-dependency-path: '**/requirements*.*'
       - name: Install Python dependencies
@@ -171,20 +148,14 @@ jobs:
         run: make uninstall
   # -->
   convert:
-    strategy:
-      matrix:
-        os:
-          - ubuntu-latest
-        python-version:
-          - '3.7'
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Install Python ${{ matrix.python-version }}
+      - name: Install Python ${{ env.LOWEST_PYTHON_VERSION }}
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ env.LOWEST_PYTHON_VERSION }}
           cache: 'pip'
           cache-dependency-path: '**/requirements*.*'
       - name: Convert the template to a project
@@ -197,4 +168,4 @@ jobs:
         run: make install
       - name: Smoke test console interface
         run: artproject -h
-# <--
+  # <--

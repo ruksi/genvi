@@ -27,8 +27,8 @@ def main(config: Config) -> ErrorCode:
     )
     strip_lines_between_markers(
         target=Path(config.genvi_root, '.github/workflows/ci.yml'),
-        start='# -->',
-        end='# <--',
+        start='  # -->',
+        end='  # <--',
     )
 
     readme = Path(config.genvi_root, 'README.md')
