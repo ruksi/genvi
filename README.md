@@ -91,10 +91,11 @@ curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | 
    rm -rf .git/
    ```
 
-4. Reconfigure the repository
+4. Finalize the transformation
 
    ```bash
    make package=$NAME
+   # answer questions if any pop up
    ```
 
-5. Follow the new [`README.md`](magic/utils/readme_template.md) to continue
+5. Follow the new [`README.md`](magic/utils/readme_template.md) to continue development
