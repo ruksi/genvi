@@ -12,12 +12,13 @@ requirements :smiling_imp:
 
 ## Alternatives
 
-Some project templates you probably want to use instead of `genvi`:
+Other project templates you probably want to use instead of this one:
 
 * <https://github.com/cjolowicz/cookiecutter-hypermodern-python>
-* <https://github.com/rochacbruno/python-project-template>
+* <https://github.com/pyscaffold/pyscaffold>
 * <https://github.com/wemake-services/wemake-python-package>
 * <https://github.com/wemake-services/wemake-django-template>
+* <https://github.com/rochacbruno/python-project-template>
 
 ## FAQ
 
