@@ -52,7 +52,7 @@ Each new project is configured with:
 
 If you want a more concrete example of a `genvi` project, you are looking at one.
 `genvi` itself follows the same rules and uses the same tools. Behind the scenes,
-the process of creating a new project is renaming files and rewriting a bit of content.
+creating a new project renames a few files and rewrites a bit of content.
 
 ## Why?
 
