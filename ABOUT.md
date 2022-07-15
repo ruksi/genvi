@@ -93,6 +93,16 @@ Other project templates you probably want to use instead of this one:
     Also, setting up 10+ virtual environments without a cache takes
     a couple of minutes without much of a benefit.
 </dd>
+<dt>
+    Who uses <code>make</code> anymore?
+    Why not using <code>invoke</code>, <code>nox</code> or <code>tox</code> for task management?
+</dt>
+<dd>
+    <code>make</code> is already available on most systems, and if not,
+    it's easy to install through the operating system package management.
+    It feels more coherent to get all the initial project requirements
+    from a single interface where you are probably already getting Python and Git.
+</dd>
 </dl>
 
 ## TODO
