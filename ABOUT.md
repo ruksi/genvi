@@ -78,17 +78,19 @@ Some project templates you probably want to use instead of `genvi`:
     with <code>language: system</code>, why?
 </dt>
 <dd>
-    Some tools (e.g. <code>pylint</code>) won't work
-    installed and some tools (e.g. <code>mypy</code>) can't work in their full
-    potential if all dependencies aren't installed in the same environment; and it
-    makes little sense to duplicate the development setup.
+    Some tools (e.g. <code>pylint</code>) won't work and some tools
+    (e.g. <code>mypy</code>) won't work in their full potential
+    if the rest of the dependencies are missing from the environment;
+    and it makes little sense to duplicate the development setup.
     <br/><br/>
     And you might want to integrate some tools
     (e.g. <code>flake8</code>, <code>mypy</code>) with your IDE, in which case
     the extra layer will cause unnecessary latency while developing.
-    Or even make it impossible to use an integration without a secondary install,
-    which makes matching the tool version tedious inside and outside
-    the pre-commit hook.
+    Or make it impossible to use an integration without a secondary installation,
+    which makes matching the tool versions.
+    <br/><br/>
+    Also, setting up 10+ virtual environments without a cache takes
+    a couple of minutes without much of a benefit.
 </dd>
 </dl>
 
