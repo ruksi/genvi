@@ -83,7 +83,11 @@ lint: ensure-venv
 
 .PHONY: test
 test: ensure-venv
-	pytest --cov --cov-report=term-missing
+	python -m pytest --cov --cov-report=term-missing
+
+.PHONY: coverage-data
+coverage-data: ensure-venv
+	python -m coverage run --parallel -m pytest
 
 .PHONY: update
 # update dependency definitions after .in-file modifications
