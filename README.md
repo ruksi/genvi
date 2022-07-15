@@ -46,10 +46,9 @@ Each new project is configured with:
 <br/>
 :magic_wand: automagical GitHub [`actions`](.github/workflows/ci.yml) to verify pull requests
 <br/>
-:mage: bewitching testing setup with [`pytest`](pyproject.toml) with coverage reporting
+:mage: bewitching testing setup with [`pytest`](pyproject.toml) with 100% coverage requirement
 <br/>
-:black_cat: occult project management though [`make`](Makefile) for
-development
+:black_cat: occult project management though [`make`](Makefile) for development
 
 If you want a more concrete example of a `genvi` project, you are looking at one.
 `genvi` itself follows the same rules and uses the same tools. Behind the scenes,
