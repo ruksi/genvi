@@ -28,6 +28,10 @@ def fake_directory(*, write_makefile: bool = True) -> Generator[str, None, None]
             f'{DEFAULT_PACKAGE_NAME} README',
         )
         write_to_file(
+            Path(directory, 'ABOUT.md'),
+            f'{DEFAULT_PACKAGE_NAME} ABOUT',
+        )
+        write_to_file(
             Path(directory, 'MANIFEST.in'),
             'global-exclude tests/* */tests/* *_test.py\n'
             f'include {DEFAULT_PACKAGE_NAME}/py.typed',
@@ -61,5 +65,11 @@ def fake_directory(*, write_makefile: bool = True) -> Generator[str, None, None]
             Path(workflows_dir, 'ci.yml'),
             f'# {DEFAULT_PACKAGE_NAME} automation',
         )
+
+        magic_dir = Path(directory, 'magic')
+        magic_dir.mkdir(parents=True)
+
+        magic_dir = Path(directory, 'images')
+        magic_dir.mkdir(parents=True)
 
         yield directory
