@@ -53,13 +53,13 @@ def bump_version(
 if __name__ == '__main__':
     args = sys.argv[1:]
     if len(args) != 2:
-        print(f'Invalid number of arguments: {args}')
-        print('Are you sure you specified major, minor or patch?')
+        sys.stdout.write(f'Invalid number of arguments: {args}\n')
+        sys.stdout.write('Are you sure you specified major, minor or patch?\n')
         sys.exit(1)
     target = args[0]
     by = args[1]
     try:
         bump(Path(target), SemanticPart(by))
     except Exception as e:  # pylint: disable=broad-except
-        print(e)
+        sys.stdout.write(f'{e}\n')
         sys.exit(2)
