@@ -67,4 +67,4 @@ def get_oldest_requirements(requirements_file: Path) -> List[Requirement]:
 
 if __name__ == '__main__':
     for dependency in get_oldest_requirements(Path('requirements.in')):
-        print(dependency)
+        sys.stdout.write(f'{dependency}\n')
