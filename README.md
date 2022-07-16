@@ -110,3 +110,11 @@ curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | 
    ```
 
 5. Follow the new [`README.md`](magic/utils/readme_template.md) to continue development
+
+## License
+
+This project is released under the [MIT License](LICENSE).
+
+## Contributions
+
+Sure, the template [`README.md`](magic/utils/readme_template.md) should get you started.
