@@ -1,4 +1,5 @@
 import shutil
+import sys
 from pathlib import Path
 
 from magic.utils.config import Config
@@ -16,7 +17,7 @@ def main(config: Config) -> ErrorCode:
     try:
         config.validate()
     except ValidationError as exception:
-        print('error:', exception)  # noqa: T201
+        sys.stderr.write(f'error: {exception}\n')
         return 1
 
     rename_package(config)
