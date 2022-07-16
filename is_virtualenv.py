@@ -18,4 +18,4 @@ def is_virtualenv():  # type: ignore[no-untyped-def]
 
 
 if __name__ == '__main__':
-    print(is_virtualenv())  # type: ignore[no-untyped-call]
+    sys.stdout.write(f'{is_virtualenv()}\n')  # type: ignore[no-untyped-call]
