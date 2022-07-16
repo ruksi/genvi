@@ -78,7 +78,7 @@ Other project templates you probably want to use instead of this one:
     (e.g. <code>flake8</code>, <code>mypy</code>) with your IDE, in which case
     the extra layer will cause unnecessary latency while developing.
     Or make it impossible to use an integration without a secondary installation,
-    which makes matching the tool versions.
+    which makes matching the tool versions tedious.
 </dd>
 <dt>
     Who uses <code>make</code> anymore?
