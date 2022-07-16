@@ -65,6 +65,7 @@ prod: ensure-venv
 dev: ensure-venv dev-python dev-hooks
 
 .PHONY: dev-python
+# install Python dependencies for development
 dev-python: ensure-venv
 	pip install -r requirements-dev.txt
 
@@ -74,18 +75,22 @@ dev-python-outdated: ensure-venv
 	pip install -r requirements.out
 
 .PHONY: dev-hooks
+# install pre-commit hooks for development
 dev-hooks: ensure-venv
 	pre-commit install --install-hooks
 
 .PHONY: lint
+# run all project style, design and type checkers
 lint: ensure-venv
 	pre-commit run --all-files
 
 .PHONY: test
+# run all project unit tests and print coverage misses
 test: ensure-venv
 	python -m pytest --cov --cov-report=term-missing
 
 .PHONY: coverage-data
+# run all project unit tests and save coverage report for upload
 coverage-data: ensure-venv
 	python -m coverage run --parallel -m pytest
 
