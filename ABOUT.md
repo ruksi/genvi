@@ -48,16 +48,6 @@ Other project templates you probably want to use instead of this one:
     want to support <code>pyproject.toml</code></a> :shrug:
 </dd>
 <dt>
-    Why not just use
-    <a href="https://github.com/wemake-services/wemake-python-styleguide"><code>wemake-python-styleguide</code></a>
-    or some of the <code>wemake</code> templates?
-</dt>
-<dd>
-    Did give the linter a try as the strictness sounds nice but the resulting code was
-    subjectively less readable. <code>genvi</code> also does a bit more than just
-    linting e.g. running tests with outdated but valid dependencies.
-</dd>
-<dt>
     Why mangle the source repository itself to create a new project?
 </dt>
 <dd>
@@ -75,7 +65,7 @@ Other project templates you probably want to use instead of this one:
     the features in the future, you can get them from the version control history.
 </dd>
 <dt>
-    Many <code>pre-commit</code> hooks are disabling isolated environment
+    Some <code>pre-commit</code> hooks are disabling isolated environment
     with <code>language: system</code>, why?
 </dt>
 <dd>
@@ -89,9 +79,6 @@ Other project templates you probably want to use instead of this one:
     the extra layer will cause unnecessary latency while developing.
     Or make it impossible to use an integration without a secondary installation,
     which makes matching the tool versions.
-    <br/><br/>
-    Also, setting up 10+ virtual environments without a cache takes
-    a couple of minutes without much of a benefit.
 </dd>
 <dt>
     Who uses <code>make</code> anymore?
