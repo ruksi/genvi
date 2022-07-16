@@ -3,6 +3,7 @@
 [![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![pre-commit: enabled](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![license: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+[![alignment: chaotic evil](https://img.shields.io/badge/alignment-chaotic%20evil-red.svg)](https://github.com/ruksi/genvi)
 
 <br/>
 <div align="center">
@@ -68,7 +69,7 @@ creating a new project renames a few files and rewrites a bit of content.
 > "Who would want to manage a project like this?"
 > by Anonymous Gnu :water_buffalo:
 
-Scratching my own itch. Check out [`ABOUT.md`](ABOUT.md) to learn more.
+Scratching my own itch, see [`ABOUT.md`](ABOUT.md) to learn more :mag:
 
 ## Usage
 
