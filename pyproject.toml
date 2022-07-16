@@ -60,7 +60,12 @@ score = false    # don't show score if ran for each file...
 [tool.pylint.basic]
 docstring-min-length = 5
 good-names = [
-    '_',
+    '_',  # the "throwaway" marker
+    'i',  # a common iterator or index
+    'j',  # a common nested iterator
+    'k',  # a common nested iterator
+    'e',  # an exception or error
+    'ex', # an exception or error
 ]
 bad-names = [
     'foo',
