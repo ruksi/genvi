@@ -47,7 +47,7 @@ Borderline __evil__.
 
 Each new project is configured with:
 
-:black_cat: `black` as the code style, single quoted
+:black_cat: eery `black` as the code style, single quoted
 <br/>
 :hook: sadistic `pre-commit hooks` to enforce conventions
 <br/>
