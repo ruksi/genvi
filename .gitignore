@@ -6,6 +6,7 @@
 .coverage.*
 .idea
 __pycache__
+build
 dist
 htmlcov
 venv
