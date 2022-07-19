@@ -29,8 +29,8 @@ def main_with_logging() -> ErrorCode:
     setup_console_logging(settings.log_level)
     try:
         return run(settings)
-    except Exception as e:  # pylint: disable=broad-except
-        log.exception(e)
+    except Exception:  # pylint: disable=broad-except
+        log.exception('runtime exception:')
         return 1
 
 

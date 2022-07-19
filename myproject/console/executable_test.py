@@ -24,9 +24,9 @@ def test_main_success(
     assert std.out == ''
     assert std.err == ''
 
-    infos = [r.msg for r in caplog.records if r.levelno == logging.INFO]
-    assert len(infos) == 1
-    assert 'mock command line interface:' in infos[0]
+    info_records = [r for r in caplog.records if r.levelno == logging.INFO]
+    assert len(info_records) == 1
+    assert 'mock command line interface:' in info_records[0].msg
 
 
 @pytest.mark.parametrize(
@@ -52,10 +52,10 @@ def test_main_failure(
     assert std.out == ''
     assert std.err == ''
 
-    errors = [r.msg for r in caplog.records if r.levelno == logging.ERROR]
-    assert len(errors) == 1
-    assert isinstance(errors[0], Exception)
-    assert str(errors[0]) == msg
+    error_records = [r for r in caplog.records if r.levelno == logging.ERROR]
+    assert len(error_records) == 1
+    assert error_records[0].msg == 'runtime exception:'
+    assert msg in str(error_records[0].exc_text)
 
 
 @pytest.mark.parametrize(

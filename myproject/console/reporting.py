@@ -22,7 +22,13 @@ class ColorFormatter(logging.Formatter):  # pragma: no cover
     def format(self, record: logging.LogRecord) -> str:  # noqa: A003
         log_format = self._formats.get(record.levelno)
         formatter = logging.Formatter(log_format)
-        return formatter.format(record)
+        result = formatter.format(record)
+        if record.exc_text:
+            # remove newlines from exception stack traces
+            # as it's a good `syslog` practice that each event
+            # takes exactly one row
+            return result.replace('\n', ' ')
+        return result
 
 
 def setup_console_logging(log_level: str) -> None:  # pragma: no cover
