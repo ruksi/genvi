@@ -79,7 +79,7 @@ single-line-class-stmt = false
 single-line-if-stmt = false
 
 [tool.pytest.ini_options]
-norecursedirs = ['.*']
+norecursedirs = ['.*', 'build', 'dist', 'venv']
 python_files = ['test_*.py', '*_test.py']
 python_functions = ['test_*']
 filterwarnings = ['error']  # turn warnings into errors
