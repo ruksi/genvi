@@ -8,8 +8,15 @@ from pytest_mock import MockFixture
 
 from myproject.console.executable import main
 
+VALID_ARGV = ['/mock/myproject.py']
 
-def test_main_success(capsys: CaptureFixture[str], caplog: LogCaptureFixture) -> None:
+
+def test_main_success(
+    mocker: MockFixture,
+    capsys: CaptureFixture[str],
+    caplog: LogCaptureFixture,
+) -> None:
+    mocker.patch('sys.argv', VALID_ARGV)
     assert main() == 0
 
     # didn't write __straight__ to stdout/stderr
@@ -30,11 +37,12 @@ def test_main_success(capsys: CaptureFixture[str], caplog: LogCaptureFixture) ->
     ],
 )
 def test_main_failure(
+    mocker: MockFixture,
     capsys: CaptureFixture[str],
     caplog: LogCaptureFixture,
-    mocker: MockFixture,
     error_source: str,
 ) -> None:
+    mocker.patch('sys.argv', VALID_ARGV)
     msg = 'boom things went wrong'
     mocker.patch(error_source).side_effect = Exception(msg)
     assert main() == 1
@@ -67,10 +75,11 @@ def test_main_failure(
     ],
 )
 def test_main_log_system_failure(
-    capsys: CaptureFixture[str],
     mocker: MockFixture,
+    capsys: CaptureFixture[str],
     error_sources: List[str],
 ) -> None:
+    mocker.patch('sys.argv', VALID_ARGV)
     error_message = 'boom things went wrong'
     for target in error_sources:
         mocker.patch(target).side_effect = Exception(error_message)

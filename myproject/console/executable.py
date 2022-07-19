@@ -1,8 +1,8 @@
 import logging
 import sys
-from typing import List
 
 from myproject.console.reporting import setup_console_logging
+from myproject.console.settings import Settings, parse_settings
 
 if sys.version_info >= (3, 8):
     from typing import Literal
@@ -25,14 +25,15 @@ def main() -> ErrorCode:
 
 
 def main_with_logging() -> ErrorCode:
-    setup_console_logging()
+    settings = parse_settings(sys.argv[1:])
+    setup_console_logging(settings.log_level)
     try:
-        return run(sys.argv)
+        return run(settings)
     except Exception as e:  # pylint: disable=broad-except
         log.exception(e)
         return 1
 
 
-def run(arguments: List[str]) -> ErrorCode:
-    log.info('mock command line interface: %s', arguments)
+def run(settings: Settings) -> ErrorCode:
+    log.info('mock command line interface: %s', settings)
     return 0

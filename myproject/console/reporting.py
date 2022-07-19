@@ -1,5 +1,4 @@
 import logging
-import os
 import sys
 from typing import Mapping
 
@@ -26,7 +25,7 @@ class ColorFormatter(logging.Formatter):  # pragma: no cover
         return formatter.format(record)
 
 
-def setup_console_logging() -> None:  # pragma: no cover
+def setup_console_logging(log_level: str) -> None:  # pragma: no cover
     out_handler = logging.StreamHandler(sys.stdout)
     out_handler.addFilter(lambda record: record.levelno <= logging.INFO)
     out_handler.setFormatter(ColorFormatter())
@@ -36,6 +35,6 @@ def setup_console_logging() -> None:  # pragma: no cover
     err_handler.setFormatter(ColorFormatter())
 
     logging.basicConfig(
-        level=os.environ.get('LOGLEVEL', logging.INFO),
+        level=log_level,
         handlers=[out_handler, err_handler],
     )
