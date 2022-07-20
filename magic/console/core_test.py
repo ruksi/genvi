@@ -6,7 +6,7 @@ import pytest
 from _pytest.capture import CaptureFixture
 from pytest_mock import MockFixture
 
-from magic.console.executable import main, resolve_genvi_root
+from magic.console.core import main, resolve_genvi_root
 from magic.tests.fake_directory import fake_directory
 
 if sys.version_info >= (3, 8):
@@ -33,7 +33,7 @@ class PatchGenviRoot(Protocol):
 @pytest.fixture(name='patch_genvi_root')
 def genvi_root_patcher(mocker: MockFixture) -> PatchGenviRoot:
     def patch_genvi_root(directory: str) -> None:
-        target = 'magic.console.executable.resolve_genvi_root'
+        target = 'magic.console.core.resolve_genvi_root'
         mocker.patch(target).return_value = Path(directory)
 
     return patch_genvi_root

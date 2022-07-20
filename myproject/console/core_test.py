@@ -6,7 +6,7 @@ from _pytest.capture import CaptureFixture
 from _pytest.logging import LogCaptureFixture
 from pytest_mock import MockFixture
 
-from myproject.console.executable import main
+from myproject.console.core import main
 
 VALID_ARGV = ['/mock/myproject.py']
 
@@ -32,8 +32,8 @@ def test_main_success(
 @pytest.mark.parametrize(
     'error_source',
     [
-        'myproject.console.executable.run',
-        'myproject.console.executable.log.info',
+        'myproject.console.core.run',
+        'myproject.console.core.log.info',
     ],
 )
 def test_main_failure(
@@ -62,15 +62,15 @@ def test_main_failure(
     'error_sources',
     [
         # logging setup fails
-        ['myproject.console.executable.setup_console_logging'],
+        ['myproject.console.core.setup_console_logging'],
         # all logging fails after setup
         [
-            'myproject.console.executable.log.debug',
-            'myproject.console.executable.log.info',
-            'myproject.console.executable.log.warning',
-            'myproject.console.executable.log.error',
-            'myproject.console.executable.log.exception',
-            'myproject.console.executable.log.critical',
+            'myproject.console.core.log.debug',
+            'myproject.console.core.log.info',
+            'myproject.console.core.log.warning',
+            'myproject.console.core.log.error',
+            'myproject.console.core.log.exception',
+            'myproject.console.core.log.critical',
         ],
     ],
 )
