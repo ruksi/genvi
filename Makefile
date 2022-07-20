@@ -132,7 +132,7 @@ uninstall: ensure-venv
 # increment package version and create a tagged git commit
 # Usage: make version bump=minor # 'major', 'minor' or 'patch'
 version: ensure-venv
-	python tools/bump.py myproject/__init__.py $(bump)
+	python -m tools.bump myproject/__init__.py $(bump)
 	git reset
 	git add myproject/__init__.py
 	VERSION=`python -c 'import myproject; print(myproject.__version__)'`

@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-from tools.bump import SemanticPart, bump
+from tools.bump.core import SemanticPart, bump
 
 
 @pytest.mark.parametrize('quote', ["'", '"'])

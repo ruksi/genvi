@@ -1,5 +1,4 @@
 import re
-import sys
 from enum import Enum
 from pathlib import Path
 from typing import Tuple
@@ -48,18 +47,3 @@ def bump_version(
         minor = 0
         major += 1
     return major, minor, patch
-
-
-if __name__ == '__main__':
-    args = sys.argv[1:]
-    if len(args) != 2:
-        sys.stderr.write(f'Invalid number of arguments: {args}\n')
-        sys.stderr.write('Are you sure you specified major, minor or patch?\n')
-        sys.exit(1)
-    target = args[0]
-    by = args[1]
-    try:
-        bump(Path(target), SemanticPart(by))
-    except Exception as e:  # pylint: disable=broad-except
-        sys.stderr.write(f'error: {e}\n')
-        sys.exit(2)
