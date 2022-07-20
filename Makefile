@@ -39,7 +39,7 @@ venv:
 # override with `NO_VENV=1 make ...`
 ensure-venv:
 	if [ $(NO_VENV) ]; then exit 0; fi;
-	IS_VENV=`python tools/is_virtualenv.py`
+	IS_VENV=`python -m tools.is_virtualenv`
 	if [ $$IS_VENV != 'True' ]; then
 		echo 'Not in a virtual environment, aborting';
 		echo 'Use `NO_VENV=1 make <...>` or run `make venv` followed by activate';

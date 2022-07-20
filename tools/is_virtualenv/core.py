@@ -15,7 +15,3 @@ def get_base_prefix_compat():  # type: ignore[no-untyped-def]
 
 def is_virtualenv():  # type: ignore[no-untyped-def]
     return get_base_prefix_compat() != sys.prefix  # type: ignore[no-untyped-call]
-
-
-if __name__ == '__main__':
-    sys.stdout.write(f'{is_virtualenv()}\n')  # type: ignore[no-untyped-call]
