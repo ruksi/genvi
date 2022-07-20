@@ -70,8 +70,30 @@ def run(arguments: List[str]) -> ErrorCode:
     shutil.rmtree(Path(config.genvi_root, 'magic'))
     shutil.rmtree(Path(config.genvi_root, 'images'))
     Path(config.genvi_root, 'ABOUT.md').unlink()
+
+    write_out(
+        [
+            '',
+            f'Project "{config.name}" has been created!',
+            '',
+            'Suggestions what to do next:',
+            f'  * run `cd {config.genvi_root}`',
+            '  * run `rm -rf .git/` to remove any relation to "genvi"',
+            '  * run `git init` to create a new local repository',
+            '  * run `git add --all` to stage all content',
+            '  * run `git commit --message="Initial commit"` to save all changes',
+            '  * continue development by reading the new "README.md"',
+            '',
+        ],
+    )
+
     return 0
 
 
 def resolve_genvi_root() -> Path:
     return Path(__file__).parent.parent.parent
+
+
+def write_out(messages: List[str]) -> None:
+    for message in messages:
+        sys.stdout.write(f'{message}\n')

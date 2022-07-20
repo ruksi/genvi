@@ -21,9 +21,6 @@ endif
 .PHONY: wizard
 wizard:
 	python -m magic --name='$(package)' --author='$(author)' --email='$(email)'
-	echo 'The Python project has been created'
-	echo 'You may now `cd` to the project root and run `git add -A` followed by `git commit -m "Initial commit"`'
-	echo 'Continue development by reading the new README.md'
 # <-- THE WIZARD WILL BANISH THIS
 
 

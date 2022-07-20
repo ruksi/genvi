@@ -48,9 +48,9 @@ def test_main(
         patch_genvi_root(directory)
         mocker.patch('sys.argv', VALID_ARGV)
         assert main() == 0
-        standard = capsys.readouterr()
-        assert '' == standard.out
-        assert '' == standard.err
+        std = capsys.readouterr()
+        assert 'Project "monkey" has been created!' in std.out
+        assert std.err == ''
 
 
 def test_main_no_arguments(
@@ -63,9 +63,9 @@ def test_main_no_arguments(
         patch_genvi_root(directory)
         mocker.patch('sys.argv', ['/mock/executable'])
         assert main() == 1
-        standard = capsys.readouterr()
-        assert '' == standard.out
-        assert 'package name cannot be empty\n' == standard.err
+        std = capsys.readouterr()
+        assert std.out == ''
+        assert std.err == 'package name cannot be empty\n'
 
 
 def test_main_internal_error(
@@ -77,9 +77,9 @@ def test_main_internal_error(
         patch_genvi_root(directory)
         mocker.patch('sys.argv', VALID_ARGV)
         assert main() == 1
-        standard = capsys.readouterr()
-        assert '' == standard.out
-        assert 'package root does not look like `genvi` root\n' == standard.err
+        std = capsys.readouterr()
+        assert std.out == ''
+        assert std.err == 'package root does not look like `genvi` root\n'
 
 
 def test_resolve_genvi_root() -> None:
