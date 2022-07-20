@@ -110,7 +110,7 @@ gitdb==4.0.9
     # via gitpython
 gitpython==3.1.27
     # via bandit
-identify==2.5.1
+identify==2.5.2
     # via pre-commit
 idna==3.3
     # via requests
@@ -148,7 +148,7 @@ mccabe==0.6.1
     #   pylint
 mr-proper==0.0.7
     # via flake8-functions
-mypy==0.961
+mypy==0.971
     # via -r requirements-dev.in
 mypy-extensions==0.4.3
     # via mypy
@@ -195,7 +195,7 @@ pygments==2.12.0
     #   flake8-rst-docstrings
     #   readme-renderer
     #   rich
-pylint==2.14.4
+pylint==2.14.5
     # via
     #   flake8-for-pycharm
     #   flake8-pylint
