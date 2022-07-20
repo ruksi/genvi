@@ -4,14 +4,15 @@ from pathlib import Path
 from typing import List, Optional
 
 import pytest
-from freezenuts import (
+from packaging.requirements import Requirement
+from packaging.version import Version
+from pytest_mock import MockFixture
+
+from tools.freezenuts.core import (
     get_oldest_matching_requirement,
     get_oldest_requirements,
     package_versions,
 )
-from packaging.requirements import Requirement
-from packaging.version import Version
-from pytest_mock import MockFixture
 
 if sys.version_info >= (3, 8):
     from typing import Protocol

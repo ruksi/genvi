@@ -2,7 +2,8 @@ import tempfile
 from pathlib import Path
 
 import pytest
-from bump import SemanticPart, bump
+
+from tools.bump import SemanticPart, bump
 
 
 @pytest.mark.parametrize('quote', ["'", '"'])

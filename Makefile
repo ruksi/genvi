@@ -96,14 +96,14 @@ coverage-data: ensure-venv
 update: ensure-venv
 	pip-compile --no-header --allow-unsafe requirements.in
 	pip-compile --no-header --allow-unsafe requirements-dev.in
-	python tools/freezenuts.py requirements.in > requirements.out
+	python -m tools.freezenuts requirements.in > requirements.out
 
 .PHONY: upgrade
 # upgrade all dependencies to the latest valid version
 upgrade: ensure-venv
 	pip-compile --upgrade --no-header --allow-unsafe requirements.in
 	pip-compile --upgrade --no-header --allow-unsafe requirements-dev.in
-	python tools/freezenuts.py requirements.in > requirements.out
+	python -m tools.freezenuts requirements.in > requirements.out
 	pre-commit autoupdate
 
 

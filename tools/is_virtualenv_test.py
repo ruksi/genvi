@@ -1,4 +1,4 @@
-from is_virtualenv import is_virtualenv
+from tools.is_virtualenv import is_virtualenv
 
 
 def test_for_smoke() -> None:

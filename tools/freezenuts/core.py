@@ -5,7 +5,7 @@ Usage:
 
 .. code:: bash
 
-    python freezenuts.py requirements.in > requirements.out
+    python -m tools.freezenuts requirements.in > requirements.out
 
 """
 
@@ -63,14 +63,3 @@ def get_oldest_requirements(requirements_file: Path) -> List[Requirement]:
     requirements_in = [Requirement(line) for line in lines if line]
     requirements_out = [get_oldest_matching_requirement(req) for req in requirements_in]
     return sorted(requirements_out, key=lambda r: r.name)
-
-
-if __name__ == '__main__':
-    INPUT_FILE = ''
-    try:
-        INPUT_FILE = sys.argv[1]
-    except IndexError:
-        sys.stderr.write('missing input file e.g. requirements.in\n')
-        sys.exit(1)
-    for dependency in get_oldest_requirements(Path(INPUT_FILE)):
-        sys.stdout.write(f'{dependency}\n')
