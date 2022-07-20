@@ -1,4 +1,5 @@
-global-exclude tests/* */tests/* *_test.py
+global-exclude tests/**/* *_test.py
+exclude tools/**/*
 include */py.typed
 include LICENSE
 include requirements.in
