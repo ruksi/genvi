@@ -2,7 +2,7 @@ import shutil
 from pathlib import Path
 from string import Template
 
-from magic.utils.config import Config
+from magic.console.config import Config
 from magic.utils.consts import DEFAULT_AUTHOR, DEFAULT_EMAIL, DEFAULT_PACKAGE_NAME
 
 

@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pytest
 
+from magic.console.config import Config, resolve_genvi_root
 from magic.tests.fake_directory import fake_directory
-from magic.utils.config import Config
 from magic.utils.errors import InternalError, ValidationError
 
 
@@ -45,3 +45,7 @@ def test_config_setup_smells_fishy() -> None:
                 email='',
                 genvi_root=Path(directory),
             ).validate()
+
+
+def test_resolve_genvi_root() -> None:
+    assert resolve_genvi_root()

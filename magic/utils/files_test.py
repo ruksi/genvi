@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pytest
 
+from magic.console.config import Config
 from magic.tests.fake_directory import fake_directory
-from magic.utils.config import Config
 from magic.utils.files import (
     generate_readme,
     rename_package,
