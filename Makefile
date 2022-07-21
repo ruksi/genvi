@@ -132,10 +132,10 @@ uninstall: ensure-venv
 # increment package version and create a tagged git commit
 # Usage: make version bump=minor # 'major', 'minor' or 'patch'
 version: ensure-venv
-	python -m tools.bump myproject/__init__.py $(bump)
+	python -m tools.bump myproject/VERSION $(bump)
 	git reset
-	git add myproject/__init__.py
-	VERSION=`python -c 'import myproject; print(myproject.__version__)'`
+	git add myproject/VERSION
+	VERSION=`cat myproject/VERSION`
 	git commit -m "Become $$VERSION"
 	git tag -a $$VERSION -m "$$VERSION"
 	echo -e '\nCreated a new tagged commit, remember to later push it with `git push --follow-tags`'
@@ -148,5 +148,5 @@ build: ensure-venv
 .PHONY: publish
 # upload the current version distributables to PyPI for sharing
 publish: ensure-venv
-	VERSION=`python -c 'import myproject; print(myproject.__version__)'`
+	VERSION=`cat myproject/VERSION`
 	twine upload dist/myproject-$$VERSION*

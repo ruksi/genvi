@@ -16,19 +16,17 @@ class SemanticPart(Enum):
 
 def bump(version_file: Path, bump_by: SemanticPart) -> None:
     with version_file.open(encoding='utf-8') as file:
-        lines = file.readlines()
-    for index, line in enumerate(lines):
-        if line.startswith('__version__ ='):
-            lines[index] = bump_line(line, bump_by)
+        content = file.read()
+    content = bump_line(content, bump_by)
     with version_file.open(encoding='utf-8', mode='w') as file:
-        file.writelines(lines)
+        file.write(content)
 
 
 def bump_line(line: str, bump_by: SemanticPart) -> str:
-    semver_str = re.findall(r'["\'](.+)["\']', line)[0]
+    semver_str = re.findall(r'(.+)', line)[0]
     major, minor, patch = (int(s) for s in semver_str.split('.'))
     major, minor, patch = bump_version(major, minor, patch, bump_by)
-    return f"__version__ = '{major}.{minor}.{patch}'\n"
+    return f'{major}.{minor}.{patch}\n'
 
 
 def bump_version(
