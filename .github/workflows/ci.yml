@@ -147,6 +147,16 @@ jobs:
         run: myproject -h
       - name: Uninstall (editable)
         run: make uninstall
+
+      - name: Install pipx
+        run: pip install pipx
+      - name: Install package (pipx)
+        run: pipx install .
+      - name: Run console smoke test (pipx)
+        run: myproject -h
+      - name: Uninstall (pipx)
+        run: pipx uninstall myproject
+
   # -->
   convert:
     runs-on: ubuntu-latest
