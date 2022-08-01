@@ -1,0 +1,6 @@
+# https://www.freedesktop.org/software/systemd/man/systemd.service.html#Command%20lines
+# > Multiple command lines may be concatenated in a single directive by separating them
+# > with semicolons (these semicolons must be passed as separate words).
+[Service]
+Type=oneshot
+ExecStart=echo one ; echo "two two"

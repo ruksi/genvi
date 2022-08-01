@@ -1,0 +1,7 @@
+[Service]
+Type=oneshot
+ExecStart=
+ExecStart=/bin/echo hello
+ExecStart=/bin/echo bye
+ExecStart=
+ExecStart=/bin/echo HIYA

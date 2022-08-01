@@ -1,0 +1,10 @@
+# https://www.freedesktop.org/software/systemd/man/systemd.service.html#ExecStart=
+# > When Type=oneshot is used, zero or more commands may be specified.
+# > Commands may be specified by providing multiple command lines in the same
+# > directive, or alternatively, this directive may be specified more than once
+# > with the same effect.
+[Service]
+Type=oneshot
+ExecStart=/bin/echo ${ONE} ${TWO} ${THREE}
+Environment=ONE='one' "TWO='two two' too" THREE=
+ExecStart=/bin/echo $ONE $TWO $THREE

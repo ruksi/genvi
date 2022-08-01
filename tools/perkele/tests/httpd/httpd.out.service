@@ -1,0 +1,14 @@
+[Unit]
+Description=Some HTTP server
+After=remote-fs.target sqldb.service memcached.service
+Requires=sqldb.service memcached.service
+AssertPathExists=/srv/www
+
+[Service]
+Type=notify
+ExecStart=/usr/sbin/some-fancy-httpd-server
+Nice=0
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target

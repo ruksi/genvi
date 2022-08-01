@@ -1,0 +1,11 @@
+# https://www.freedesktop.org/software/systemd/man/systemd.syntax.html
+# > Often, multiple settings form a list, and setting to an empty value "resets" [the list]...
+#
+# Thus, maintain empty values as they are in the config.
+[Service]
+Type=oneshot
+ExecStart=
+ExecStart=/bin/echo hello
+ExecStart=/bin/echo bye
+ExecStart=
+ExecStart=/bin/echo HIYA

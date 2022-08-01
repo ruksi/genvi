@@ -1,0 +1,24 @@
+[Unit]
+Description=PostgreSQL Cluster %i
+AssertPathExists=/etc/postgresql/%I/postgresql.conf
+RequiresMountsFor=/etc/postgresql/%I /var/lib/postgresql/%I
+PartOf=postgresql.service
+ReloadPropagatedFrom=postgresql.service
+Before=postgresql.service
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=-/usr/bin/pg_ctlcluster --skip-systemctl-redirect %i start
+TimeoutStartSec=0
+ExecStop=/usr/bin/pg_ctlcluster --skip-systemctl-redirect -m fast %i stop
+TimeoutStopSec=1h
+ExecReload=/usr/bin/pg_ctlcluster --skip-systemctl-redirect %i reload
+PIDFile=/run/postgresql/%i.pid
+SyslogIdentifier=postgresql@%i
+OOMScoreAdjust=-900
+Restart=on-failure
+RestartPreventExitStatus=SIGINT SIGTERM
+
+[Install]
+WantedBy=multi-user.target
