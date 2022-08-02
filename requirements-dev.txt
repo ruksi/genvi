@@ -54,7 +54,6 @@ flake8==4.0.1
     #   flake8-bandit
     #   flake8-broken-line
     #   flake8-bugbear
-    #   flake8-builtins
     #   flake8-comprehensions
     #   flake8-docstrings
     #   flake8-eradicate
@@ -73,8 +72,6 @@ flake8-bandit==3.0.0
 flake8-broken-line==0.4.0
     # via -r requirements-dev.in
 flake8-bugbear==22.7.1
-    # via -r requirements-dev.in
-flake8-builtins==1.5.3
     # via -r requirements-dev.in
 flake8-comprehensions==3.10.0
     # via -r requirements-dev.in

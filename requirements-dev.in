@@ -19,7 +19,6 @@ flake8-annotations-complexity  # avoid complex type annotations
 flake8-bandit                  # avoid security vulnerabilities with `bandit`
 flake8-broken-line             # avoid backslashes to split lines
 flake8-bugbear                 # avoid code design issues
-flake8-builtins                # avoid shadowing builtin terms
 flake8-comprehensions          # avoid silly comprehensions
 flake8-docstrings              # check docstrings with `pydocstyle`
 flake8-eradicate               # avoid commented-out code
