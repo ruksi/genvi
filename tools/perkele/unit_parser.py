@@ -135,5 +135,7 @@ class UnitParser(configparser.ConfigParser):
                     value = delimiter + str(value).replace('\n', '\n\t')
 
                 # format line wrapping backslashes properly
+                value = value.replace('\\\\', '<BACKSLASH_PLACEHOLDER>')
                 value = value.replace('\\', '\\\n')
+                value = value.replace('<BACKSLASH_PLACEHOLDER>', '\\\\')
                 fp.write(f'{key}{value}\n')

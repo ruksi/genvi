@@ -1,0 +1,5 @@
+[Section A]
+OptionOne="value 1"
+OptionTwo='value 2'
+OptionThree=value 3
+OptionFour="value with \\ backslash"

@@ -71,6 +71,17 @@ def test_writing_no_value() -> None:
     assert_config(config, here('no-value.ini'))
 
 
+def test_quotes() -> None:
+    gets = [
+        ('Section A', 'OptionOne', '"value 1"'),
+        ('Section A', 'OptionTwo', "'value 2'"),
+        ('Section A', 'OptionThree', 'value 3'),
+        ('Section A', 'OptionFour', '"value with \\\\ backslash"'),
+    ]
+    with assert_unit_file(here('quotes.*.service')) as config:
+        assert_gets(config, gets)
+
+
 def test_semicolons() -> None:
     gets = [
         ('Service', 'Type', 'oneshot'),
