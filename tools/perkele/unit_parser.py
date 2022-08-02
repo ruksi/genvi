@@ -1,15 +1,16 @@
 import configparser
 import itertools
 from collections import OrderedDict
-from typing import Any, Callable, Iterable, List, Optional, Tuple, TypeVar, Union
+from typing import Any, Iterable, Optional, Tuple, TypeVar, Union
 
 from typing_extensions import Protocol, TypeAlias
+
+from tools.perkele.utils import pop_until
 
 DirectiveKey: TypeAlias = str
 DirectiveValue: TypeAlias = Union[None, str, Tuple[Optional[str], ...]]
 SectionItems: TypeAlias = Iterable[Tuple[DirectiveKey, DirectiveValue]]
 
-T = TypeVar('T')
 T_contra = TypeVar('T_contra', contravariant=True)
 
 
@@ -35,11 +36,6 @@ class UnitParserDict(OrderedDict):  # type: ignore[type-arg]
                 super().__setitem__(key, self[key] + value)
             return
         super().__setitem__(key, value)
-
-
-def pop_until(items: List[T], condition: Callable[[T], bool]) -> None:
-    while not condition(items[-1]):
-        items.pop()
 
 
 class UnitParser(configparser.ConfigParser):
