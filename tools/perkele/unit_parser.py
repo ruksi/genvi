@@ -61,7 +61,7 @@ class UnitParser(configparser.ConfigParser):
         kwargs.setdefault('strict', False)
         # empty lines are ignored in unit files, but there can be comments lines
         # inside backslash concatenation, which are treated similarly to empty lines
-        kwargs.setdefault('empty_lines_in_values', True)
+        kwargs.setdefault('empty_lines_in_values', False)
         # unit file key-value pairs are always delimited with `=`
         kwargs.setdefault('delimiters', ('=',))
         # don't do any interpolation by default, it messes with values containing %

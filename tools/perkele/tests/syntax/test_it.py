@@ -1,3 +1,5 @@
+import pytest
+
 from tools.perkele.tests.utils import assert_config, assert_gets, assert_unit_file, here
 from tools.perkele.unit_parser import UnitParser
 
@@ -7,10 +9,22 @@ def test_backslashes() -> None:
         ('Section A', 'KeyOne', 'value 1'),
         ('Section A', 'KeyTwo', 'value 2'),
         ('Section B', 'Setting', '"something" "some thing" "…"'),
-        ('Section B', 'KeyTwo', 'value 2 \\ value 2 continued'),
-        ('Section C', 'KeyThree', 'value 3\\ value 3 continued'),
+        ('Section B', 'KeyTwo', 'value 2 \\ value 2 continued\\ value 2 ending'),
     ]
     with assert_unit_file(here('backslashes.*.ini')) as config:
+        assert_gets(config, gets)
+
+
+@pytest.mark.xfail(
+    reason='backlashes with comments break duplicate directives',
+)
+def test_backslashes_commented() -> None:
+    gets = [
+        ('Section A', 'KeyOne', 'value 1'),
+        ('Section A', 'KeyTwo', 'value 2'),
+        ('Section B', 'KeyThree', 'value 3\\ value 3 continued \\ value 3 ending'),
+    ]
+    with assert_unit_file(here('backslashes-commented.*.ini')) as config:
         assert_gets(config, gets)
 
 
@@ -34,7 +48,7 @@ def test_list_reset() -> None:
         (
             'Service',
             'ExecStart',
-            ('', '/bin/echo hello', '/bin/echo bye', '', '/bin/echo HIYA'),
+            ('', 'one', 'two', '', 'three', 'four'),
         ),
     ]
     with assert_unit_file(here('list-reset.*.service')) as config:

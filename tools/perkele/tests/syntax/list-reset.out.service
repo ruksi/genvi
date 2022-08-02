@@ -1,7 +1,8 @@
 [Service]
 Type=oneshot
 ExecStart=
-ExecStart=/bin/echo hello
-ExecStart=/bin/echo bye
+ExecStart=one
+ExecStart=two
 ExecStart=
-ExecStart=/bin/echo HIYA
+ExecStart=three
+ExecStart=four
