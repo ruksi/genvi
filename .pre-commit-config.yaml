@@ -1,4 +1,6 @@
 ---
+fail_fast: true
+
 repos:
 
   - repo: meta
