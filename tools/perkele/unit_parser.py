@@ -1,41 +1,12 @@
 import configparser
 import itertools
 from collections import OrderedDict
-from typing import Any, Iterable, Optional, Tuple, TypeVar, Union
+from typing import Any
 
-from typing_extensions import Protocol, TypeAlias
-
+from tools.perkele.types import SectionItems, SupportsWrite
 from tools.perkele.utils import pop_until
 
-DirectiveKey: TypeAlias = str
-DirectiveValue: TypeAlias = Union[None, str, Tuple[Optional[str], ...]]
-SectionItems: TypeAlias = Iterable[Tuple[DirectiveKey, DirectiveValue]]
-
-T_contra = TypeVar('T_contra', contravariant=True)
-
-
-class SupportsWrite(Protocol[T_contra]):
-    def write(self, s: T_contra) -> Any:  # type: ignore[misc] # noqa: PLC0103, PLW0613
-        """Write the given thing to somewhere."""
-
-
 DUPLICATE_MARKER = object()
-
-
-class UnitParserDict(OrderedDict):  # type: ignore[type-arg]
-    """A custom dictionary to reimplement the standard library config parser logic."""
-
-    def __setitem__(self, key: str, value: Any) -> None:  # type: ignore[misc]
-        if isinstance(value, list) and key in self and isinstance(self[key], list):
-            # all ini file option values are fed as lists on the initial read,
-            # use tuples as a special type that signifies duplicate key definitions
-            # and hope that no other part of config parser uses lists for anything
-            if self[key][0] != DUPLICATE_MARKER:
-                super().__setitem__(key, [DUPLICATE_MARKER] + self[key] + value)
-            else:
-                super().__setitem__(key, self[key] + value)
-            return
-        super().__setitem__(key, value)
 
 
 class UnitParser(configparser.ConfigParser):
@@ -139,3 +110,19 @@ class UnitParser(configparser.ConfigParser):
                 value = value.replace('\\', '\\\n')
                 value = value.replace('<BACKSLASH_PLACEHOLDER>', '\\\\')
                 fp.write(f'{key}{value}\n')
+
+
+class UnitParserDict(OrderedDict):  # type: ignore[type-arg]
+    """A custom dictionary to reimplement the standard library config parser logic."""
+
+    def __setitem__(self, key: str, value: Any) -> None:  # type: ignore[misc]
+        if isinstance(value, list) and key in self and isinstance(self[key], list):
+            # all ini file option values are fed as lists on the initial read,
+            # use tuples as a special type that signifies duplicate key definitions
+            # and hope that no other part of config parser uses lists for anything
+            if self[key][0] != DUPLICATE_MARKER:
+                super().__setitem__(key, [DUPLICATE_MARKER] + self[key] + value)
+            else:
+                super().__setitem__(key, self[key] + value)
+            return
+        super().__setitem__(key, value)
