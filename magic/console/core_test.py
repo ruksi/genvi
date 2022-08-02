@@ -1,18 +1,13 @@
-import sys
 import tempfile
 from pathlib import Path
 
 import pytest
 from _pytest.capture import CaptureFixture
 from pytest_mock import MockFixture
+from typing_extensions import Protocol
 
 from magic.console.core import main
 from magic.tests.fake_directory import fake_directory
-
-if sys.version_info >= (3, 8):
-    from typing import Protocol
-else:
-    from typing_extensions import Protocol
 
 VALID_ARGV = [
     '/mock/executable',

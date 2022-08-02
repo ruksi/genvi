@@ -1,4 +1,3 @@
-import sys
 import tempfile
 from pathlib import Path
 from typing import List, Optional
@@ -7,18 +6,13 @@ import pytest
 from packaging.requirements import Requirement
 from packaging.version import Version
 from pytest_mock import MockFixture
+from typing_extensions import Protocol
 
 from tools.freezenuts.core import (
     get_oldest_matching_requirement,
     get_oldest_requirements,
     package_versions,
 )
-
-if sys.version_info >= (3, 8):
-    from typing import Protocol
-else:
-    from typing_extensions import Protocol
-
 
 REQUIREMENTS_CONTENT = """
 # comments

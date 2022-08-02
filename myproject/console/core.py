@@ -1,13 +1,10 @@
 import logging
 import sys
 
+from typing_extensions import Literal
+
 from myproject.console.reporting import setup_console_logging
 from myproject.console.settings import Settings, parse_settings
-
-if sys.version_info >= (3, 8):
-    from typing import Literal
-else:
-    from typing_extensions import Literal
 
 ErrorCode = Literal[0, 1]
 
