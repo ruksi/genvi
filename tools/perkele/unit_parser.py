@@ -1,7 +1,7 @@
 import configparser
 import itertools
 from collections import OrderedDict
-from typing import Any, Iterable, Optional, Tuple, TypeVar, Union
+from typing import Any, Callable, Iterable, List, Optional, Tuple, TypeVar, Union
 
 from typing_extensions import Protocol, TypeAlias
 
@@ -9,6 +9,7 @@ DirectiveKey: TypeAlias = str
 DirectiveValue: TypeAlias = Union[None, str, Tuple[Optional[str], ...]]
 SectionItems: TypeAlias = Iterable[Tuple[DirectiveKey, DirectiveValue]]
 
+T = TypeVar('T')
 T_contra = TypeVar('T_contra', contravariant=True)
 
 
@@ -17,17 +18,28 @@ class SupportsWrite(Protocol[T_contra]):
         """Write the given thing to somewhere."""
 
 
+DUPLICATE_MARKER = object()
+
+
 class UnitParserDict(OrderedDict):  # type: ignore[type-arg]
     """A custom dictionary to reimplement the standard library config parser logic."""
 
     def __setitem__(self, key: str, value: Any) -> None:  # type: ignore[misc]
-        if isinstance(value, list) and key in self:
+        if isinstance(value, list) and key in self and isinstance(self[key], list):
             # all ini file option values are fed as lists on the initial read,
             # use tuples as a special type that signifies duplicate key definitions
             # and hope that no other part of config parser uses lists for anything
-            super().__setitem__(key, tuple(self[key]) + tuple(value))
+            if self[key][0] != DUPLICATE_MARKER:
+                super().__setitem__(key, [DUPLICATE_MARKER] + self[key] + value)
+            else:
+                super().__setitem__(key, self[key] + value)
             return
         super().__setitem__(key, value)
+
+
+def pop_until(items: List[T], condition: Callable[[T], bool]) -> None:
+    while not condition(items[-1]):
+        items.pop()
 
 
 class UnitParser(configparser.ConfigParser):
@@ -75,10 +87,12 @@ class UnitParser(configparser.ConfigParser):
         )
         for section, options in all_sections:
             for name, val in options.items():
-                if isinstance(val, list):
-                    val = ' '.join(val).rstrip()
-                if isinstance(val, tuple):
+                if val[0] == DUPLICATE_MARKER:
+                    val.pop(0)
+                    pop_until(val, lambda item: bool(item != ''))
                     val = tuple(v.rstrip() for v in val)
+                else:
+                    val = ' '.join(val).rstrip()
                 options[name] = self._interpolation.before_read(  # type: ignore[attr-defined] # noqa: E501
                     self,
                     section,
