@@ -15,7 +15,7 @@ mypy
 
 # linting
 darglint                       # check docstring with `darglint`
-flake8==4.0.1                  # a lint framework including basic checks, some plugins don't support > `v5`
+flake8<5                       # a lint framework including basic checks, some plugins break in `v5`
 flake8-annotations-complexity  # avoid complex type annotations
 flake8-bandit                  # avoid security vulnerabilities with `bandit`
 flake8-broken-line             # avoid backslashes to split lines
