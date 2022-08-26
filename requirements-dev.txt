@@ -1,6 +1,6 @@
 astpretty==2.1.0
     # via flake8-expression-complexity
-astroid==2.11.7
+astroid==2.12.5
     # via pylint
 attrs==22.1.0
     # via
@@ -37,7 +37,7 @@ darglint==1.8.1
     # via -r requirements-dev.in
 dill==0.3.5.1
     # via pylint
-distlib==0.3.5
+distlib==0.3.6
     # via virtualenv
 docutils==0.19
     # via
@@ -71,7 +71,7 @@ flake8-bandit==3.0.0
     # via -r requirements-dev.in
 flake8-broken-line==0.5.0
     # via -r requirements-dev.in
-flake8-bugbear==22.8.22
+flake8-bugbear==22.8.23
     # via -r requirements-dev.in
 flake8-comprehensions==3.10.0
     # via -r requirements-dev.in
@@ -192,7 +192,7 @@ pygments==2.13.0
     #   flake8-rst-docstrings
     #   readme-renderer
     #   rich
-pylint==2.14.5
+pylint==2.15.0
     # via
     #   flake8-for-pycharm
     #   flake8-pylint
@@ -290,9 +290,8 @@ zipp==3.8.1
 # The following packages are considered to be unsafe in a requirements file:
 pip==22.2.2
     # via pip-tools
-setuptools==65.2.0
+setuptools==65.3.0
     # via
-    #   astroid
     #   flake8-eradicate
     #   flake8-functions
     #   mr-proper
