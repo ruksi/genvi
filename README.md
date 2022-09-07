@@ -27,7 +27,7 @@ O <b>generation of vipers</b>, how can ye, being evil, speak good things?
 ## Quickstart
 
 ```bash
-# creates a new directory after asking for a name
+# will ask for a new directory name
 curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | bash
 ```
 
@@ -117,4 +117,5 @@ This project is released under the [MIT License](LICENSE).
 
 ## Contributions
 
-Sure, the template [`README.md`](magic/utils/readme_template.md) should get you started.
+Sure, the [`README.md`](magic/utils/readme_template.md) template should get you started
+as `genvi` itself works like the projects it generates.
