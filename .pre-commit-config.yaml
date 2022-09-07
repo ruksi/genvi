@@ -29,7 +29,7 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/PyCQA/autoflake
-    rev: 'v1.5.1'
+    rev: 'v1.5.3'
     hooks:
       - id: autoflake
         args: [
@@ -44,7 +44,7 @@ repos:
         args: ['--py37-plus']  # https://github.com/asottile/reorder_python_imports/issues/101#issuecomment-537936957
 
   - repo: https://github.com/ambv/black
-    rev: '22.6.0'
+    rev: '22.8.0'
     hooks:
       - id: black
 

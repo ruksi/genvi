@@ -112,9 +112,11 @@ def test_requirement_deep_freezing(
             ],
         ),
         (
-            'zion (0.1.0)\n'
-            'Available versions: 2.28.0, 2.27.1, 2.27.0\n'
-            '  INSTALLED: 2.27.1\n',
+            (
+                'zion (0.1.0)\n'
+                'Available versions: 2.28.0, 2.27.1, 2.27.0\n'
+                '  INSTALLED: 2.27.1\n'
+            ),
             [
                 '2.27.0',
                 '2.27.1',
