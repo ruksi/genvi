@@ -91,18 +91,19 @@ repos:
       - id: flake8
         name: flake8
         entry: flake8
+        args: []
         language: system
         types: [python]
         require_serial: true
 
       - id: mypy
         name: mypy
-        language: system
         entry: mypy
         args: [
           '--install-types',
           '--non-interactive',
           '--scripts-are-modules',
         ]
+        language: system
         types_or: [python, pyi]
         require_serial: true
