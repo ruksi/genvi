@@ -15,7 +15,7 @@ build==0.8.0
     # via
     #   -r requirements-dev.in
     #   pip-tools
-certifi==2022.6.15.1
+certifi==2022.6.15.2
     # via requests
 cffi==1.15.1
     # via cryptography
@@ -70,7 +70,7 @@ flake8-bandit==4.1.1
     # via -r requirements-dev.in
 flake8-broken-line==0.5.0
     # via -r requirements-dev.in
-flake8-bugbear==22.8.23
+flake8-bugbear==22.9.11
     # via -r requirements-dev.in
 flake8-comprehensions==3.10.0
     # via -r requirements-dev.in
@@ -106,7 +106,7 @@ gitpython==3.1.27
     # via bandit
 identify==2.5.5
     # via pre-commit
-idna==3.3
+idna==3.4
     # via requests
 importlib-metadata==4.2.0
     # via
