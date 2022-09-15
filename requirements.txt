@@ -1,2 +1,2 @@
-typing-extensions==4.3.0
+typing-extensions==4.4.0
     # via -r requirements.in
