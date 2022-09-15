@@ -97,9 +97,11 @@ omit = [
 
 [tool.coverage.report]
 exclude_lines = [
-    'pragma: no cover',
+    'class .*Protocol.*\)',
     'def __repr__',
     'if __name__ == .__main__.:',
-    'raise NotImplementedError',
     'import',
+    'pragma: no cover',
+    'raise NotImplementedError',
+    '@(abc\.)?abstractmethod',
 ]
