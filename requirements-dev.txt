@@ -1,6 +1,6 @@
 astpretty==2.1.0
     # via flake8-expression-complexity
-astroid==2.12.11
+astroid==2.12.12
     # via pylint
 attrs==22.1.0
     # via
@@ -159,7 +159,7 @@ packaging==21.3
     #   -r requirements-dev.in
     #   build
     #   pytest
-pbr==5.10.0
+pbr==5.11.0
     # via stevedore
 pep517==0.13.0
     # via build
@@ -240,7 +240,7 @@ snowballstemmer==2.2.0
     # via pydocstyle
 stdlib-list==0.8.0
     # via mr-proper
-stevedore==3.5.1
+stevedore==3.5.2
     # via bandit
 toml==0.10.2
     # via pre-commit
