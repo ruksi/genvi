@@ -35,7 +35,7 @@ cryptography==38.0.1
     # via secretstorage
 darglint==1.8.1
     # via -r requirements-dev.in
-dill==0.3.5.1
+dill==0.3.6
     # via pylint
 distlib==0.3.6
     # via virtualenv
@@ -284,7 +284,7 @@ wheel==0.37.1
     # via pip-tools
 wrapt==1.14.1
     # via astroid
-zipp==3.9.0
+zipp==3.10.0
     # via
     #   importlib-metadata
     #   pep517
