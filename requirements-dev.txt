@@ -72,7 +72,7 @@ flake8-bandit==4.1.1
     # via -r requirements-dev.in
 flake8-broken-line==0.6.0
     # via -r requirements-dev.in
-flake8-bugbear==22.10.25
+flake8-bugbear==22.10.27
     # via -r requirements-dev.in
 flake8-comprehensions==3.10.0
     # via -r requirements-dev.in
@@ -140,7 +140,7 @@ jeepney==0.8.0
     #   secretstorage
 keyring==23.9.3
     # via twine
-lazy-object-proxy==1.7.1
+lazy-object-proxy==1.8.0
     # via astroid
 mccabe==0.7.0
     # via
