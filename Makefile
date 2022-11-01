@@ -34,10 +34,10 @@ venv:
 	python -m venv venv/
 	echo -e '\nVirtual environment created at `venv/`; activate it with `source venv/bin/activate`'
 
-.PHONY: ensure-venv
+.PHONY: ensure.venv
 # abort if running outside of a virtual environment
 # override with `NO_VENV=1 make ...`
-ensure-venv:
+ensure.venv:
 	if [ $(NO_VENV) ]; then exit 0; fi;
 	IS_VENV=`python -m tools.is_virtualenv`
 	if [ $$IS_VENV != 'True' ]; then
@@ -51,7 +51,7 @@ ensure-venv:
 
 .PHONY: prod
 # setup production environment
-prod: ensure-venv
+prod: ensure.venv
 	pip install -r requirements.txt
 
 
@@ -59,48 +59,48 @@ prod: ensure-venv
 
 .PHONY: dev
 # setup development environment
-dev: ensure-venv dev-python dev-hooks
+dev: ensure.venv dev.python dev.hooks
 
-.PHONY: dev-python
+.PHONY: dev.python
 # install Python dependencies for development
-dev-python: ensure-venv
+dev.python: ensure.venv
 	pip install -r requirements-dev.txt
 
-.PHONY: dev-python-outdated
+.PHONY: dev.python.outdated
 # install valid but outdated production requirements for development
-dev-python-outdated: ensure-venv
+dev.python.outdated: ensure.venv
 	pip install -r requirements.out
 
-.PHONY: dev-hooks
+.PHONY: dev.hooks
 # install pre-commit hooks for development
-dev-hooks: ensure-venv
+dev.hooks: ensure.venv
 	pre-commit install --install-hooks
 
 .PHONY: lint
 # run all project style, design and type checkers
-lint: ensure-venv
+lint: ensure.venv
 	pre-commit run --all-files
 
 .PHONY: test
 # run all project unit tests and print coverage misses
-test: ensure-venv
+test: ensure.venv
 	python -m pytest --cov --cov-report=term-missing
 
-.PHONY: coverage-data
+.PHONY: test.coverage
 # run all project unit tests and save coverage report for upload
-coverage-data: ensure-venv
+test.coverage: ensure.venv
 	python -m coverage run --parallel -m pytest
 
 .PHONY: update
 # update dependency definitions after .in-file modifications
-update: ensure-venv
+update: ensure.venv
 	pip-compile --no-header --allow-unsafe requirements.in
 	pip-compile --no-header --allow-unsafe requirements-dev.in
 	python -m tools.freezenuts requirements.in > requirements.out
 
 .PHONY: upgrade
 # upgrade all dependencies to the latest valid version
-upgrade: ensure-venv
+upgrade: ensure.venv
 	pip-compile --upgrade --no-header --allow-unsafe requirements.in
 	pip-compile --upgrade --no-header --allow-unsafe requirements-dev.in
 	python -m tools.freezenuts requirements.in > requirements.out
@@ -111,19 +111,19 @@ upgrade: ensure-venv
 
 .PHONY: run
 # run package as a module
-run: ensure-venv
+run: ensure.venv
 	python -m myproject
 
 .PHONY: install
 # install the package to current the virtual environment as an editable,
 # and add all the configured executables to the environment `/bin`
-install: ensure-venv
+install: ensure.venv
 	pip install -e .
 	echo -e '\nTry running `myproject` in the command line'
 
 .PHONY: uninstall
 # uninstall any `pip` installation of this package, but doesn't touch dependencies
-uninstall: ensure-venv
+uninstall: ensure.venv
 	pip uninstall -y myproject
 
 
@@ -131,7 +131,7 @@ uninstall: ensure-venv
 .PHONY: version
 # increment package version and create a tagged git commit
 # Usage: make version bump=minor # 'major', 'minor' or 'patch'
-version: ensure-venv
+version: ensure.venv
 	python -m tools.bump myproject/VERSION $(bump)
 	git reset
 	git add myproject/VERSION
@@ -142,11 +142,11 @@ version: ensure-venv
 
 .PHONY: build
 # compile the current package version as distributables under `/dist`
-build: ensure-venv
+build: ensure.venv
 	python -m build
 
 .PHONY: publish
 # upload the current version distributables to PyPI for sharing
-publish: ensure-venv
+publish: ensure.venv
 	VERSION=`cat myproject/VERSION`
 	twine upload dist/myproject-$$VERSION*

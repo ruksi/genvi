@@ -26,7 +26,7 @@ jobs:
           cache: 'pip'
           cache-dependency-path: '**/requirements*.*'
       - name: Install Python dependencies
-        run: make dev-python
+        run: make dev.python
       - name: Save cache base key for Python
         run: echo "PY=$(python -VV | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV
       - name: Use pre-commit hook cache
@@ -35,7 +35,7 @@ jobs:
           path: ~/.cache/pre-commit
           key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
       - name: Install pre-commit hooks
-        run: make dev-hooks
+        run: make dev.hooks
       - name: Run lint
         run: make lint
 
@@ -63,9 +63,9 @@ jobs:
           cache: 'pip'
           cache-dependency-path: '**/requirements*.*'
       - name: Install Python dependencies
-        run: make dev-python
+        run: make dev.python
       - name: Run tests with coverage
-        run: make coverage-data
+        run: make test.coverage
       - name: Upload coverage data
         uses: actions/upload-artifact@v3
         with:
@@ -113,7 +113,7 @@ jobs:
           cache: 'pip'
           cache-dependency-path: '**/requirements*.*'
       - name: Install valid but outdated Python dependencies
-        run: make dev-python dev-python-outdated
+        run: make dev.python dev.python.outdated
       - name: Run tests
         run: make test
 
@@ -130,7 +130,7 @@ jobs:
           cache: 'pip'
           cache-dependency-path: '**/requirements*.*'
       - name: Install Python dependencies
-        run: make dev-python
+        run: make dev.python
 
       - name: Build package (wheel)
         run: make build
@@ -172,7 +172,7 @@ jobs:
       - name: Convert the template to a project
         run: make package="artproject" author="Arthur" email="arthur@example.com"
       - name: Install Python dependencies
-        run: make dev-python
+        run: make dev.python
       - name: Run tests
         run: make test
       - name: Install package

@@ -92,7 +92,7 @@ Resolve build issues about outdated dependency conflicts:
 
 ```bash
 # edit `requirements.in` version specifications
-make update dev-python dev-python-outdated
+make update dev.python dev.python.outdated
 # repeat until you get no conflicts
 ```
 
