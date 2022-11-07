@@ -45,7 +45,7 @@ docutils==0.19
     #   restructuredtext-lint
 eradicate==2.1.0
     # via flake8-eradicate
-exceptiongroup==1.0.0
+exceptiongroup==1.0.1
     # via pytest
 filelock==3.8.0
     # via virtualenv
@@ -139,7 +139,9 @@ jeepney==0.8.0
     #   keyring
     #   secretstorage
 keyring==23.9.3
-    # via twine
+    # via
+    #   -r requirements-dev.in
+    #   twine
 lazy-object-proxy==1.8.0
     # via astroid
 mccabe==0.7.0
@@ -171,7 +173,7 @@ pip-tools==6.9.0
     # via -r requirements-dev.in
 pkginfo==1.8.3
     # via twine
-platformdirs==2.5.2
+platformdirs==2.5.3
     # via
     #   pylint
     #   virtualenv
@@ -280,7 +282,7 @@ virtualenv==20.16.2
     #   pre-commit
 webencodings==0.5.1
     # via bleach
-wheel==0.37.1
+wheel==0.38.2
     # via pip-tools
 wrapt==1.14.1
     # via astroid
@@ -290,9 +292,9 @@ zipp==3.10.0
     #   pep517
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==22.3
+pip==22.3.1
     # via pip-tools
-setuptools==65.5.0
+setuptools==65.5.1
     # via
     #   flake8-functions
     #   mr-proper
