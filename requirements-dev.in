@@ -37,3 +37,9 @@ pep8-naming                    # follow PEP-8 naming conventions
 # the following are only needed if you distribute the built package through PyPI / `pip`
 build
 twine
+
+# `keyring` is an indirect dependency through `twine`,
+# and later versions of `keyring` require `importlib_metadata` incompatible with `flake8`
+# https://github.com/jaraco/keyring/commit/19374c65876c14ea69dcc4a29fb9858fcbc3c749
+# https://github.com/PyCQA/flake8/blob/main/setup.cfg#L44
+keyring>=15.1,<23.10.0
