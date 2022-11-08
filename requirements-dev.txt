@@ -152,7 +152,7 @@ more-itertools==9.0.0
     # via jaraco-classes
 mr-proper==0.0.7
     # via flake8-functions
-mypy==0.982
+mypy==0.990
     # via -r requirements-dev.in
 mypy-extensions==0.4.3
     # via mypy
