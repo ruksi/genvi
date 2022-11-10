@@ -282,7 +282,7 @@ virtualenv==20.16.2
     #   pre-commit
 webencodings==0.5.1
     # via bleach
-wheel==0.38.3
+wheel==0.38.4
     # via pip-tools
 wrapt==1.14.1
     # via astroid
