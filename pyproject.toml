@@ -79,10 +79,12 @@ single-line-class-stmt = false
 single-line-if-stmt = false
 
 [tool.pytest.ini_options]
-addopts = ['--import-mode=importlib']  # best practice https://docs.pytest.org/en/latest/explanation/goodpractices.html
+addopts = [
+    '--strict-config',
+    '--strict-markers',
+    '--import-mode=importlib',  # the best practice https://docs.pytest.org/en/latest/explanation/goodpractices.html
+]
 norecursedirs = ['.*', 'build', 'dist', 'venv']
-python_files = ['test_*.py', '*_test.py']
-python_functions = ['test_*']
 filterwarnings = ['error']  # turn warnings into errors
 log_level = 'NOTSET'        # capture all `logging` messages
 
@@ -93,7 +95,6 @@ omit = [
     '*/site-packages/*',
     '*/tests/*',
     '*_test.py',
-    'test_*.py',
 ]
 
 [tool.coverage.report]
