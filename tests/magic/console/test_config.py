@@ -4,48 +4,34 @@ import pytest
 
 from magic.console.config import Config, resolve_genvi_root
 from magic.utils.errors import InternalError, ValidationError
-from tests.magic.fake_directory import fake_directory
 
 
-def test_config_validation() -> None:
-    with fake_directory() as directory:
-        Config(name='test', author='', email='', genvi_root=Path(directory)).validate()
+def test_config_validation(tmp_genvi_path: Path) -> None:
+    Config(name='test', author='', email='', genvi_root=tmp_genvi_path).validate()
 
 
 @pytest.mark.parametrize('name', ['', 'bad name', 'images', 'magic', 'tests'])
-def test_config_invalid_package_name(name: str) -> None:
-    with fake_directory() as directory:
-        with pytest.raises(ValidationError):
-            Config(
-                name=name,
-                author='',
-                email='',
-                genvi_root=Path(directory),
-            ).validate()
+def test_config_invalid_package_name(name: str, tmp_genvi_path: Path) -> None:
+    with pytest.raises(ValidationError):
+        Config(name=name, author='', email='', genvi_root=tmp_genvi_path).validate()
 
 
-@pytest.mark.parametrize('write_makefile', [True, False])
-def test_config_not_directory(write_makefile: bool) -> None:
-    with fake_directory(write_makefile=write_makefile) as directory:
-        with pytest.raises(InternalError):
-            Config(
-                name='test',
-                author='',
-                email='',
-                genvi_root=Path(directory, 'Makefile'),
-            ).validate()
+def test_config_doesnt_exist(tmp_genvi_path: Path) -> None:
+    root = Path(tmp_genvi_path, 'i-do-not-exist')
+    with pytest.raises(InternalError):
+        Config(name='test', author='', email='', genvi_root=root).validate()
 
 
-def test_config_setup_smells_fishy() -> None:
-    with fake_directory(write_makefile=False) as directory:
-        with pytest.raises(InternalError):
-            Config(
-                name='test',
-                author='',
-                email='',
-                genvi_root=Path(directory),
-            ).validate()
+def test_config_not_directory(tmp_genvi_path: Path) -> None:
+    root = Path(tmp_genvi_path, 'Makefile')
+    with pytest.raises(InternalError):
+        Config(name='test', author='', email='', genvi_root=root).validate()
+
+
+def test_config_setup_smells_fishy(tmp_path: Path) -> None:
+    with pytest.raises(InternalError):
+        Config(name='test', author='', email='', genvi_root=tmp_path).validate()
 
 
 def test_resolve_genvi_root() -> None:
-    assert resolve_genvi_root()
+    assert resolve_genvi_root().name == 'genvi'
