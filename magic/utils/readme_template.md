@@ -68,9 +68,11 @@ Bring `mypy` type checks to PyCharm:
 
 ## Testing Guidelines
 
-All tests and testing related utilities go to the root `tests/` directory.
+All tests and testing related utilities go under the `tests` directories.
+This keeps testing related code separate from the application code.
 
-* This keeps testing related code separate from the application code.
+* Prefer `tests/*`,
+  but `path/to/subdir/tests/*` are also acceptable if `subdir` is a well-defined whole
 * This is the most common standard in the Python world and many tools assume
   this approach e.g. `pytest` fixture discovery through `conftest.py` files,
   which would lead you to add these `conftest.py` files to bizarre locations

@@ -1,4 +1,4 @@
-from tests.tools.perkele.utils import assert_config, assert_gets, assert_unit_file, here
+from tools.perkele.tests.utils import assert_config, assert_gets, assert_unit_file, here
 from tools.perkele.unit_parser import UnitParser
 
 

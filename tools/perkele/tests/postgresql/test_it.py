@@ -2,7 +2,7 @@ import configparser
 
 import pytest
 
-from tests.tools.perkele.utils import assert_unit_file, here
+from tools.perkele.tests.utils import assert_unit_file, here
 
 
 def test_file_postgresql_main_service_template() -> None:

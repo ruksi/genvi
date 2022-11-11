@@ -1,4 +1,4 @@
-from tests.tools.perkele.utils import assert_gets, assert_unit_file, here
+from tools.perkele.tests.utils import assert_gets, assert_unit_file, here
 
 
 def test_file_failure_handler_service_template() -> None:
