@@ -43,6 +43,7 @@ def run(arguments: List[str]) -> ErrorCode:
 
     # bibbidi-bobbidi-poof!
     shutil.rmtree(Path(config.genvi_root, 'magic'))
+    shutil.rmtree(Path(config.genvi_root, 'tests/magic'))
     shutil.rmtree(Path(config.genvi_root, 'images'))
     Path(config.genvi_root, 'ABOUT.md').unlink()
 

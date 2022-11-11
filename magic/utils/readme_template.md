@@ -68,11 +68,13 @@ Bring `mypy` type checks to PyCharm:
 
 ## Testing Guidelines
 
-* Keep unit tests (`*_test.py`) near the target
-  e.g. `model.py` should be accompanied by `model_test.py`.
-* Keep other tests (`test_*.py`) and utilities in `tests/` directories
-  e.g. `api/tests/test_integration.py`.
-* Project root `tests/` can contain global testing configuration and utilities.
+All tests and testing related utilities go to the root `tests/` directory.
+
+* This keeps testing related code separate from the application code.
+* This is the most common standard in the Python world and many tools assume
+  this approach e.g. `pytest` fixture discovery through `conftest.py` files,
+  which would lead you to add these `conftest.py` files to bizarre locations
+  in your application code.
 * None of the above are included in distribution builds or test coverage.
 
 ## Distribution

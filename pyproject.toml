@@ -79,6 +79,7 @@ single-line-class-stmt = false
 single-line-if-stmt = false
 
 [tool.pytest.ini_options]
+addopts = ['--import-mode=importlib']  # best practice https://docs.pytest.org/en/latest/explanation/goodpractices.html
 norecursedirs = ['.*', 'build', 'dist', 'venv']
 python_files = ['test_*.py', '*_test.py']
 python_functions = ['test_*']
