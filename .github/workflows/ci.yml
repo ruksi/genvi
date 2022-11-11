@@ -156,7 +156,6 @@ jobs:
         run: myproject -h
       - name: Uninstall (pipx)
         run: pipx uninstall myproject
-
   # -->
   convert:
     runs-on: ubuntu-latest
