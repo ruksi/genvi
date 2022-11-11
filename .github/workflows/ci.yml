@@ -171,9 +171,11 @@ jobs:
       - name: Convert the template to a project
         run: make package="artproject" author="Arthur" email="arthur@example.com"
       - name: Install Python dependencies
-        run: make dev.python
+        run: make dev.python dev.hooks
       - name: Run tests
         run: make test
+      - name: Run lint
+        run: make lint
       - name: Install package
         run: make install
       - name: Smoke test console interface
