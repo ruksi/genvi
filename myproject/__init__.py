@@ -1,4 +1,4 @@
 from pathlib import Path
 
-with Path(Path(__file__).parent, 'VERSION').open(encoding='utf-8') as version_file:
-    __version__ = version_file.read().strip()
+version_path = Path(Path(__file__).parent, 'VERSION')
+__version__ = version_path.read_text(encoding='utf-8').strip()
