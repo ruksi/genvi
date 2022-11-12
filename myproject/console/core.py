@@ -1,36 +1,50 @@
 import logging
-import sys
+import os
+from typing import Optional
 
-from typing_extensions import Literal
+import click
 
 from myproject.console.reporting import setup_console_logging
-from myproject.console.settings import Settings, parse_settings
-
-ErrorCode = Literal[0, 1]
 
 log = logging.getLogger(__name__)
 
 
-def main() -> ErrorCode:
-    try:
-        return main_with_logging()
-    except Exception as e:  # pylint: disable=broad-except
-        # an exception escaped logging system
-        # so write straight to stderr
-        sys.stderr.write(f'{e}\n')
-        return 1
+@click.command(
+    context_settings={'help_option_names': ['-h', '--help']},
+)
+@click.option(
+    '--verbose',
+    '-v',
+    'log_level',
+    flag_value=logging.getLevelName(logging.DEBUG),
+    help='Turn on verbose mode, also showing debug information.',
+)
+@click.option(
+    '--quiet',
+    '-q',
+    'log_level',
+    flag_value=logging.getLevelName(logging.WARNING),
+    help='Turn on quiet mode, only showing warnings and up.',
+)
+@click.option(
+    '--quiet-quirks',
+    '-qq',
+    'log_level',
+    flag_value=logging.getLevelName(logging.ERROR),
+    help='Turn on quiet quirks mode, only showing errors and up.',
+)
+def cli(
+    log_level: Optional[str],
+) -> None:
+    """
+    Show debug information.
 
+    This docstring will show up in the command line help.
+    """
+    if not log_level:
+        default_log_level = logging.getLevelName(logging.INFO)
+        log_level = os.environ.get('LOGLEVEL', default_log_level).upper()
 
-def main_with_logging() -> ErrorCode:
-    settings = parse_settings(sys.argv[1:])
-    setup_console_logging(settings.log_level)
-    try:
-        return run(settings)
-    except Exception:  # pylint: disable=broad-except
-        log.exception('runtime exception:')
-        return 1
-
-
-def run(settings: Settings) -> ErrorCode:
-    log.info('mock command line interface: %s', settings)
-    return 0
+    setup_console_logging(log_level)
+    log.info('log level = %s', log_level)
+    click.echo('hello!')
