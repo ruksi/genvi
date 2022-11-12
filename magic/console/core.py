@@ -1,6 +1,5 @@
 import shutil
 import sys
-from pathlib import Path
 from typing import List
 
 from magic.console.config import parse_config
@@ -26,26 +25,25 @@ def run(arguments: List[str]) -> ErrorCode:
 
     rename_package(config)
     strip_lines_between_markers(
-        target=Path(config.genvi_root, 'Makefile'),
+        target=(config.genvi_root / 'Makefile'),
         start='# -->',
         end='# <--',
     )
     strip_lines_between_markers(
-        target=Path(config.genvi_root, '.github/workflows/ci.yml'),
+        target=(config.genvi_root / '.github/workflows/ci.yml'),
         start='  # -->',
         end='  # <--',
     )
 
-    readme = Path(config.genvi_root, 'README.md')
+    readme = config.genvi_root / 'README.md'
     readme.unlink()
-    with readme.open(encoding='utf-8', mode='w') as file:
-        file.write(generate_readme(config))
+    readme.write_text(generate_readme(config), encoding='utf-8')
 
     # bibbidi-bobbidi-poof!
-    shutil.rmtree(Path(config.genvi_root, 'magic'))
-    shutil.rmtree(Path(config.genvi_root, 'tests/magic'))
-    shutil.rmtree(Path(config.genvi_root, 'images'))
-    Path(config.genvi_root, 'ABOUT.md').unlink()
+    shutil.rmtree(config.genvi_root / 'magic')
+    shutil.rmtree(config.genvi_root / 'tests/magic')
+    shutil.rmtree(config.genvi_root / 'images')
+    (config.genvi_root / 'ABOUT.md').unlink()
 
     write_out(
         [
