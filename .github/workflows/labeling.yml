@@ -2,9 +2,7 @@ name: labeling
 
 on:
   push:
-    branches:
-      - main
-      - master
+    branches: [main, master]
     paths:
       - .github/labels.yml
       - .github/workflows/labeling.yml
