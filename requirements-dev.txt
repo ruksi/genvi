@@ -171,7 +171,7 @@ pep517==0.13.0
     # via build
 pep8-naming==0.13.2
     # via -r requirements-dev.in
-pip-tools==6.9.0
+pip-tools==6.10.0
     # via -r requirements-dev.in
 pkginfo==1.8.3
     # via twine
