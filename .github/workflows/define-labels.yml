@@ -7,7 +7,7 @@ on:
       - master
     paths:
       - .github/labels.yml
-
+      - .github/workflows/define-labels.yml
 jobs:
 
 
