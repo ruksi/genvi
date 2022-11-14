@@ -1,0 +1,115 @@
+
+# Issue Core Types
+
+- name: 🐛 Bug
+  description: A bug report or a fix for one
+  color: 'E9FD00'
+  from_name: 'bug'
+
+- name: ️🌟 Feature
+  description: A feature request or an implementation of one
+  color: 'FDD835'
+  from_name: 'enhancement'
+
+- name: 🤔 Question
+  description: The issue is a question
+  color: '49472E'
+  from_name: 'question'
+
+# Issue and Pull Request Sub-Types
+
+- name: 👷 Automation
+  description: Work on CI, tests or automation
+  color: '4a97D6'
+
+- name: 💥 Breaking Change
+  description: Introduces an API breaking change
+  color: 'E7681E'
+
+- name: 🔨 Build
+  description: Work on the build or packaging system
+  color: 'BFDADC'
+
+- name: 📝 Documentation
+  description: Work on documentation
+  color: '706F40'
+  from_name: 'documentation'
+
+- name: 🧬 Duplicate
+  description: This issue or pull request already exists
+  color: '97A5BE'
+  from_name: 'duplicate'
+
+- name: 🐎️️ Performance
+  description: Work on performance
+  color: 'D56E64'
+
+- name: ♻️ Refactoring
+  description: Work on refactoring or reformatting code
+  color: '409B44'
+
+- name: 🤖 Robot
+  description: Done by automation
+  color: '8A9DA6'
+
+- name: 🔥 Removal
+  description: Removal or deprecation of things
+  color: 'EE6C00'
+
+- name: 🧹 Upkeep
+  description: Updating dependencies or other maintenance
+  color: 'BBB490'
+
+- name: 💄 Visual
+  description: Work on visual interfaces, styles or assets
+  color: '930843'
+
+# Contributor Flow
+
+- name: ⏳ Waiting for Response
+  description: Issue waiting for maintainer action
+  color: '7057FF'
+
+- name: 🔍 Waiting Investigation
+  description: Issue being investigated by maintainers
+  color: 'D876E3'
+
+- name: 💭 Waiting Discussion
+  description: Issue being discussed or under consideration
+  color: 'D876E3'
+
+- name: 👍️ Waiting for PR
+  description: Issue accepted and waiting for implementation
+  color: 'D876E3'
+
+# Issue Priority
+
+- name: 🚨 High Priority
+  description: One of utmost importance
+  color: 'FF0000'
+
+- name: 😎 Nice to Have
+  description: The issue is awesome but not essential
+  color: '020202'
+
+- name: 🙃 Invalid
+  description: Acknowledged but nothing to work on
+  color: 'AAAAAA'
+  from_name: 'invalid'
+
+- name: ⚰️ Abandoned
+  description: Acknowledged but not to be worked on
+  color: 'AAAAAA'
+  from_name: 'wontfix'
+
+# Call-outs
+
+- name: 👋 Good First Issue
+  description: A good issue for new contributors
+  color: 'B1FC6F'
+  from_name: 'good first issue'
+
+- name: 💁 Help Needed
+  description: Some helping hands appreciated!
+  color: '00FFFF'
+  from_name: 'help wanted'

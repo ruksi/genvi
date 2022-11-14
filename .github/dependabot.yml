@@ -6,5 +6,8 @@ updates:
   # Check for updates to GitHub Actions
   - package-ecosystem: 'github-actions'
     directory: '/'
+    labels:
+      - '🤖 Robot'
+      - '🧹 Upkeep'
     schedule:
       interval: 'daily'
