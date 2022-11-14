@@ -1,0 +1,121 @@
+categories:
+
+  - title: 💥 Breaking Changes
+    label: 💥 Breaking Change
+
+  - title: ️🌟 New Features
+    label: ️🌟 Feature
+
+  - title: 🐛 Fixes
+    label: 🐛 Bug
+
+  - title: 🔒️ Security Updates
+    label: 🔒️ Security
+
+  - title: 🐎️️ Performance Improvements
+    label: 🐎️️ Performance
+
+  - title: 📝 Documentation Changes
+    label: 📝 Documentation
+
+  - title: 💄 Visual Changes
+    label: 💄 Visual
+
+  - title: 🧰️ Maintenance
+    collapse-after: 3
+    labels:
+      - 👷 Automation
+      - 🔨 Build
+      - ⛏️ Removal
+      - 🧹 Upkeep
+
+version-resolver:
+  default: patch
+  major:
+    labels:
+      - 💥 Breaking Change
+  minor:
+    labels:
+      - 🌟 Feature
+  patch:
+    labels: []
+
+autolabeler:
+
+  - label: 👷 Automation
+    title:
+      - '/CI/i'
+      - '/GitHub/i'
+      - '/test/i'
+      - '/workflow/i'
+      - '/🐙/i'
+      - '/👷/i'
+      - '/🧪/i'
+
+  - label: 🐛 Bug
+    title:
+      - '/bug/i'
+      - '/correct/i'
+      - '/fix/i'
+      - '/🐛/i'
+      - '/🐞/i'
+      - '/🚨/i'
+      - '/🩹/i'
+      - '/🪲/i'
+
+  - label: 🔨 Build
+    title:
+      - '/Dockerfile/i'
+      - '/build/i'
+      - '/🐋/i'
+      - '/🐳/i'
+      - '/🔨/i'
+
+  - label: ️🌟 Feature
+    title:
+      - '/add/i'
+      - '/create/i'
+      - '/feature/i'
+      - '/implement/i'
+      - '/✨/i'
+      - '/🚀/i'
+      - '/️🌟/i'
+
+  - label: 📝 Documentation
+    title:
+      - '/README/i'
+      - '/docs/i'
+      - '/documentation/i'
+      - '/typos/i'
+      - '/📒/i'
+      - '/📚/i'
+      - '/📝/i'
+
+  - label: ♻️ Refactoring
+    title:
+      - '/move/i'
+      - '/refactor/i'
+      - '/rename/i'
+      - '/♻️/i'
+      - '/🎨/i'
+      - '/🚚/i'
+      - '/🚧/i'
+
+  - label: 🧹 Upkeep
+    title:
+      - '/bump/i'
+      - '/dependencies/i'
+      - '/ignore/i'
+      - '/➕️️/i'
+      - '/➖️️/i'
+      - '/⬆️/i'
+      - '/⬇️️/i'
+      - '/📌/i'
+      - '/🔧/i'
+      - '/🙈/i'
+      - '/🧑‍💻/i'
+      - '/🧹/i'
+      - '/🪝/i'
+
+template: |
+  $CHANGES
