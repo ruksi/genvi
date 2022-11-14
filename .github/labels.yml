@@ -12,7 +12,7 @@
   from_name: 'enhancement'
 
 - name: 🤔 Question
-  description: The issue is a question
+  description: The issue is an open question
   color: '49472E'
   from_name: 'question'
 
@@ -55,6 +55,10 @@
 - name: 🔥 Removal
   description: Removal or deprecation of things
   color: 'EE6C00'
+
+- name: 🔒️ Security
+  description: Work on information security
+  color: '222222'
 
 - name: 🧹 Upkeep
   description: Updating dependencies or other maintenance
