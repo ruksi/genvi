@@ -77,6 +77,10 @@
   description: Issue OK and waiting for implementation
   color: 'D876E3'
 
+- name: 🏷️ Waiting for Release
+  description: Implementation OK! Soon...
+  color: '5319E7'
+
 # Issue Priority
 
 - name: 🚨 High Priority
