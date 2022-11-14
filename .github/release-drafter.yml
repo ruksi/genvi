@@ -29,6 +29,7 @@ categories:
       - ⛏️ Removal
       - 🧹 Upkeep
 
+
 version-resolver:
   default: patch
   major:
@@ -39,6 +40,11 @@ version-resolver:
       - 🌟 Feature
   patch:
     labels: []
+
+
+template: |
+  $CHANGES
+
 
 autolabeler:
 
@@ -51,6 +57,8 @@ autolabeler:
       - '/🐙/i'
       - '/👷/i'
       - '/🧪/i'
+    files:
+      - '.github/**/*'
 
   - label: 🐛 Bug
     title:
@@ -90,6 +98,9 @@ autolabeler:
       - '/📒/i'
       - '/📚/i'
       - '/📝/i'
+    files:
+      - '*.md'
+      - '*.rst'
 
   - label: ♻️ Refactoring
     title:
@@ -117,5 +128,10 @@ autolabeler:
       - '/🧹/i'
       - '/🪝/i'
 
-template: |
-  $CHANGES
+  - label: 💄 Visual
+    files:
+      - '*.gif'
+      - '*.jpeg'
+      - '*.jpg'
+      - '*.png'
+      - '*.svg'
