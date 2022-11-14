@@ -4,10 +4,10 @@ version: 2
 updates:
 
   # Check for updates to GitHub Actions
-  - package-ecosystem: 'github-actions'
-    directory: '/'
+  - package-ecosystem: github-actions
+    directory: /
     labels:
-      - '🤖 Robot'
-      - '🧹 Upkeep'
+      - 🤖 Robot
+      - 🧹 Upkeep
     schedule:
-      interval: 'daily'
+      interval: daily
