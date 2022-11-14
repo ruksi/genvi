@@ -1,4 +1,4 @@
-name: Define Labels
+name: labeling
 
 on:
   push:
@@ -7,16 +7,17 @@ on:
       - master
     paths:
       - .github/labels.yml
-      - .github/workflows/define-labels.yml
+      - .github/workflows/labeling.yml
+
 jobs:
 
 
-  labeler:
+  label-sync:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Run the labeler
+      - name: Synchronize GitHub labels
         uses: crazy-max/ghaction-github-labeler@v4.1.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
