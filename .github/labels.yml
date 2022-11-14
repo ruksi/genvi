@@ -102,7 +102,7 @@
   from_name: 'invalid'
 
 - name: ⚰️ Abandoned
-  description: Acknowledged but not to be worked on
+  description: 'Acknowledged but #WontFix'
   color: 'AAAAAA'
   from_name: 'wontfix'
 
