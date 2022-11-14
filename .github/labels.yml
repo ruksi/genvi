@@ -1,5 +1,5 @@
 
-# Issue Core Types
+# Issue Main Types
 
 - name: 🐛 Bug
   description: A bug report or a fix for one
@@ -16,10 +16,10 @@
   color: '49472E'
   from_name: 'question'
 
-# Issue and Pull Request Sub-Types
+# Issue and Pull Request Secondary Types
 
 - name: 👷 Automation
-  description: Work on CI, tests or automation
+  description: Work on CI, tests or other automation
   color: '4a97D6'
 
 - name: 💥 Breaking Change
@@ -35,11 +35,6 @@
   color: '706F40'
   from_name: 'documentation'
 
-- name: 🧬 Duplicate
-  description: This issue or pull request already exists
-  color: '97A5BE'
-  from_name: 'duplicate'
-
 - name: 🐎️️ Performance
   description: Work on performance
   color: 'D56E64'
@@ -47,10 +42,6 @@
 - name: ♻️ Refactoring
   description: Work on refactoring or reformatting code
   color: '409B44'
-
-- name: 🤖 Robot
-  description: Done by automation
-  color: '8A9DA6'
 
 - name: ⛏️ Removal
   description: Removal or deprecation of things
@@ -68,7 +59,7 @@
   description: Work on visual interfaces, styles or assets
   color: '930843'
 
-# Contributor Flow
+# Maintainer Flow
 
 - name: ⏳ Waiting for Response
   description: Issue waiting for maintainer action
@@ -83,7 +74,7 @@
   color: 'D876E3'
 
 - name: 👍️ Waiting for PR
-  description: Issue accepted and waiting for implementation
+  description: Issue OK and waiting for implementation
   color: 'D876E3'
 
 # Issue Priority
@@ -96,6 +87,11 @@
   description: The issue is awesome but not essential
   color: '020202'
 
+- name: 🧬 Duplicate
+  description: This issue or pull request already exists
+  color: '97A5BE'
+  from_name: 'duplicate'
+
 - name: 🙃 Invalid
   description: Acknowledged but nothing to work on
   color: 'AAAAAA'
@@ -107,6 +103,10 @@
   from_name: 'wontfix'
 
 # Call-outs
+
+- name: 🤖 Robot
+  description: Done by automation
+  color: '8A9DA6'
 
 - name: 👋 Good First Issue
   description: A good issue for new contributors
