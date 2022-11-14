@@ -9,13 +9,13 @@ categories:
   - title: 🐛 Fixes
     label: 🐛 Bug
 
-  - title: 🔒️ Security Updates
+  - title: 🔒️ Security
     label: 🔒️ Security
 
-  - title: 🐎️️ Performance Improvements
+  - title: 🐎️️ Performance
     label: 🐎️️ Performance
 
-  - title: 📝 Documentation Changes
+  - title: 📝 Documentation
     label: 📝 Documentation
 
   - title: 💄 Visual Changes
@@ -26,6 +26,7 @@ categories:
     labels:
       - 👷 Automation
       - 🔨 Build
+      - ♻️ Refactoring
       - ⛏️ Removal
       - 🧹 Upkeep
 
