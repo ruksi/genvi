@@ -69,24 +69,24 @@
 
 # Maintainer Flow
 
-- name: ⏳ Waiting for Response
+- name: ⏳ Wait for Response
   description: Issue waiting for maintainer action
   color: '7057FF'
 
-- name: 🔍 Waiting Investigation
-  description: Issue being investigated by maintainers
+- name: 🔍 Wait for Investigation
+  description: Issue is being investigated by maintainers
   color: 'D876E3'
 
-- name: 💭 Waiting Discussion
+- name: 💭 Wait for Discussion
   description: Issue being discussed or under consideration
   color: 'D876E3'
 
-- name: 👍️ Waiting for PR
-  description: Issue OK and waiting for implementation
+- name: 👍️ Wait for PR
+  description: Issue is OK and waiting for implementation
   color: 'D876E3'
 
-- name: 🏷️ Waiting for Release
-  description: Implementation OK! Soon™️...
+- name: 🏷️ Wait for Release
+  description: Implementation is OK! Soon™️...
   color: '5319E7'
 
 - name: 🥷 Stealth
