@@ -18,8 +18,8 @@
 
 # Issue and Pull Request Secondary Types
 
-- name: 👷 Automation
-  description: Work on CI, tests or other automation
+- name: 👷 Automata
+  description: Work on CI or other remote automation
   color: '4a97D6'
 
 - name: 💥 Breaking Change
@@ -34,6 +34,10 @@
   description: Work on documentation
   color: '706F40'
   from_name: 'documentation'
+
+- name: 🏗️ Infrastructure
+  description: Work on deployments and cloud providers
+  color: 'bfd4f2'
 
 - name: 🐎️️ Performance
   description: Work on performance
@@ -50,6 +54,10 @@
 - name: 🔒️ Security
   description: Work on information security
   color: '222222'
+
+- name: 🛠 Tooling
+  description: Work on developer scripts, lints or tests
+  color: 'A06023'
 
 - name: 🧹 Upkeep
   description: Updating dependencies or other maintenance
@@ -78,8 +86,12 @@
   color: 'D876E3'
 
 - name: 🏷️ Waiting for Release
-  description: Implementation OK! Soon...
+  description: Implementation OK! Soon™️...
   color: '5319E7'
+
+- name: 🥷 Stealth
+  description: Not mentioned in the changelogs
+  color: '111111'
 
 # Issue Priority
 

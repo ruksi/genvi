@@ -18,18 +18,22 @@ categories:
   - title: 📝 Documentation
     label: 📝 Documentation
 
-  - title: 💄 Visual Changes
+  - title: 💄 Adornments
     label: 💄 Visual
 
   - title: 🧰️ Maintenance
     collapse-after: 3
     labels:
-      - 👷 Automation
+      - 👷 Automata
       - 🔨 Build
+      - 🏗️ Infrastructure
       - ♻️ Refactoring
       - ⛏️ Removal
+      - 🛠 Tooling
       - 🧹 Upkeep
 
+exclude-labels:
+  - 🥷 Stealth
 
 version-resolver:
   default: patch
@@ -49,15 +53,13 @@ template: |
 
 autolabeler:
 
-  - label: 👷 Automation
+  - label: 👷 Automata
     title:
       - '/CI/i'
       - '/GitHub/i'
-      - '/test/i'
       - '/workflow/i'
       - '/🐙/i'
       - '/👷/i'
-      - '/🧪/i'
     files:
       - '.github/**/*'
 
@@ -87,6 +89,8 @@ autolabeler:
       - '/feature/i'
       - '/implement/i'
       - '/✨/i'
+      - '/⭐️/i'
+      - '/💫/i'
       - '/🚀/i'
       - '/️🌟/i'
 
@@ -95,8 +99,8 @@ autolabeler:
       - '/README/i'
       - '/docs/i'
       - '/documentation/i'
-      - '/typos/i'
       - '/📒/i'
+      - '/📓/i'
       - '/📚/i'
       - '/📝/i'
     files:
@@ -105,28 +109,46 @@ autolabeler:
 
   - label: ♻️ Refactoring
     title:
+      - '/clean/i'
       - '/move/i'
       - '/refactor/i'
+      - '/relocate/i'
       - '/rename/i'
+      - '/rework/i'
       - '/♻️/i'
       - '/🎨/i'
       - '/🚚/i'
-      - '/🚧/i'
 
   - label: 🧹 Upkeep
     title:
       - '/bump/i'
       - '/dependencies/i'
       - '/ignore/i'
+      - '/pin/i'
+      - '/upgrade/i'
       - '/➕️️/i'
       - '/➖️️/i'
       - '/⬆️/i'
       - '/⬇️️/i'
+      - '/🏷️/i'
       - '/📌/i'
-      - '/🔧/i'
+      - '/🔖/i'
       - '/🙈/i'
-      - '/🧑‍💻/i'
       - '/🧹/i'
+
+  - label: 🛠 Tooling
+    title:
+      - '/Makefile\i'
+      - '/hook\i'
+      - '/lint/i'
+      - '/script\i'
+      - '/test/i'
+      - '/⚒️/i'
+      - '/⚙️/i'
+      - '/🔧/i'
+      - '/🛠️/i'
+      - '/🧑‍💻/i'
+      - '/🧪/i'
       - '/🪝/i'
 
   - label: 💄 Visual
