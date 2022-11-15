@@ -7,4 +7,4 @@
 # from 2011.
 typing_extensions>=4.3,<5
 click>=8                        # 8.0.0 required by `black` in dev
-importlib-metadata>=3.6.0,<4.3  # lower bound from `keyring`, `flake8` doesn't accept any newer one... both from dev
+importlib-metadata>=3.6.0,<5.1  # lower bound from `keyring`, `flake8` doesn't accept any newer one... both from dev
