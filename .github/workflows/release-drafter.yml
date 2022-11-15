@@ -7,10 +7,16 @@ on:
     branches: [main, master]
     types: [opened, reopened, synchronize]
 
+permissions:
+  contents: read
+
 jobs:
 
 
   release-draft-update:
+    permissions:
+      contents: write       # for creating the release draft
+      pull-requests: write  # for the autolabeler
     runs-on: ubuntu-latest
     steps:
       - uses: release-drafter/release-drafter@v5
