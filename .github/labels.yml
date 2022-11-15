@@ -109,7 +109,7 @@
   from_name: 'duplicate'
 
 - name: 🙃 Invalid
-  description: Acknowledged but nothing to work on
+  description: Acknowledged but something seems wrong
   color: 'AAAAAA'
   from_name: 'invalid'
 
