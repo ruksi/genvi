@@ -1,11 +1,11 @@
-name: labeling
+name: label-sync
 
 on:
   push:
     branches: [main, master]
     paths:
       - .github/labels.yml
-      - .github/workflows/labeling.yml
+      - .github/workflows/label-sync.yml
 
 jobs:
 
