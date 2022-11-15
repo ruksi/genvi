@@ -46,7 +46,7 @@ docutils==0.19
     #   restructuredtext-lint
 eradicate==2.1.0
     # via flake8-eradicate
-exceptiongroup==1.0.2
+exceptiongroup==1.0.3
     # via pytest
 filelock==3.8.0
     # via virtualenv
@@ -154,7 +154,7 @@ more-itertools==9.0.0
     # via jaraco-classes
 mr-proper==0.0.7
     # via flake8-functions
-mypy==0.990
+mypy==0.991
     # via -r requirements-dev.in
 mypy-extensions==0.4.3
     # via mypy
