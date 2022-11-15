@@ -81,14 +81,14 @@ autolabeler:
     title:
       - '/Dockerfile/i'
       - '/build/i'
+      - '/packaging/i'
       - '/🐋/i'
       - '/🐳/i'
+      - '/📦️/i'
       - '/🔨/i'
 
   - label: ️🌟 Feature
     title:
-      - '/add/i'
-      - '/create/i'
       - '/feature/i'
       - '/implement/i'
       - '/✨/i'
