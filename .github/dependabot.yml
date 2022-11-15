@@ -1,13 +1,11 @@
-# Dependabot is an automated dependency updater built into GitHub
-
 version: 2
 updates:
 
-  # Check for updates to GitHub Actions
   - package-ecosystem: github-actions
     directory: /
+    schedule: {interval: daily}
     labels:
       - 🤖 Robot
       - 🧹 Upkeep
-    schedule:
-      interval: daily
+
+  # NB: cannot rely on Dependabot Python updates as using multiple manifests (e.g. requirements-dev.in)
