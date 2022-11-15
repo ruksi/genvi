@@ -46,8 +46,6 @@ docutils==0.19
     #   restructuredtext-lint
 eradicate==2.1.0
     # via flake8-eradicate
-exceptiongroup==1.0.3
-    # via pytest
 filelock==3.8.0
     # via virtualenv
 flake8==5.0.4
@@ -114,22 +112,7 @@ idna==3.4
 importlib-metadata==4.2.0
     # via
     #   -r requirements.txt
-    #   build
-    #   click
-    #   flake8
-    #   flake8-broken-line
-    #   flake8-comprehensions
-    #   flake8-eradicate
-    #   flake8-tidy-imports
-    #   keyring
-    #   pep517
-    #   pluggy
-    #   pre-commit
-    #   pytest
-    #   pytest-randomly
-    #   stevedore
     #   twine
-    #   virtualenv
 iniconfig==1.1.1
     # via pytest
 isort==5.10.1
@@ -248,37 +231,19 @@ stevedore==3.5.2
     # via bandit
 toml==0.10.2
     # via pre-commit
-tomli==2.0.1
-    # via
-    #   build
-    #   coverage
-    #   mypy
-    #   pep517
-    #   pylint
-    #   pytest
 tomlkit==0.11.6
     # via pylint
 twine==4.0.1
     # via -r requirements-dev.in
-typed-ast==1.5.4
-    # via
-    #   astroid
-    #   mypy
 typing-extensions==4.4.0
     # via
     #   -r requirements.txt
-    #   astroid
-    #   gitpython
-    #   importlib-metadata
-    #   mr-proper
     #   mypy
-    #   pylint
-    #   rich
 urllib3==1.26.12
     # via
     #   requests
     #   twine
-virtualenv==20.16.2
+virtualenv==20.16.7
     # via
     #   -r requirements-dev.in
     #   pre-commit
@@ -292,7 +257,6 @@ zipp==3.10.0
     # via
     #   -r requirements.txt
     #   importlib-metadata
-    #   pep517
 
 # The following packages are considered to be unsafe in a requirements file:
 pip==22.3.1
