@@ -24,7 +24,7 @@ flake8-comprehensions          # avoid silly comprehensions
 flake8-docstrings              # check docstrings with `pydocstyle`
 flake8-eradicate               # avoid commented-out code
 flake8-expression-complexity   # avoid complex expressions
-flake8-for-pycharm==0.3.2      # get `flake8` errors to PyCharm IDE
+flake8-for-pycharm==0.4.1      # get `flake8` errors to PyCharm IDE
 flake8-functions               # avoid lengthy or otherwise large functions
 flake8-print                   # avoid print-statements
 flake8-pylint                  # get `pylint` errors to `flake8`
