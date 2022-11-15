@@ -35,6 +35,9 @@ categories:
 exclude-labels:
   - 🥷 Stealth
 
+exclude-contributors:
+  - dependabot  # sorry bot 😢
+
 version-resolver:
   default: patch
   major:
