@@ -1,0 +1,59 @@
+name: upgrade
+
+#on:
+#  schedule:
+#    - cron: '*/5 * * * *'  # every 5 minutes
+
+on: push
+
+env:
+  NO_VENV: 1
+  LOWEST_PYTHON_VERSION: 3.7
+
+jobs:
+
+  upgrade:
+    permissions:
+      contents: write       # for pushing the upgrades if needed
+      pull-requests: write  # for creating the pull request
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Python ${{ env.LOWEST_PYTHON_VERSION }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.LOWEST_PYTHON_VERSION }}
+          cache: 'pip'
+          cache-dependency-path: '**/requirements*.*'
+
+      - name: Install development dependencies
+        run: make dev
+
+      - name: Upgrade all dependencies
+        run: make upgrade
+
+      - name: Record git status
+        run: |
+          GIT_STATUS=$(test -n "`git status --porcelain`" && echo 'dirty' || echo 'clean')
+          echo "git_status=$GIT_STATUS" >> $GITHUB_ENV
+
+      - name: If changes, create upgrade commit
+        if: ${{ env.git_status == 'dirty' }}
+        run: |
+          git config user.email "robot@example.com"
+          git config user.name "Robot"
+          git checkout -b robot-upgrades
+          git add .
+          git commit -m "⬆️ Upgrade dependencies" --no-verify
+          echo "commit_created=yes" >> $GITHUB_ENV
+
+      - name: If created a commit, push branch and create pull request
+        if: ${{ env.commit_created == 'yes' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push -f -u origin HEAD
+          gh pr create --fill --label "🤖 Robot" --label "🧹 Upkeep"
