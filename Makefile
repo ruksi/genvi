@@ -49,14 +49,6 @@ ensure.venv:
 
 
 
-.PHONY: prod
-# setup production environment
-prod: ensure.venv
-	pip install -r requirements.txt
-
-
-
-
 .PHONY: dev
 # setup development environment
 dev: ensure.venv dev.python dev.hooks

@@ -107,16 +107,3 @@ should've been keeping updated according to the labels in pull requests merged t
 
 Check that the release draft looks correct,
 change the version number to match the release and publish.
-
-## Production
-
-Setup production environment:
-
-```bash
-NO_VENV=1 make prod
-
-# or, if a virtual environment is wanted
-make venv
-source venv/bin/activate
-make prod
-```
