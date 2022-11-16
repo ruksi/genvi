@@ -18,6 +18,6 @@ Steps to reproduce the bug as in 1. 2. 3...
 
 A clear and concise description of what you expected to happen.
 
-### 👇️️ Snippets & Screenshots (optional)
+### 👇️️ Snippets & Screenshots
 
 If applicable, add code snippets and screenshots to help explain the bug.
