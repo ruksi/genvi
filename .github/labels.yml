@@ -1,5 +1,5 @@
 
-# Issue Main Types
+# Main Types
 
 - name: 🐛 Bug
   description: A bug report or a fix for one
@@ -16,7 +16,7 @@
   color: '49472E'
   from_name: 'question'
 
-# Issue and Pull Request Secondary Types
+# Secondary Types
 
 - name: 👷 Automata
   description: Work on CI or other remote automation
@@ -74,7 +74,7 @@
   color: '7057FF'
 
 - name: 🔍 Wait for Investigation
-  description: Issue is being investigated by maintainers
+  description: Issue being investigated by maintainers
   color: 'D876E3'
 
 - name: 💭 Wait for Discussion
@@ -82,26 +82,29 @@
   color: 'D876E3'
 
 - name: 👍️ Wait for PR
-  description: Issue is OK and waiting for implementation
+  description: Issue OK and waiting for implementation
   color: 'D876E3'
 
-- name: 🏷️ Wait for Release
-  description: Implementation is OK! Soon™️...
-  color: '5319E7'
-
-- name: 🥷 Stealth
-  description: Not mentioned in the changelogs
-  color: '111111'
+- name: 🪨 Blocked
+  description: Waiting on another issue or something
+  color: '99CCCC'
 
 # Issue Priority
 
 - name: 🚨 High Priority
-  description: One of utmost importance
+  description: One of the utmost importance
   color: 'FF0000'
 
 - name: 😎 Nice to Have
   description: The issue is awesome but not essential
   color: '020202'
+
+# Closing Reasons (if other than done)
+
+- name: ⚰️ Abandoned
+  description: 'Acknowledged but #WontFix'
+  color: 'AAAAAA'
+  from_name: 'wontfix'
 
 - name: 🧬 Duplicate
   description: This issue or pull request already exists
@@ -113,23 +116,22 @@
   color: 'AAAAAA'
   from_name: 'invalid'
 
-- name: ⚰️ Abandoned
-  description: 'Acknowledged but #WontFix'
-  color: 'AAAAAA'
-  from_name: 'wontfix'
-
 # Call-outs
-
-- name: 🤖 Robot
-  description: Done by automation
-  color: '8A9DA6'
 
 - name: 👋 Good First Issue
   description: A good issue for new contributors
   color: 'B1FC6F'
   from_name: 'good first issue'
 
-- name: 💁 Help Needed
-  description: Some helping hands appreciated!
+- name: 💁 Help Appreciated
+  description: Additional helping hands welcome!
   color: '00FFFF'
   from_name: 'help wanted'
+
+- name: 🤖 Robot
+  description: Done by automation
+  color: '8A9DA6'
+
+- name: 🥷 Stealth
+  description: Not mentioned in the changelogs
+  color: '111111'
