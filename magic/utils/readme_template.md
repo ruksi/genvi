@@ -39,6 +39,14 @@ make upgrade
 make dev lint test
 ```
 
+Resolve build issues about outdated dependency conflicts:
+
+```bash
+# edit `requirements.in` version specifications
+make update dev.python dev.python.outdated
+# repeat until you get no conflicts
+```
+
 ### PyCharm Integrations
 
 The following PyCharm integrations make development flow smoother by giving errors
@@ -89,16 +97,16 @@ Release a new version:
 # patch (other improvements and fixes)
 make version bump=minor
 make build
+git push --follow-tags
 make publish
 ```
 
-Resolve build issues about outdated dependency conflicts:
+To publish release notes, go to GitHub Releases and find the latest draft that
+[Release Drafter](https://github.com/release-drafter/release-drafter) GitHub Action
+should've been keeping updated according to the labels in pull requests merged to the master.
 
-```bash
-# edit `requirements.in` version specifications
-make update dev.python dev.python.outdated
-# repeat until you get no conflicts
-```
+Check that the release draft looks correct,
+change the version number to match the release and publish.
 
 ## Production
 
