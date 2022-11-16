@@ -6,19 +6,16 @@ It doesn't have versioning as it's expected to be used
 in a fire-and-forget fashion; generate the Python project and code on.
 
 There isn't much anything special about `genvi`, it's just another Python project
-template among many others. Different strokes for different folks. Maybe except
-that `genvi` is brutally sadistic regarding linting and contribution
-requirements :smiling_imp:
+template among many others. Different strokes for different folks.
 
 ## Alternatives
 
-Other project templates you probably want to use instead of this one:
+Other project templates you might want to check out:
 
 * <https://github.com/cjolowicz/cookiecutter-hypermodern-python>
-* <https://github.com/pyscaffold/pyscaffold>
 * <https://github.com/wemake-services/wemake-python-package>
-* <https://github.com/wemake-services/wemake-django-template>
 * <https://github.com/rochacbruno/python-project-template>
+* <https://github.com/pyscaffold/pyscaffold>
 
 ## FAQ
 
@@ -85,14 +82,21 @@ Other project templates you probably want to use instead of this one:
     Why not using <code>invoke</code>, <code>nox</code> or <code>tox</code> for task management?
 </dt>
 <dd>
-    <code>make</code> is already available on most systems, and if not,
-    it's easy to install through the operating system package management.
-    It feels more coherent to get all the initial project requirements
-    from a single interface where you are probably already getting Python and Git.
+    <ul>
+        <li>
+            <code>make</code> is already available on most systems, and if not,
+            it's easy to install with the help of a single Google search.
+        </li>
+        <li>
+            It is more coherent to get all the initial project requirements
+            from a single interface where you are probably already getting Python and Git.
+        </li>
+        <li>
+            When working on multitude of project in different languages,
+            it reduces the mental burden if you have a single way of managing projects.
+            You don't want to require Python on your Go project just for the development
+            tooling, for example.
+        </li>
+    </ul>
 </dd>
 </dl>
-
-## TODO
-
-* Running the resulting project as a `systemd` service would be a nice addition.
-* Maybe some simple Docker packaging boilerplate.
