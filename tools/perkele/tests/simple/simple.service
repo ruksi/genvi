@@ -1,8 +1,0 @@
-[Unit]
-Description=My Service
-
-[Service]
-ExecStart=/usr/bin/my-service
-
-[Install]
-WantedBy=multi-user.target

@@ -1,6 +1,0 @@
-[Unit]
-Description=My failure handler for %i
-
-[Service]
-Type=oneshot
-ExecStart=/usr/sbin/handler %i

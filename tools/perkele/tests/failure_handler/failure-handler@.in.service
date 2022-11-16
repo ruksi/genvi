@@ -1,8 +1,0 @@
-# https://www.freedesktop.org/software/systemd/man/systemd.unit.html#Examples
-[Unit]
-Description=My failure handler for %i
-
-[Service]
-Type=oneshot
-# Perform some special action for when %i exits unexpectedly.
-ExecStart=/usr/sbin/handler %i

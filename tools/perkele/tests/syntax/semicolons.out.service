@@ -1,3 +1,0 @@
-[Service]
-Type=oneshot
-ExecStart=echo one ; echo "two two"

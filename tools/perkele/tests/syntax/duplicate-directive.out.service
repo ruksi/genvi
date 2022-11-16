@@ -1,5 +1,0 @@
-[Service]
-Type=oneshot
-ExecStart=/bin/echo ${ONE} ${TWO} ${THREE}
-ExecStart=/bin/echo $ONE $TWO $THREE
-Environment=ONE='one' "TWO='two two' too" THREE=
