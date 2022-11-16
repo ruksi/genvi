@@ -9,11 +9,13 @@ from magic.utils.consts import DEFAULT_AUTHOR, DEFAULT_EMAIL, DEFAULT_PACKAGE_NA
 def rename_package(config: Config) -> None:
     package_dir = config.genvi_root / DEFAULT_PACKAGE_NAME
     test_dir = config.genvi_root / 'tests'
+    github_dir = config.genvi_root / '.github'
     files_to_search_and_replace = (
         list(package_dir.glob('**/*.py'))
         + list(test_dir.glob('**/*.py'))
+        + list(github_dir.glob('**/*.yml'))
+        + list(github_dir.glob('**/*.md'))
         + [
-            (config.genvi_root / '.github/workflows/ci.yml'),
             (config.genvi_root / 'LICENSE'),
             (config.genvi_root / 'MANIFEST.in'),
             (config.genvi_root / 'Makefile'),
