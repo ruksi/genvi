@@ -1,0 +1,73 @@
+name: upgrade
+
+on:
+  schedule:
+    - cron: '53 1 * * *'  # at 01:53 UTC
+
+env:
+  NO_VENV: 1
+  LOWEST_PYTHON_VERSION: 3.7
+  UPGRADE_BRANCH: 'robot/upgrades'
+
+jobs:
+
+  upgrade:
+    permissions:
+      contents: write       # for pushing the upgrades to the upgrade branch
+      pull-requests: write  # for creating the pull request
+      actions: write        # for triggering CI on the pull request
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Python ${{ env.LOWEST_PYTHON_VERSION }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.LOWEST_PYTHON_VERSION }}
+          cache: 'pip'
+          cache-dependency-path: '**/requirements*.*'
+
+      - name: Upgrade all dependencies
+        run: make dev upgrade
+
+      - name: Record git status
+        run: |
+          GIT_STATUS=$(test -n "`git status --porcelain`" && echo 'dirty' || echo 'clean')
+          echo "git_status=$GIT_STATUS" >> $GITHUB_ENV
+
+      # we already have the development dependencies so
+      # do the first pass of checks before full CI
+      - name: If git dirty, run checks with upgraded dependencies
+        if: ${{ env.git_status == 'dirty' }}
+        run: |
+          make dev lint test
+          echo "checks_pass=yes" >> $GITHUB_ENV
+
+      - name: If checks pass, create an upgrade commit
+        if: ${{ env.checks_pass == 'yes' }}
+        run: |
+          git config user.name "Robot"
+          git config user.email "robot@example.com"
+          git checkout -b $UPGRADE_BRANCH
+          git add .
+          git commit -m "⬆️ Upgrade dependencies" --no-verify
+          echo "commit_created=yes" >> $GITHUB_ENV
+
+      # we don't mind the PR creation fails, the most probable reason is that
+      # the pull request already existed, and we just updated the HEAD of
+      # that pull request
+      - name: If created a commit, create or modify a pull request
+        if: ${{ env.commit_created == 'yes' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push -f -u origin HEAD
+          gh pr create \
+            --title "⬆️ Upgrade dependencies" \
+            --body "Remember to check that the CI action passed!" \
+            --label "🤖 Robot" \
+            --label "🧹 Upkeep" \
+            | true
+          gh workflow run ci.yml --ref $UPGRADE_BRANCH
