@@ -55,7 +55,7 @@ def run(arguments: List[str]) -> ErrorCode:
             '  * run `rm -rf .git/` to remove any relation to "genvi"',
             '  * run `git init` to create a new local repository',
             '  * run `git add --all` to stage all content',
-            '  * run `git commit --message="Initial commit"` to save all changes',
+            '  * run `git commit --message="🎉 Initial commit"` to save all changes',
             '  * continue development by reading the new "README.md"',
             '',
         ],
