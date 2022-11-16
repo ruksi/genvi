@@ -1,11 +1,18 @@
 name: release-drafter
 
 on:
+
+  # update release draft when master changes
   push:
     branches: [main, master]
+
+  # label pull requests when they are opened
+  # the original events also include 'synchronize' which triggers on PR HEAD change,
+  # but it can be quite annoying to keep relabeling if you already set the labels properly
+  # after opening the PR
   pull_request:
     branches: [main, master]
-    types: [opened, reopened, synchronize]
+    types: [opened, reopened]
 
 permissions:
   contents: read
