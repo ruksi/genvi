@@ -1,10 +1,17 @@
 name: ci
 
 on:
+
+  # trigger if default branch contents change
   push:
     branches: [main, master]
+
+  # trigger on pull requests that target the default branch
   pull_request:
     branches: [main, master]
+
+  # allow triggering manually
+  workflow_dispatch:
 
 env:
   NO_VENV: 1                  # enable running `make` commands outside of a virtual environment
