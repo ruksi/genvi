@@ -9,4 +9,4 @@ updates:
       - 🤖 Robot
       - 🧹 Upkeep
 
-  # NB: cannot rely on Dependabot Python updates as using multiple manifests (e.g. requirements-dev.in)
+  # NB: a custom dependency upgrade workflow is under workflows/upgrade.yml
