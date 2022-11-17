@@ -36,7 +36,9 @@ exclude-labels:
   - 🥷 Stealth
 
 exclude-contributors:
-  - dependabot  # sorry bot 😢
+  # sorry bots 😢
+  - github-actions
+  - dependabot
 
 version-resolver:
   default: patch
