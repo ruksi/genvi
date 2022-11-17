@@ -19,13 +19,13 @@ permissions:
 
 jobs:
 
-
   release-draft-update:
     permissions:
       contents: write       # for creating the release draft
       pull-requests: write  # for the autolabeler
     runs-on: ubuntu-latest
     steps:
+
       - uses: release-drafter/release-drafter@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

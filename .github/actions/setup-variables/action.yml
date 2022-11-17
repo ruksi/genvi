@@ -1,0 +1,7 @@
+name: Setup variables
+description: Load the environment variables from a shared file
+runs:
+  using: composite
+  steps:
+    - run: cat ./.github/variables.env >> $GITHUB_ENV
+      shell: bash

@@ -5,8 +5,6 @@ on:
     - cron: '53 1 * * *'  # at 01:53 UTC
 
 env:
-  NO_VENV: 1
-  LOWEST_PYTHON_VERSION: 3.7
   UPGRADE_BRANCH: 'robot/upgrades'
 
 jobs:
@@ -21,6 +19,9 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Setup variables
+        uses: ./.github/actions/setup-variables
 
       - name: Install Python ${{ env.LOWEST_PYTHON_VERSION }}
         uses: actions/setup-python@v4
