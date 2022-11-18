@@ -33,7 +33,10 @@ repos:
       - id: autoflake
         args: [
           '--in-place',
-          '--remove-all-unused-imports',  # remove or replace with --imports if some imports have side effects
+          '--remove-duplicate-keys',
+          '--remove-unused-variables',
+          '--ignore-init-module-imports',  # package inits are frequently used to simplify further imports
+          '--remove-all-unused-imports',   # remove or replace with `--imports` if some imports have side effects
         ]
 
   - repo: https://github.com/asottile/pyupgrade
