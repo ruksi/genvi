@@ -23,7 +23,6 @@ repos:
       - id: detect-private-key
       - id: double-quote-string-fixer
       - id: end-of-file-fixer
-        exclude: 'requirements.txt'
       - id: fix-byte-order-marker
       - id: mixed-line-ending
       - id: trailing-whitespace
