@@ -1,5 +1,5 @@
 name: Setup variables
-description: Load the environment variables from a shared file
+description: Load shared environment variables from a file
 runs:
   using: composite
   steps:

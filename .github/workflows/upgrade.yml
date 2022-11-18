@@ -39,7 +39,7 @@ jobs:
           echo "git_status=$GIT_STATUS" >> $GITHUB_ENV
 
       # we already have the development dependencies so
-      # do the first pass of checks before full CI
+      # do the first pass of checks before the full CI run
       - name: If git dirty, run checks with upgraded dependencies
         if: ${{ env.git_status == 'dirty' }}
         run: |
@@ -56,9 +56,9 @@ jobs:
           git commit -m "⬆️ Upgrade dependencies" --no-verify
           echo "commit_created=yes" >> $GITHUB_ENV
 
-      # we don't mind the PR creation fails, the most probable reason is that
-      # the pull request already existed, and we just updated the HEAD of
-      # that pull request
+      # we don't mind if the PR creation fails, the most probable reason
+      # is that the pull request already exists, and we just updated
+      # the HEAD of that pull request
       - name: If created a commit, create or modify a pull request
         if: ${{ env.commit_created == 'yes' }}
         env:

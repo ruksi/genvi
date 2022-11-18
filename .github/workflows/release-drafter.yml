@@ -7,9 +7,9 @@ on:
     branches: [main, master]
 
   # label pull requests when they are opened
-  # the original events also include 'synchronize' which triggers on PR HEAD change,
-  # but it can be quite annoying to keep relabeling if you already set the labels properly
-  # after opening the PR
+  # the original events also include 'synchronize' which triggers on PR HEAD change
+  # and 'edited' which triggers on title change but both of the previous can be
+  # quite annoying if you already set the labels properly after opening the PR
   pull_request:
     branches: [main, master]
     types: [opened, reopened]
@@ -26,6 +26,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - uses: release-drafter/release-drafter@v5
+      - name: Update the release draft and autolabel pull requests
+        uses: release-drafter/release-drafter@v5
+        with:
+          disable-autolabeler: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
