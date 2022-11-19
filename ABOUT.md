@@ -42,7 +42,7 @@ Other project templates you might want to check out:
     <code>setuptools</code> + <code>pyproject.toml</code> is still an experimental feature
     e.g. installing package as an editable doesn't work if using dynamic file fields.
     Also, <code>flake8</code> <a href="https://github.com/PyCQA/flake8/issues/234">doesn't
-    want to support <code>pyproject.toml</code></a> :shrug:
+    want to support <code>pyproject.toml</code></a>, at least not yet.
 </dd>
 <dt>
     Why mangle the source repository itself to create a new project?
@@ -62,7 +62,7 @@ Other project templates you might want to check out:
     the features in the future, you can get them from the version control history.
 </dd>
 <dt>
-    Some <code>pre-commit</code> hooks are disabling isolated environment
+    Some <code>pre-commit</code> hooks disable the isolated environment
     with <code>language: system</code>, why?
 </dt>
 <dd>
@@ -82,21 +82,21 @@ Other project templates you might want to check out:
     Why not using <code>invoke</code>, <code>nox</code> or <code>tox</code> for task management?
 </dt>
 <dd>
-    <ul>
-        <li>
-            <code>make</code> is already available on most systems, and if not,
-            it's easy to install with the help of a single Google search.
-        </li>
-        <li>
-            It is more coherent to get all the initial project requirements
-            from a single interface where you are probably already getting Python and Git.
-        </li>
-        <li>
-            When working on multitude of project in different languages,
-            it reduces the mental burden if you have a single way of managing projects.
-            You don't want to require Python on your Go project just for the development
-            tooling, for example.
-        </li>
-    </ul>
+    <code>make</code> is already available on most systems, and if not,
+    it's easy to install. It is more coherent to get all the initial project requirements
+    from a single interface where you are probably already getting Python and Git.
+    <br/><br/>
+    When working on multitude of project in different languages,
+    it reduces the mental burden if you have a single way of managing projects.
+    You don't want to require Python on your Go project just for the development
+    tooling, for example. The answer to "How was testing done in this context?"
+    is always <code>make test</code>
+</dd>
+<dt>
+    Having an 100% test coverage requirement gives false sense-of-security.
+    Isn't that an overkill?
+</dt>
+<dd>
+    Yes.
 </dd>
 </dl>
