@@ -1,6 +1,6 @@
 astpretty==2.1.0
     # via flake8-expression-complexity
-astroid==2.12.12
+astroid==2.12.13
     # via pylint
 attrs==22.1.0
     # via
@@ -107,7 +107,7 @@ gitdb==4.0.9
     # via gitpython
 gitpython==3.1.29
     # via bandit
-identify==2.5.8
+identify==2.5.9
     # via pre-commit
 idna==3.4
     # via requests
@@ -198,7 +198,7 @@ pygments==2.13.0
     #   flake8-rst-docstrings
     #   readme-renderer
     #   rich
-pylint==2.15.5
+pylint==2.15.6
     # via
     #   flake8-for-pycharm
     #   flake8-pylint
@@ -297,7 +297,7 @@ zipp==3.10.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==22.3.1
     # via pip-tools
-setuptools==65.5.1
+setuptools==65.6.0
     # via
     #   flake8-functions
     #   mr-proper
