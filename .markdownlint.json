@@ -2,5 +2,6 @@
   "MD013": {
     "line_length": 88
   },
+  "first-line-h1": false,
   "no-inline-html": false
 }

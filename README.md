@@ -1,5 +1,3 @@
-# `genvi`
-
 [![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![pre-commit: enabled](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
@@ -24,21 +22,21 @@ O <b>generation of vipers</b>, how can ye, being evil, speak good things?
 </p>
 <br/>
 
-## Quickstart
+## ⚡️ Quickstart
 
 ```bash
 # will ask for a new directory name
 curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | bash
 ```
 
-## Requirements
+## 📝 Requirements
 
 * Linux, macOS or Windows Subsystem for Linux (WSL) with a `bash`-like shell
 * `python>=3.7` with `pip`
 * `git`
 * `make`
 
-## What?
+## 👉️ What?
 
 > "I would sacrifice anything for some good quality code."
 > by Anonymous Principal Engineer :woman_technologist:
@@ -49,39 +47,39 @@ Borderline __evil__.
 
 Each new project is configured with:
 
-:black_cat: eery `black` as the code style, single quoted
+🐈‍⬛ eery `black` as the code style, single quoted
 <br/>
-:hook: sadistic `pre-commit hooks` to enforce conventions
+🪝 sadistic `pre-commit hooks` to enforce conventions
 <br/>
-:magic_wand: automagical `GitHub actions` to verify incoming pull requests
+🪄 automagical `GitHub actions` to verify incoming pull requests
 <br/>
-:mage: bewitching testing setup with `pytest` with 100% coverage requirement
+🧙 bewitching testing setup with `pytest` with 100% coverage requirement
 <br/>
-:eight_pointed_black_star: occult project management though `make` for development
+✴️ occult project management though `make` for development
 <br/>
-:infinity: plethora of 20+ design and type checkers like `flake8`, `pylint` and `mypy`
+♾️ plethora of 20+ design and type checkers like `flake8`, `pylint` and `mypy`
 
 If you want a more concrete example of a `genvi` project, you are looking at one.
 `genvi` itself follows the same rules and uses the same tools. Behind the scenes,
 creating a new project renames a few files and rewrites a bit of content.
 
-## Why?
+## 🤔 Why?
 
 > "Who would want to manage a project like this?"
 > by Anonymous Gnu :water_buffalo:
 
-Scratching my own itch, see [`ABOUT.md`](ABOUT.md) to learn more :mag:
+Scratching my own itch, see [`ABOUT.md`](ABOUT.md) to learn more
 
-## Usage
+## 🦮 Usage
 
-### Quickstart Usage
+### ⚡️ Quick
 
 ```bash
 # creates a new directory after asking for a name
 curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | bash
 ```
 
-### Manual Usage
+### ✋ Manual
 
 1. Name your project e.g. `myproject`
 
@@ -111,11 +109,11 @@ curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | 
 
 5. Follow the new [`README.md`](magic/utils/readme_template.md) to continue development
 
-## License
+## 📜 License
 
 This project is released under the [MIT License](LICENSE).
 
-## Contributions
+## 🧑‍💻 Contributions
 
 Sure, the [`README.md`](magic/utils/readme_template.md) template should get you started
 as `genvi` itself works like the projects it generates.
