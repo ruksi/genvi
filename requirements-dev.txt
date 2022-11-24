@@ -274,7 +274,7 @@ typing-extensions==4.4.0
     #   mypy
     #   pylint
     #   rich
-urllib3==1.26.12
+urllib3==1.26.13
     # via
     #   requests
     #   twine
@@ -297,7 +297,7 @@ zipp==3.10.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==22.3.1
     # via pip-tools
-setuptools==65.6.0
+setuptools==65.6.2
     # via
     #   flake8-functions
     #   mr-proper
