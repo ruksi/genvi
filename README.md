@@ -31,10 +31,7 @@ curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | 
 
 ## 📝 Requirements
 
-* Linux, macOS or Windows Subsystem for Linux (WSL) with a `bash`-like shell
-* `python>=3.7` with `pip`
-* `git`
-* `make`
+`python>=3.7`, `git` and `make`.
 
 ## 👉️ What?
 
