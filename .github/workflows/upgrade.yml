@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: '53 1 * * *'  # at 01:53 UTC
 
+permissions:
+  contents: read
+
 env:
   UPGRADE_BRANCH: 'robot/upgrades'
 
