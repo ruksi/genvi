@@ -77,33 +77,20 @@ curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | 
 
 ### ✋ Manual
 
-1. Name your project e.g. `myproject`
+1. Decide the project name and clone this repository
 
    ```bash
-   export NAME=myproject
+   git clone git@github.com:ruksi/genvi.git my-project
+   cd my-project
    ```
 
-2. Clone this repository
+2. Decide a clean package name, run the wizard and follow instruction
 
    ```bash
-   git clone git@github.com:ruksi/genvi.git $NAME
-   cd $NAME
+   # package name should be something you can `import` in Python
+   # preferably just lowercase ASCII letters
+   make package=myproject
    ```
-
-3. Delete the `.git/` directory to remove all relation to `genvi`
-
-   ```bash
-   rm -rf .git/
-   ```
-
-4. Finalize the transformation
-
-   ```bash
-   make package=$NAME
-   # answer questions if any pop up
-   ```
-
-5. Follow the new [`README.md`](magic/utils/readme_template.md) to continue development
 
 ## 📜 License
 
