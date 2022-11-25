@@ -46,11 +46,11 @@ def parse_config(arguments: List[str]) -> Config:
     )
 
     if not config.name:
-        config.name = input('Package name: ')
+        config.name = safe_input('Package name: ')
     if not config.author:
-        config.author = input('Author name: ')
+        config.author = safe_input('Author name: ')
     if not config.email:
-        config.email = input('Author email: ')
+        config.email = safe_input('Author email: ')
 
     if not config.author:
         config.author = 'Arthur Author'
@@ -59,6 +59,13 @@ def parse_config(arguments: List[str]) -> Config:
 
     config.validate()
     return config
+
+
+def safe_input(prompt: str) -> str:
+    try:
+        return input(prompt)
+    except EOFError:
+        return ''
 
 
 def resolve_genvi_root() -> Path:

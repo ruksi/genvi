@@ -50,6 +50,18 @@ def test_main_no_arguments(
     assert std.err == 'package name cannot be empty\n'
 
 
+def test_main_not_interactive(
+    mocker: MockFixture,
+    capsys: CaptureFixture[str],
+) -> None:
+    mocker.patch('builtins.input').side_effect = EOFError
+    mocker.patch('sys.argv', ['/mock/executable'])
+    assert main() == 1
+    std = capsys.readouterr()
+    assert std.out == ''
+    assert std.err == 'package name cannot be empty\n'
+
+
 def test_main_internal_error(
     mocker: MockFixture,
     capsys: CaptureFixture[str],
