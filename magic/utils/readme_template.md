@@ -1,13 +1,16 @@
-
 # `$name`
 
 ## Development
 
+Development requires `python>=3.7` and `make`.
+
 Setup development environment:
 
 ```bash
+# activate a virtual environment as you prefer; or simply:
 make venv
 source venv/bin/activate
+# install development dependencies:
 make dev
 ```
 
@@ -62,16 +65,16 @@ Bring `flake8` lint highlights to PyCharm:
   ```
 
 * Install **Pylint** plugin to PyCharm using the marketplace
-* Configure `Settings > Pylint`:
-  * Path to Pylint executable: *`flake8_pycharm.py` full path*
+* Configure `Settings > Other Settings > Pylint`:
+  * Path to Pylint executable: *the `flake8_pycharm.py` full path*
   * Path to pylintrc: */projects/$name/setup.cfg* (i.e. `flake8` config)
 
 Bring `mypy` type checks to PyCharm:
 
 * Install **Mypy** plugin to PyCharm using the marketplace
-  * Not the *Mypy (Official)*, that is outdated and inferior
-* Configure `Settings > Mypy`:
-  * Path to Mypy executable: */projects/$name/venv/bin/mypy* (should detect)
+  * Not the *Mypy (Official)*, that is outdated
+* Configure `Settings > Other Settings > Mypy`:
+  * Path to Mypy executable: */projects/$name/venv/bin/mypy*
   * Arguments: *--install-types --scripts-are-modules*
 
 ## Testing Guidelines
