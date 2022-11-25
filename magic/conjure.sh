@@ -9,8 +9,10 @@ make --version
 python --version
 
 echo "Creating a new directory for a Python project."
-read -r -p "Package name: " PACKAGE < /dev/tty
+read -r -p "Package Name (lowercase letters, no special characters of any kind): " PACKAGE < /dev/tty
+read -r -p "Author Name: " AUTHOR < /dev/tty
+read -r -p "Author Email: " EMAIL < /dev/tty
 git clone git@github.com:ruksi/genvi.git "$PACKAGE"
 cd "$PACKAGE"
 rm -rf .git/
-make package="$PACKAGE"
+make package="$PACKAGE" author="$AUTHOR" email="$EMAIL"
