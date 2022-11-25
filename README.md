@@ -113,5 +113,5 @@ This project is released under the [MIT License](LICENSE).
 
 ## 🧑‍💻 Contributions
 
-Sure, the [`README.md`](magic/utils/readme_template.md) template should get you started
+Sure, [`the README template`](magic/utils/readme_template.md) should get you started
 as `genvi` itself works like the projects it generates.
