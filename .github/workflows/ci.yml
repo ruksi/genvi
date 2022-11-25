@@ -13,6 +13,9 @@ on:
   # allow triggering manually
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
 
 
