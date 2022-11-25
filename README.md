@@ -25,7 +25,6 @@ O <b>generation of vipers</b>, how can ye, being evil, speak good things?
 ## ⚡️ Quickstart
 
 ```bash
-# will ask for a new directory name
 curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | bash
 ```
 
@@ -75,7 +74,6 @@ Scratching my own itch, see [`ABOUT.md`](ABOUT.md) to learn more
 ### ⚡️ Quick
 
 ```bash
-# creates a new directory after asking for a name
 curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | bash
 ```
 
