@@ -14,5 +14,4 @@ read -r -p "Author Name: " AUTHOR < /dev/tty
 read -r -p "Author Email: " EMAIL < /dev/tty
 git clone git@github.com:ruksi/genvi.git "$PACKAGE"
 cd "$PACKAGE"
-rm -rf .git/
 make package="$PACKAGE" author="$AUTHOR" email="$EMAIL"
