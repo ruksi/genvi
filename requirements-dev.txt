@@ -288,7 +288,7 @@ wheel==0.38.4
     # via pip-tools
 wrapt==1.14.1
     # via astroid
-zipp==3.10.0
+zipp==3.11.0
     # via
     #   -r requirements.txt
     #   importlib-metadata
