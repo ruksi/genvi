@@ -173,7 +173,7 @@ pep8-naming==0.13.2
     # via -r requirements-dev.in
 pip-tools==6.10.0
     # via -r requirements-dev.in
-pkginfo==1.8.3
+pkginfo==1.9.2
     # via twine
 platformdirs==2.5.4
     # via
@@ -198,7 +198,7 @@ pygments==2.13.0
     #   flake8-rst-docstrings
     #   readme-renderer
     #   rich
-pylint==2.15.6
+pylint==2.15.7
     # via
     #   flake8-for-pycharm
     #   flake8-pylint
