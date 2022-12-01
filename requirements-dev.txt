@@ -258,7 +258,7 @@ tomli==2.0.1
     #   pytest
 tomlkit==0.11.6
     # via pylint
-twine==4.0.1
+twine==4.0.2
     # via -r requirements-dev.in
 typed-ast==1.5.4
     # via
