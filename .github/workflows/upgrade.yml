@@ -72,6 +72,7 @@ jobs:
             --title "⬆️ Upgrade dependencies" \
             --body "Remember to check that the CI action passed!" \
             --label "🤖 Robot" \
+            --label "🥷 Stealth" \
             --label "🧹 Upkeep" \
             | true
           gh workflow run ci.yml --ref $UPGRADE_BRANCH
