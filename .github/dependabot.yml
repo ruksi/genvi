@@ -7,6 +7,7 @@ updates:
     commit-message: {prefix: ⬆️}
     labels:
       - 🤖 Robot
+      - 🥷 Stealth
       - 🧹 Upkeep
 
   # NB: a custom dependency upgrade workflow is under workflows/upgrade.yml
