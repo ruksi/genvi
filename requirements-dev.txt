@@ -48,7 +48,7 @@ eradicate==2.1.0
     # via flake8-eradicate
 exceptiongroup==1.0.4
     # via pytest
-filelock==3.8.0
+filelock==3.8.2
     # via virtualenv
 flake8==5.0.4
     # via
@@ -198,7 +198,7 @@ pygments==2.13.0
     #   flake8-rst-docstrings
     #   readme-renderer
     #   rich
-pylint==2.15.7
+pylint==2.15.8
     # via
     #   flake8-for-pycharm
     #   flake8-pylint
