@@ -21,8 +21,10 @@ class Config(Namespace):
             raise ValidationError('package name cannot be empty')
         if any(c not in string.ascii_lowercase for c in self.name):
             raise ValidationError(
-                'package name must consist of lowercase ASCII'
-                f' ({string.ascii_lowercase})',
+                (
+                    'package name must consist of lowercase ASCII'
+                    f' ({string.ascii_lowercase})'
+                ),
             )
         if self.name in {'images', 'magic', 'tests', 'tools', 'dist', 'build'}:
             raise ValidationError('package name is invalid')

@@ -23,8 +23,10 @@ def tmp_genvi_path(tmp_path: Path) -> Path:
         f'{DEFAULT_PACKAGE_NAME} ABOUT',
     )
     (tmp_path / 'MANIFEST.in').write_text(
-        'global-exclude tests/* */tests/* *_test.py\n'
-        f'include {DEFAULT_PACKAGE_NAME}/py.typed',
+        (
+            'global-exclude tests/* */tests/* *_test.py\n'
+            f'include {DEFAULT_PACKAGE_NAME}/py.typed'
+        ),
     )
     (tmp_path / 'pyproject.toml').write_text(
         "[tool.isort]\n profile = 'black'\n",

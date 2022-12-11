@@ -39,11 +39,13 @@ def test_generating_readme(tmp_genvi_path: Path) -> None:
 def test_stripping_files(tmp_path: Path) -> None:
     test_file = tmp_path / 'my_file'
     test_file.write_text(
-        '# HEADING\n'
-        '\n'
-        '# --> Here we have something to snip snip\n'
-        '# <-- end of snip snip\n'
-        '# AFTER\n',
+        (
+            '# HEADING\n'
+            '\n'
+            '# --> Here we have something to snip snip\n'
+            '# <-- end of snip snip\n'
+            '# AFTER\n'
+        ),
     )
     strip_lines_between_markers(
         target=test_file,
