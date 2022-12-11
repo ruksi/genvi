@@ -52,7 +52,7 @@ jobs:
       - name: If checks pass, create an upgrade commit
         if: ${{ env.checks_pass == 'yes' }}
         run: |
-          git config user.name "Robot"
+          git config user.name "robot"
           git config user.email "robot@example.com"
           git checkout -b $UPGRADE_BRANCH
           git add .
