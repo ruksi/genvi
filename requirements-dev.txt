@@ -48,7 +48,7 @@ eradicate==2.1.0
     # via flake8-eradicate
 exceptiongroup==1.1.0
     # via pytest
-filelock==3.8.2
+filelock==3.9.0
     # via virtualenv
 flake8==5.0.4
     # via
@@ -177,7 +177,7 @@ pip-tools==6.12.1
     # via -r requirements-dev.in
 pkginfo==1.9.2
     # via twine
-platformdirs==2.6.0
+platformdirs==2.6.2
     # via
     #   pylint
     #   virtualenv
@@ -276,6 +276,7 @@ typing-extensions==4.4.0
     #   importlib-metadata
     #   mr-proper
     #   mypy
+    #   platformdirs
     #   pylint
     #   rich
 urllib3==1.26.13
