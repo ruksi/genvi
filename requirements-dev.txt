@@ -145,7 +145,7 @@ keyring==23.9.3
     # via
     #   -r requirements-dev.in
     #   twine
-lazy-object-proxy==1.8.0
+lazy-object-proxy==1.9.0
     # via astroid
 mccabe==0.7.0
     # via
