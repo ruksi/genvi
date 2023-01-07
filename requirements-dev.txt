@@ -1,6 +1,6 @@
 astpretty==2.1.0
     # via flake8-expression-complexity
-astroid==2.12.13
+astroid==2.12.14
     # via pylint
 attrs==22.2.0
     # via
@@ -176,7 +176,7 @@ pip==22.3.1
     # via pip-tools
 pip-tools==6.12.1
     # via -r requirements-dev.in
-pkginfo==1.9.3
+pkginfo==1.9.5
     # via twine
 platformdirs==2.6.2
     # via
@@ -233,7 +233,7 @@ restructuredtext-lint==1.4.0
     # via flake8-rst-docstrings
 rfc3986==2.0.0
     # via twine
-rich==13.0.0
+rich==13.0.1
     # via twine
 secretstorage==3.3.3
     # via keyring
