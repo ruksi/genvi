@@ -201,7 +201,7 @@ pygments==2.14.0
     #   flake8-rst-docstrings
     #   readme-renderer
     #   rich
-pylint==2.15.9
+pylint==2.15.10
     # via
     #   flake8-for-pycharm
     #   flake8-pylint
