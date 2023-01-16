@@ -73,7 +73,7 @@ flake8-bandit==4.1.1
     # via -r requirements-dev.in
 flake8-broken-line==0.6.0
     # via -r requirements-dev.in
-flake8-bugbear==22.12.6
+flake8-bugbear==23.1.14
     # via -r requirements-dev.in
 flake8-comprehensions==3.10.1
     # via -r requirements-dev.in
@@ -204,7 +204,7 @@ pylint==2.15.10
     #   flake8-pylint
 pyproject-hooks==1.0.0
     # via build
-pytest==7.2.0
+pytest==7.2.1
     # via
     #   -r requirements-dev.in
     #   pytest-cov
@@ -232,11 +232,11 @@ restructuredtext-lint==1.4.0
     # via flake8-rst-docstrings
 rfc3986==2.0.0
     # via twine
-rich==13.0.1
+rich==13.1.0
     # via twine
 secretstorage==3.3.3
     # via keyring
-setuptools==65.7.0
+setuptools==66.0.0
     # via
     #   flake8-functions
     #   mr-proper
