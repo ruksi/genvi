@@ -49,7 +49,7 @@ def get_oldest_matching_requirement(requirement: Requirement) -> Requirement:
     candidates = [c for c in candidates if c in requirement.specifier]
     if not candidates:
         all_as_string = ', '.join([str(c) for c in all_candidates])
-        raise Exception(
+        raise RuntimeError(
             f'No valid candidate found for {requirement} in: {all_as_string}',
         )
 
