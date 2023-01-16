@@ -136,11 +136,11 @@ def test_querying_package_versions(
 
 def test_stupid_specification(check_output_mock: CheckOutputMock) -> None:
     check_output_mock('zion (0.1.0)\nAvailable versions: 3.0.0, 2.0.0, 1.0.0')
-    with pytest.raises(Exception, match='No valid candidate found for mox<=1,>2'):
+    with pytest.raises(RuntimeError, match='No valid candidate found for mox<=1,>2'):
         get_oldest_matching_requirement(Requirement('mox<=1,>2'))
 
 
 def test_impossible_specification(check_output_mock: CheckOutputMock) -> None:
     check_output_mock('zion (0.1.0)\nAvailable versions: 3.0.0, 2.0.0, 1.0.0')
-    with pytest.raises(Exception, match='No valid candidate found for mox>3'):
+    with pytest.raises(RuntimeError, match='No valid candidate found for mox>3'):
         get_oldest_matching_requirement(Requirement('mox>3'))
