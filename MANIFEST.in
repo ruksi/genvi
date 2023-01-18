@@ -1,6 +1,0 @@
-global-exclude tests/**/* *_test.py
-exclude tools/**/*
-include */VERSION
-include */py.typed
-include LICENSE
-include requirements.in

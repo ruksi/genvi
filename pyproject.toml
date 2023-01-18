@@ -1,9 +1,55 @@
-[build-system]
-requires = [
-    'setuptools>=62.6', # supports requirements `file:` in `setup.cfg`
-    'wheel',
+[project]
+name = "myproject"
+description = "<missing description>"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.7"
+keywords = []
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
 ]
-build-backend = 'setuptools.build_meta'
+authors = [
+    { name = "Ruksi Korpisara", email = "me@ruk.si" },
+]
+dynamic = [
+    "version",
+    "dependencies",
+]
+
+[project.urls]
+Source = "https://github.com/ruksi/genvi"
+
+[project.scripts]
+myproject = "myproject.console.core:cli"
+
+[build-system]
+requires = ["hatchling", "hatch-requirements-txt==0.3.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.in"]
+
+[tool.hatch.version]
+source = "regex"
+path = "myproject/VERSION"
+pattern = "^(?P<version>.+?)$"
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "/.github/",
+    "/images/",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "myproject",
+]
 
 [tool.black]
 line-length = 88
