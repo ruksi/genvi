@@ -4,9 +4,6 @@ SHELL := bash
 .SHELLFLAGS := -eu -o pipefail -c
 .ONESHELL:
 
-package?=
-author?=
-email?=
 NO_VENV?=
 
 ifndef VERBOSE
@@ -15,14 +12,6 @@ ifndef VERBOSE
 #    VERBOSE=1 make help  # print commands ran
 .SILENT:
 endif
-
-
-# --> THE WIZARD WILL BANISH THIS
-.PHONY: wizard
-wizard:
-	python -m magic --name='$(package)' --author='$(author)' --email='$(email)'
-# <-- THE WIZARD WILL BANISH THIS
-
 
 .PHONY: help
 help:

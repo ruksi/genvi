@@ -25,11 +25,6 @@ def run(arguments: List[str]) -> ErrorCode:
 
     rename_package(config)
     strip_lines_between_markers(
-        target=(config.genvi_root / 'Makefile'),
-        start='# -->',
-        end='# <--',
-    )
-    strip_lines_between_markers(
         target=(config.genvi_root / '.github/workflows/ci.yml'),
         start='  # -->',
         end='  # <--',
