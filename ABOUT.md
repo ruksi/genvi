@@ -27,21 +27,10 @@ Other project templates you might want to check out:
     We don't need thousands of lines of code to <code>mv</code> a couple of files.
 </dd>
 <dt>
-    Why not using <a href="https://python-poetry.org/"><code>poetry</code></a>?
-</dt>
-<dd>
-    Following <a href="https://packaging.python.org/en/latest/guides/tool-recommendations/">
-    the official packaging recommendations</a> where <code>setuptools</code> + <code>build</code>
-    is still the recommended packaging combo and <code>pip</code> is just as good for dependency
-    management. Might switch sometime later though.
-</dd>
-<dt>
     Why partially using <code>setup.cfg</code> instead of all-out <code>pyproject.toml</code>?
 </dt>
 <dd>
-    <code>setuptools</code> + <code>pyproject.toml</code> is still an experimental feature
-    e.g. installing package as an editable doesn't work if using dynamic file fields.
-    Also, <code>flake8</code> <a href="https://github.com/PyCQA/flake8/issues/234">doesn't
+    <code>flake8</code> <a href="https://github.com/PyCQA/flake8/issues/234">doesn't
     want to support <code>pyproject.toml</code></a>, at least not yet.
 </dd>
 <dt>
