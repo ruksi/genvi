@@ -7,7 +7,7 @@
 
 <br/>
 <div align="center">
-<img src="https://github.com/ruksi/genvi/blob/main/images/genvi.svg"  alt="genvi logo"/>
+<img src="https://github.com/ruksi/genvi/blob/main/.github/genvi.svg"  alt="genvi logo"/>
 </div>
 <br/>
 <p align="center">
