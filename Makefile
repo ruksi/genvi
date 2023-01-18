@@ -130,4 +130,4 @@ build: ensure.venv
 # upload the current version distributables to PyPI for sharing
 publish: ensure.venv
 	VERSION=`cat myproject/VERSION`
-	twine upload dist/myproject-$$VERSION*
+	hatch publish -r test dist/myproject-$$VERSION*

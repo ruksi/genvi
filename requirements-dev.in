@@ -1,4 +1,5 @@
 -r requirements.txt
+hatch
 packaging
 pip-tools
 pre-commit
@@ -33,10 +34,6 @@ flake8-return                  # avoid inconsistent function returns
 flake8-rst-docstrings          # check rst markup in docstrings with `docutils`
 flake8-tidy-imports            # keep your imports a bit more tidy
 pep8-naming                    # follow PEP-8 naming conventions
-
-# the following are only needed if you distribute the built package through PyPI / `pip`
-build
-twine
 
 # `keyring` is an indirect dependency through `twine`,
 # and later versions of `keyring` require `importlib_metadata` incompatible with `flake8`
