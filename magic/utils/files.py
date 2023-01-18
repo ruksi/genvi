@@ -17,7 +17,6 @@ def rename_package(config: Config) -> None:
         + list(github_dir.glob('**/*.md'))
         + [
             (config.genvi_root / 'LICENSE'),
-            (config.genvi_root / 'MANIFEST.in'),
             (config.genvi_root / 'Makefile'),
             (config.genvi_root / 'pyproject.toml'),
             (config.genvi_root / 'setup.cfg'),
