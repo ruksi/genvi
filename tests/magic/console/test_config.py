@@ -10,7 +10,7 @@ def test_config_validation(tmp_genvi_path: Path) -> None:
     Config(name='test', author='', email='', genvi_root=tmp_genvi_path).validate()
 
 
-@pytest.mark.parametrize('name', ['', 'bad name', 'images', 'magic', 'tests'])
+@pytest.mark.parametrize('name', ['', 'bad name', 'magic', 'tests'])
 def test_config_invalid_package_name(name: str, tmp_genvi_path: Path) -> None:
     with pytest.raises(ValidationError):
         Config(name=name, author='', email='', genvi_root=tmp_genvi_path).validate()

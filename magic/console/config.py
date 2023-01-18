@@ -26,7 +26,7 @@ class Config(Namespace):
                     f' ({string.ascii_lowercase})'
                 ),
             )
-        if self.name in {'images', 'magic', 'tests', 'tools', 'dist', 'build'}:
+        if self.name in {'magic', 'tests', 'tools', 'dist', 'build'}:
             raise ValidationError('package name is invalid')
 
     def _validate_root(self) -> None:

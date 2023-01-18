@@ -60,6 +60,5 @@ def tmp_genvi_path(tmp_path: Path) -> Path:
     )
 
     (tmp_path / 'magic').mkdir()
-    (tmp_path / 'images').mkdir()
 
     return tmp_path
