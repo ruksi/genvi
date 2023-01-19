@@ -17,10 +17,7 @@ classifiers = [
 authors = [
     { name = "Ruksi Korpisara", email = "me@ruk.si" },
 ]
-dynamic = [
-    "version",
-    "dependencies",
-]
+dynamic = ["version", "dependencies"]
 
 [project.urls]
 Documentation = "https://github.com/ruksi/genvi#readme"
@@ -99,12 +96,12 @@ warn_unreachable = true
 
 [tool.pylint.messages_control]
 max-line-length = 88
-disable = [  # https://pylint.pycqa.org/en/latest/user_guide/messages/messages_overview.html
+disable = [# https://pylint.pycqa.org/en/latest/user_guide/messages/messages_overview.html
     'missing-class-docstring',
     'missing-function-docstring',
     'missing-module-docstring',
     'too-few-public-methods',
-    'abstract-class-instantiated',  # duplicate with mypy:abstract
+    'abstract-class-instantiated', # duplicate with mypy:abstract
 ]
 
 [tool.pylint.reports]
@@ -115,11 +112,11 @@ score = false    # don't show score if ran for each file...
 [tool.pylint.basic]
 docstring-min-length = 5
 good-names = [
-    '_',  # the "throwaway" marker
-    'i',  # a common iterator or index
-    'j',  # a common nested iterator
-    'k',  # a common nested iterator
-    'e',  # an exception or error
+    '_', # the "throwaway" marker
+    'i', # a common iterator or index
+    'j', # a common nested iterator
+    'k', # a common nested iterator
+    'e', # an exception or error
     'ex', # an exception or error
 ]
 bad-names = [
@@ -137,7 +134,7 @@ single-line-if-stmt = false
 addopts = [
     '--strict-config',
     '--strict-markers',
-    '--import-mode=importlib',  # the best practice https://docs.pytest.org/en/latest/explanation/goodpractices.html
+    '--import-mode=importlib', # the best practice https://docs.pytest.org/en/latest/explanation/goodpractices.html
 ]
 norecursedirs = ['.*', 'build', 'dist', 'venv']
 filterwarnings = ['error']  # turn warnings into errors
