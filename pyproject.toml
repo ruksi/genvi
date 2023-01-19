@@ -143,6 +143,7 @@ log_level = 'NOTSET'        # capture all `logging` messages
 
 [tool.coverage.run]
 branch = true
+parallel = true
 source = ['.']
 omit = [
     '*/site-packages/*',
