@@ -23,6 +23,8 @@ dynamic = [
 ]
 
 [project.urls]
+Documentation = "https://github.com/ruksi/genvi#readme"
+Issues = "https://github.com/ruksi/genvi/issues"
 Source = "https://github.com/ruksi/genvi"
 
 [project.scripts]
