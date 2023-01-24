@@ -1,11 +1,9 @@
-appdirs==1.4.4
-    # via hatch
+anyio==3.6.2
+    # via httpcore
 astpretty==2.1.0
     # via flake8-expression-complexity
-astroid==2.13.2
+astroid==2.13.3
     # via pylint
-atomicwrites==1.4.1
-    # via hatch
 attrs==22.2.0
     # via
     #   flake8-bugbear
@@ -13,20 +11,16 @@ attrs==22.2.0
     #   pytest
 bandit==1.7.4
     # via flake8-bandit
-bleach==5.0.1
-    # via readme-renderer
 build==0.10.0
     # via pip-tools
 certifi==2022.12.7
     # via
+    #   httpcore
     #   httpx
-    #   requests
 cffi==1.15.1
     # via cryptography
 cfgv==3.3.1
     # via pre-commit
-charset-normalizer==3.0.1
-    # via requests
 click==8.1.3
     # via
     #   -r requirements.txt
@@ -34,14 +28,8 @@ click==8.1.3
     #   mr-proper
     #   pip-tools
     #   userpath
-colorama==0.4.6
-    # via hatch
-commonmark==0.9.1
-    # via rich
 coverage[toml]==7.0.5
-    # via
-    #   hatch
-    #   pytest-cov
+    # via pytest-cov
 cryptography==39.0.0
     # via secretstorage
 darglint==1.8.1
@@ -51,9 +39,9 @@ dill==0.3.6
 distlib==0.3.6
     # via virtualenv
 docutils==0.19
-    # via
-    #   readme-renderer
-    #   restructuredtext-lint
+    # via restructuredtext-lint
+editables==0.3
+    # via hatchling
 eradicate==2.1.0
     # via flake8-eradicate
 exceptiongroup==1.1.0
@@ -83,7 +71,7 @@ flake8-bandit==4.1.1
     # via -r requirements-dev.in
 flake8-broken-line==0.6.0
     # via -r requirements-dev.in
-flake8-bugbear==23.1.14
+flake8-bugbear==23.1.20
     # via -r requirements-dev.in
 flake8-comprehensions==3.10.1
     # via -r requirements-dev.in
@@ -117,12 +105,25 @@ gitdb==4.0.10
     # via gitpython
 gitpython==3.1.30
     # via bandit
-hatch==0.23.1
+h11==0.14.0
+    # via httpcore
+hatch==1.6.3
     # via -r requirements-dev.in
-identify==2.5.13
+hatchling==1.12.2
+    # via hatch
+httpcore==0.16.3
+    # via httpx
+httpx==0.23.3
+    # via hatch
+hyperlink==21.0.0
+    # via hatch
+identify==2.5.15
     # via pre-commit
 idna==3.4
-    # via requests
+    # via
+    #   anyio
+    #   hyperlink
+    #   rfc3986
 importlib-metadata==4.2.0
     # via
     #   -r requirements.txt
@@ -133,6 +134,7 @@ importlib-metadata==4.2.0
     #   flake8-comprehensions
     #   flake8-eradicate
     #   flake8-tidy-imports
+    #   hatchling
     #   keyring
     #   pluggy
     #   pre-commit
@@ -140,7 +142,6 @@ importlib-metadata==4.2.0
     #   pytest
     #   pytest-randomly
     #   stevedore
-    #   twine
     #   virtualenv
 iniconfig==2.0.0
     # via pytest
@@ -155,13 +156,17 @@ jeepney==0.8.0
 keyring==23.9.3
     # via
     #   -r requirements-dev.in
-    #   twine
+    #   hatch
 lazy-object-proxy==1.9.0
     # via astroid
+markdown-it-py==2.1.0
+    # via rich
 mccabe==0.7.0
     # via
     #   flake8
     #   pylint
+mdurl==0.1.2
+    # via markdown-it-py
 more-itertools==9.0.0
     # via jaraco-classes
 mr-proper==0.0.7
@@ -176,7 +181,11 @@ packaging==23.0
     # via
     #   -r requirements-dev.in
     #   build
+    #   hatch
+    #   hatchling
     #   pytest
+pathspec==0.10.3
+    # via hatchling
 pbr==5.11.1
     # via stevedore
 pep8-naming==0.13.3
@@ -184,19 +193,18 @@ pep8-naming==0.13.3
 pexpect==4.8.0
     # via hatch
 pip==22.3.1
-    # via
-    #   hatch
-    #   pip-tools
+    # via pip-tools
 pip-tools==6.12.1
     # via -r requirements-dev.in
-pkginfo==1.9.6
-    # via twine
 platformdirs==2.6.2
     # via
+    #   hatch
     #   pylint
     #   virtualenv
 pluggy==1.0.0
-    # via pytest
+    # via
+    #   hatchling
+    #   pytest
 pre-commit==2.21.0
     # via -r requirements-dev.in
 ptyprocess==0.7.0
@@ -207,25 +215,25 @@ pycodestyle==2.9.1
     #   flake8-print
 pycparser==2.21
     # via cffi
-pydocstyle==6.2.3
+pydocstyle==6.3.0
     # via flake8-docstrings
 pyflakes==2.5.0
     # via flake8
 pygments==2.14.0
     # via
     #   flake8-rst-docstrings
-    #   readme-renderer
     #   rich
 pylint==2.15.10
     # via
     #   flake8-for-pycharm
     #   flake8-pylint
+pyperclip==1.8.2
+    # via hatch
 pyproject-hooks==1.0.0
     # via build
 pytest==7.2.1
     # via
     #   -r requirements-dev.in
-    #   hatch
     #   pytest-cov
     #   pytest-mock
     #   pytest-randomly
@@ -239,61 +247,50 @@ pyyaml==6.0
     # via
     #   bandit
     #   pre-commit
-readme-renderer==37.3
-    # via twine
-requests==2.28.2
-    # via
-    #   requests-toolbelt
-    #   twine
-requests-toolbelt==0.10.1
-    # via twine
 restructuredtext-lint==1.4.0
     # via flake8-rst-docstrings
-rfc3986==2.0.0
-    # via twine
-rich==13.1.0
-    # via
-    #   hatch
-    #   twine
+rfc3986[idna2008]==1.5.0
+    # via httpx
+rich==13.2.0
+    # via hatch
 secretstorage==3.3.3
     # via keyring
-semver==2.13.0
-    # via hatch
-setuptools==66.0.0
+setuptools==66.1.1
     # via
     #   flake8-functions
-    #   hatch
     #   mr-proper
     #   nodeenv
     #   pip-tools
-six==1.16.0
-    # via bleach
+shellingham==1.5.0.post1
+    # via hatch
 smmap==5.0.0
     # via gitdb
+sniffio==1.3.0
+    # via
+    #   anyio
+    #   httpcore
+    #   httpx
 snowballstemmer==2.2.0
     # via pydocstyle
-sortedcontainers==2.4.0
-    # via hatch
 stdlib-list==0.8.0
     # via mr-proper
 stevedore==3.5.2
     # via bandit
-toml==0.10.2
-    # via hatch
 tomli==2.0.1
     # via
     #   build
     #   coverage
+    #   hatchling
     #   mypy
     #   pylint
     #   pyproject-hooks
     #   pytest
+tomli-w==1.0.0
+    # via hatch
 tomlkit==0.11.6
     # via
     #   hatch
     #   pylint
-twine==4.0.2
-    # via hatch
 typed-ast==1.5.4
     # via
     #   astroid
@@ -301,18 +298,17 @@ typed-ast==1.5.4
 typing-extensions==4.4.0
     # via
     #   -r requirements.txt
+    #   anyio
     #   astroid
     #   gitpython
+    #   h11
     #   importlib-metadata
+    #   markdown-it-py
     #   mr-proper
     #   mypy
     #   platformdirs
     #   pylint
     #   rich
-urllib3==1.26.14
-    # via
-    #   requests
-    #   twine
 userpath==1.8.0
     # via hatch
 virtualenv==20.16.2
@@ -320,12 +316,8 @@ virtualenv==20.16.2
     #   -r requirements-dev.in
     #   hatch
     #   pre-commit
-webencodings==0.5.1
-    # via bleach
 wheel==0.38.4
-    # via
-    #   hatch
-    #   pip-tools
+    # via pip-tools
 wrapt==1.14.1
     # via astroid
 zipp==3.11.0
