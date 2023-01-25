@@ -9,7 +9,7 @@ Usage:
 
 """
 
-import subprocess  # noqa: S404
+import subprocess
 import sys
 from pathlib import Path
 from typing import List
@@ -23,43 +23,43 @@ def package_versions(project_name: str) -> List[Version]:
     # possibly switch to `distlib`, raw requests or something else later
     # https://pip.pypa.io/en/stable/user_guide/#using-pip-from-your-program
     # should we consider using `--platform` or `--python-version`?
-    cmd = [sys.executable, '-m', 'pip', 'index', 'versions', project_name]
-    output = subprocess.check_output(cmd, stderr=subprocess.PIPE).decode()  # noqa: S603
-    lines = output.split('\n')
+    cmd = [sys.executable, "-m", "pip", "index", "versions", project_name]
+    output = subprocess.check_output(cmd, stderr=subprocess.PIPE).decode()
+    lines = output.split("\n")
     versions_line, *_ = filter(
-        lambda line: line.startswith('Available versions: '),
+        lambda line: line.startswith("Available versions: "),
         lines,
     )
-    _, _, *version_texts = versions_line.split(' ')
-    version_texts = [vt.rstrip(',') for vt in version_texts]
+    _, _, *version_texts = versions_line.split(" ")
+    version_texts = [vt.rstrip(",") for vt in version_texts]
     return sorted(Version(vt) for vt in version_texts)  # oldest -> newest
 
 
 def get_oldest_matching_requirement(requirement: Requirement) -> Requirement:
     # not perfect but should work well enough
-    extras = ''
+    extras = ""
     if requirement.extras:
-        extras_str = ','.join(requirement.extras)
-        extras = f'[{extras_str}]'
+        extras_str = ",".join(requirement.extras)
+        extras = f"[{extras_str}]"
 
     candidates = all_candidates = package_versions(requirement.name)
     if not requirement.specifier:
-        return Requirement(f'{requirement.name}{extras}=={candidates[0]}')
+        return Requirement(f"{requirement.name}{extras}=={candidates[0]}")
 
     candidates = [c for c in candidates if c in requirement.specifier]
     if not candidates:
-        all_as_string = ', '.join([str(c) for c in all_candidates])
+        all_as_string = ", ".join([str(c) for c in all_candidates])
         raise RuntimeError(
-            f'No valid candidate found for {requirement} in: {all_as_string}',
+            f"No valid candidate found for {requirement} in: {all_as_string}",
         )
 
-    return Requirement(f'{requirement.name}{extras}=={candidates[0]}')
+    return Requirement(f"{requirement.name}{extras}=={candidates[0]}")
 
 
 def get_oldest_requirements(requirements_file: Path) -> List[Requirement]:
-    with requirements_file.open(encoding='utf-8') as file:
+    with requirements_file.open(encoding="utf-8") as file:
         lines = file.readlines()
-    lines = [line.partition('#')[0].rstrip(' \n') for line in lines]
+    lines = [line.partition("#")[0].rstrip(" \n") for line in lines]
     requirements_in = [Requirement(line) for line in lines if line]
     requirements_out = [get_oldest_matching_requirement(req) for req in requirements_in]
     return sorted(requirements_out, key=lambda r: r.name)

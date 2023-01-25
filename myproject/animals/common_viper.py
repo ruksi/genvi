@@ -13,7 +13,7 @@ class CommonViper(Animal):
     as East Asia.
     """
 
-    scientific_name = 'Vipera berus'
+    scientific_name = "Vipera berus"
 
     def vocalize(self) -> str:
-        return '*hiss*'
+        return "*hiss*"

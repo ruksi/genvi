@@ -18,46 +18,46 @@ class Config(Namespace):
 
     def _validate_name(self) -> None:
         if not self.name:
-            raise ValidationError('package name cannot be empty')
+            raise ValidationError("package name cannot be empty")
         if any(c not in string.ascii_lowercase for c in self.name):
             raise ValidationError(
                 (
-                    'package name must consist of lowercase ASCII'
-                    f' ({string.ascii_lowercase})'
+                    "package name must consist of lowercase ASCII"
+                    f" ({string.ascii_lowercase})"
                 ),
             )
-        if self.name in {'magic', 'tests', 'tools', 'dist', 'build'}:
-            raise ValidationError('package name is invalid')
+        if self.name in {"magic", "tests", "tools", "dist", "build"}:
+            raise ValidationError("package name is invalid")
 
     def _validate_root(self) -> None:
         # do a few sanity checks...
         if not self.genvi_root.is_dir():
-            raise InternalError('package root must be an existing directory')
-        if not Path(self.genvi_root, 'Makefile').is_file():
-            raise InternalError('package root does not look like `genvi` root')
+            raise InternalError("package root must be an existing directory")
+        if not Path(self.genvi_root, "Makefile").is_file():
+            raise InternalError("package root does not look like `genvi` root")
 
 
 def parse_config(arguments: List[str]) -> Config:
     parser = ArgumentParser()
-    parser.add_argument('--name', help='package name')
-    parser.add_argument('--author', help='package author name')
-    parser.add_argument('--email', help='package author email')
+    parser.add_argument("--name", help="package name")
+    parser.add_argument("--author", help="package author name")
+    parser.add_argument("--email", help="package author email")
     config = parser.parse_args(
         args=arguments,
         namespace=Config(genvi_root=resolve_genvi_root()),
     )
 
     if not config.name:
-        config.name = safe_input('Package name: ')
+        config.name = safe_input("Package name: ")
     if not config.author:
-        config.author = safe_input('Author name: ')
+        config.author = safe_input("Author name: ")
     if not config.email:
-        config.email = safe_input('Author email: ')
+        config.email = safe_input("Author email: ")
 
     if not config.author:
-        config.author = 'Arthur Author'
+        config.author = "Arthur Author"
     if not config.email:
-        config.email = 'author@example.com'
+        config.email = "author@example.com"
 
     config.validate()
     return config
@@ -67,7 +67,7 @@ def safe_input(prompt: str) -> str:
     try:
         return input(prompt)
     except EOFError:
-        return ''
+        return ""
 
 
 def resolve_genvi_root() -> Path:

@@ -9,24 +9,24 @@ from typing import Tuple
 
 
 class SemanticPart(Enum):
-    MAJOR = 'major'
-    MINOR = 'minor'
-    PATCH = 'patch'
+    MAJOR = "major"
+    MINOR = "minor"
+    PATCH = "patch"
 
 
 def bump(version_file: Path, bump_by: SemanticPart) -> None:
-    with version_file.open(encoding='utf-8') as file:
+    with version_file.open(encoding="utf-8") as file:
         content = file.read()
     content = bump_line(content, bump_by)
-    with version_file.open(encoding='utf-8', mode='w') as file:
+    with version_file.open(encoding="utf-8", mode="w") as file:
         file.write(content)
 
 
 def bump_line(line: str, bump_by: SemanticPart) -> str:
-    semver_str = re.findall(r'(.+)', line)[0]
-    major, minor, patch = (int(s) for s in semver_str.split('.'))
+    semver_str = re.findall(r"(.+)", line)[0]
+    major, minor, patch = (int(s) for s in semver_str.split("."))
     major, minor, patch = bump_version(major, minor, patch, bump_by)
-    return f'{major}.{minor}.{patch}\n'
+    return f"{major}.{minor}.{patch}\n"
 
 
 def bump_version(
