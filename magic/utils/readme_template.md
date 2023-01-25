@@ -1,4 +1,4 @@
-# `$name`
+# `$$name`
 
 ## Development
 
@@ -52,30 +52,28 @@ make update dev.python dev.python.outdated
 
 ### PyCharm Integrations
 
-The following PyCharm integrations make development flow smoother by giving errors
+The following PyCharm integrations make development smoother by giving errors
 interactively while developing and makes it easy to jump to specific error locations.
 
-Bring `flake8` lint highlights to PyCharm:
+Bring `ruff` errors to PyCharm:
 
-* Figure out where the `flake8-for-pycharm` executable is e.g.
-
-  ```bash
-  which flake8_pycharm.py
-  # e.g. /projects/$name/venv/bin/flake8_pycharm.py
-  ```
-
-* Install **Pylint** plugin to PyCharm using the marketplace
-* Configure `Settings > Other Settings > Pylint`:
-  * Path to Pylint executable: *the `flake8_pycharm.py` full path*
-  * Path to pylintrc: */projects/$name/setup.cfg* (i.e. `flake8` config)
+* Create a new `Settings > Tools > File Watchers`
+  * Name: *ruff*
+  * File type: *Python*
+  * Scope: *Project Files*
+  * Program: *$PyInterpreterDirectory$/ruff*
+  * Arguments: *--force-exclude $FilePath$*
+  * Output paths to refresh: *$FilePath$*
+  * Working directory: *$ContentRoot$*
+* Enable the watcher in `Settings > Tools > File Watchers`
 
 Bring `mypy` type checks to PyCharm:
 
 * Install **Mypy** plugin to PyCharm using the marketplace
   * Not the *Mypy (Official)*, that is outdated
 * Configure `Settings > Other Settings > Mypy`:
-  * Path to Mypy executable: */projects/$name/venv/bin/mypy*
-  * Arguments: *--install-types --scripts-are-modules*
+  * Path to Mypy executable: *(should auto-detect)*
+  * Arguments: *--install-types --non-interactive --scripts-are-modules*
 
 ## Testing Guidelines
 

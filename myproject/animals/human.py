@@ -12,7 +12,7 @@ class Human(Animal):
     They are mainly characterized by bipedalism and large heads.
     """
 
-    scientific_name = 'Homo sapiens'
+    scientific_name = "Homo sapiens"
 
     def vocalize(self) -> str:
-        return '*grunt*'
+        return "*grunt*"

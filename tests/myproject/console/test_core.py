@@ -11,12 +11,12 @@ from myproject.console.core import cli
 
 
 @pytest.mark.parametrize(
-    ('args', 'log_level'),
+    ("args", "log_level"),
     [
-        ([], 'INFO'),
-        (['-v'], 'DEBUG'),
-        (['-q'], 'WARNING'),
-        (['-qq'], 'ERROR'),
+        ([], "INFO"),
+        (["-v"], "DEBUG"),
+        (["-q"], "WARNING"),
+        (["-qq"], "ERROR"),
     ],
 )
 def test_main_log_levels(
@@ -29,21 +29,21 @@ def test_main_log_levels(
     result = runner.invoke(cli, args)
 
     assert result.exit_code == 0
-    assert result.output == 'hello!\n'
+    assert result.output == "hello!\n"
 
     info_records = [r for r in caplog.records if r.levelno == logging.INFO]
     assert len(info_records) == 1
-    assert info_records[0].getMessage() == f'log level = {log_level}'
+    assert info_records[0].getMessage() == f"log level = {log_level}"
 
     # didn't write __straight__ to stdout/stderr
     std = capsys.readouterr()
-    assert std.out == ''
-    assert std.err == ''
+    assert std.out == ""
+    assert std.err == ""
 
 
 def test_main_logging_setup_fails(mocker: MockFixture) -> None:
-    error_message = 'boom things went wrong'
-    error_source = 'myproject.console.core.setup_console_logging'
+    error_message = "boom things went wrong"
+    error_source = "myproject.console.core.setup_console_logging"
     mocker.patch(error_source).side_effect = Exception(error_message)
 
     runner = CliRunner()

@@ -12,10 +12,10 @@ class Animal(abc.ABC):
     """
 
     name: str
-    scientific_name: str = 'Animalia'
+    scientific_name: str = "Animalia"
 
-    def __init__(self, name: str):
-        log.debug('create')
+    def __init__(self, name: str) -> None:
+        log.debug("create")
         self.name: str = name
 
     @abc.abstractmethod

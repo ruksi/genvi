@@ -4,12 +4,12 @@ from typing import Mapping
 
 
 class ColorFormatter(logging.Formatter):  # pragma: no cover
-    _grey = '\x1b[38;20m'
-    _yellow = '\x1b[33;20m'
-    _red = '\x1b[31;20m'
-    _bold_red = '\x1b[31;1m'
-    _reset = '\x1b[0m'
-    _msg_format = '%(message)s'
+    _grey = "\x1b[38;20m"
+    _yellow = "\x1b[33;20m"
+    _red = "\x1b[31;20m"
+    _bold_red = "\x1b[31;1m"
+    _reset = "\x1b[0m"
+    _msg_format = "%(message)s"
     _formats: Mapping[int, str] = {
         logging.CRITICAL: _bold_red + _msg_format + _reset,
         logging.ERROR: _red + _msg_format + _reset,
@@ -27,7 +27,7 @@ class ColorFormatter(logging.Formatter):  # pragma: no cover
             # remove newlines from exception stack traces
             # as it's a good `syslog` practice that each event
             # takes exactly one row
-            return result.replace('\n', ' ')
+            return result.replace("\n", " ")
         return result
 
 

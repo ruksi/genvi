@@ -11,12 +11,12 @@ from magic.utils.files import (
 
 
 @pytest.mark.parametrize(
-    ('author', 'email'),
-    [('', ''), ('Barry Bananas', 'barry@example.com')],
+    ("author", "email"),
+    [("", ""), ("Barry Bananas", "barry@example.com")],
 )
 def test_renaming_package(tmp_genvi_path: Path, author: str, email: str) -> None:
     config = Config(
-        name='monkey',
+        name="monkey",
         author=author,
         email=email,
         genvi_root=tmp_genvi_path,
@@ -26,30 +26,30 @@ def test_renaming_package(tmp_genvi_path: Path, author: str, email: str) -> None
 
 def test_generating_readme(tmp_genvi_path: Path) -> None:
     config = Config(
-        name='monkey',
-        author='',
-        email='',
+        name="monkey",
+        author="",
+        email="",
         genvi_root=tmp_genvi_path,
     )
     readme_contents = generate_readme(config)
-    assert '# `monkey`' in readme_contents
-    assert '$name' not in readme_contents
+    assert "# `monkey`" in readme_contents
+    assert "$$name" not in readme_contents
 
 
 def test_stripping_files(tmp_path: Path) -> None:
-    test_file = tmp_path / 'my_file'
+    test_file = tmp_path / "my_file"
     test_file.write_text(
         (
-            '# HEADING\n'
-            '\n'
-            '# --> Here we have something to snip snip\n'
-            '# <-- end of snip snip\n'
-            '# AFTER\n'
+            "# HEADING\n"
+            "\n"
+            "# --> Here we have something to snip snip\n"
+            "# <-- end of snip snip\n"
+            "# AFTER\n"
         ),
     )
     strip_lines_between_markers(
         target=test_file,
-        start='# -->',
-        end='# <--',
+        start="# -->",
+        end="# <--",
     )
-    assert test_file.read_text() == '# HEADING\n\n# AFTER\n'
+    assert test_file.read_text() == "# HEADING\n\n# AFTER\n"
