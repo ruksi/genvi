@@ -11,32 +11,8 @@ pytest-cov
 pytest-mock
 pytest-randomly
 
+# linting
+ruff
+
 # type checking
 mypy
-
-# linting
-darglint                       # check docstring with `darglint`
-flake8                         # a lint framework including basic checks
-flake8-annotations-complexity  # avoid complex type annotations
-flake8-bandit                  # avoid security vulnerabilities with `bandit`
-flake8-broken-line             # avoid backslashes to split lines
-flake8-bugbear                 # avoid code design issues
-flake8-comprehensions          # avoid silly comprehensions
-flake8-docstrings              # check docstrings with `pydocstyle`
-flake8-eradicate               # avoid commented-out code
-flake8-expression-complexity   # avoid complex expressions
-flake8-for-pycharm==0.3.2      # get `flake8` errors to PyCharm IDE
-flake8-functions               # avoid lengthy or otherwise large functions
-flake8-print                   # avoid print-statements
-flake8-pylint                  # get `pylint` errors to `flake8`
-flake8-pytest-style            # avoid inconsistent unit tests
-flake8-return                  # avoid inconsistent function returns
-flake8-rst-docstrings          # check rst markup in docstrings with `docutils`
-flake8-tidy-imports            # keep your imports a bit more tidy
-pep8-naming                    # follow PEP-8 naming conventions
-
-# `keyring` is an indirect dependency through `twine`,
-# and later versions of `keyring` require `importlib_metadata` incompatible with `flake8`
-# https://github.com/jaraco/keyring/commit/19374c65876c14ea69dcc4a29fb9858fcbc3c749
-# https://github.com/PyCQA/flake8/blob/main/setup.cfg#L44
-keyring>=15.1,<23.10.0

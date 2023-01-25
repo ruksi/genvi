@@ -21,22 +21,10 @@ repos:
       - id: check-yaml
       - id: debug-statements
       - id: detect-private-key
-      - id: double-quote-string-fixer
       - id: end-of-file-fixer
       - id: fix-byte-order-marker
       - id: mixed-line-ending
       - id: trailing-whitespace
-
-  - repo: https://github.com/PyCQA/autoflake
-    rev: 'v2.0.0'
-    hooks:
-      - id: autoflake
-
-  - repo: https://github.com/asottile/pyupgrade
-    rev: 'v3.3.1'
-    hooks:
-      - id: pyupgrade
-        args: ['--py37-plus']  # https://github.com/asottile/reorder_python_imports/issues/101#issuecomment-537936957
 
   - repo: https://github.com/ambv/black
     rev: '22.12.0'
@@ -48,31 +36,8 @@ repos:
     hooks:
       - id: blacken-docs
         additional_dependencies: [
-          'black==22.10.0',
+          'black==22.12.0',
         ]
-
-  - repo: https://github.com/pycqa/isort
-    rev: '5.11.4'
-    hooks:
-      - id: isort
-
-  - repo: https://github.com/asottile/add-trailing-comma
-    rev: 'v2.4.0'
-    hooks:
-      - id: add-trailing-comma
-
-  - repo: https://github.com/pre-commit/pygrep-hooks
-    rev: 'v1.10.0'
-    hooks:
-      - id: python-check-blanket-noqa
-      - id: python-check-blanket-type-ignore
-      - id: python-check-mock-methods
-      - id: python-no-log-warn
-      - id: python-use-type-annotations
-      # - id: rst-backticks
-      # - id: rst-directive-colons
-      # - id: rst-inline-touching-normal
-      - id: text-unicode-replacement-char
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: 'v0.33.0'
@@ -82,14 +47,18 @@ repos:
   - repo: local
     hooks:
 
-      - id: flake8
-        name: flake8
-        entry: flake8
-        args: []
+      # use system ruff as it should be installed for the IDE integration anyway
+      - id: ruff
+        name: ruff
+        entry: ruff
+        args: [
+          '--force-exclude',
+          '--fix',
+        ]
         language: system
-        types: [python]
-        require_serial: true
+        types_or: [python, pyi]
 
+      # use system mypy as type checking requires dependencies to be installed anyway
       - id: mypy
         name: mypy
         entry: mypy
@@ -100,4 +69,3 @@ repos:
         ]
         language: system
         types_or: [python, pyi]
-        require_serial: true
