@@ -27,13 +27,6 @@ Other project templates you might want to check out:
     We don't need thousands of lines of code to <code>mv</code> a couple of files.
 </dd>
 <dt>
-    Why partially using <code>setup.cfg</code> instead of all-out <code>pyproject.toml</code>?
-</dt>
-<dd>
-    <code>flake8</code> <a href="https://github.com/PyCQA/flake8/issues/234">doesn't
-    want to support <code>pyproject.toml</code></a>, at least not yet.
-</dd>
-<dt>
     Why mangle the source repository itself to create a new project?
 </dt>
 <dd>
@@ -55,16 +48,12 @@ Other project templates you might want to check out:
     with <code>language: system</code>, why?
 </dt>
 <dd>
-    Some tools (e.g. <code>pylint</code>) won't work and some tools
-    (e.g. <code>mypy</code>) won't work in their full potential
+    Some tools like <code>mypy</code> won't work on their full potential
     if the rest of the dependencies are missing from the environment;
-    and it makes little sense to duplicate the development setup.
+    and it makes little sense to reinstall the full the development setup.
     <br/><br/>
-    And you might want to integrate some tools
-    (e.g. <code>flake8</code>, <code>mypy</code>) with your IDE, in which case
-    the extra layer will cause unnecessary latency while developing.
-    Or make it impossible to use an integration without a secondary installation,
-    which makes matching the tool versions tedious.
+    You might want to integrate some tools (e.g. <code>ruff</code>, <code>mypy</code>)
+    with your IDE, in which case the extra duplication becomes unnecessary.
 </dd>
 <dt>
     Who uses <code>make</code> anymore?
