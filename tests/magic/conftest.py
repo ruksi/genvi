@@ -31,9 +31,6 @@ def tmp_genvi_path(tmp_path: Path) -> Path:
     (tmp_path / "pyproject.toml").write_text(
         "[tool.isort]\n profile = 'black'\n",
     )
-    (tmp_path / "setup.cfg").write_text(
-        f"[metadata]\nname = {DEFAULT_PACKAGE_NAME}\n",
-    )
 
     code_dir = tmp_path / DEFAULT_PACKAGE_NAME
     code_dir.mkdir()
