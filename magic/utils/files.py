@@ -19,7 +19,6 @@ def rename_package(config: Config) -> None:
             (config.genvi_root / "LICENSE"),
             (config.genvi_root / "Makefile"),
             (config.genvi_root / "pyproject.toml"),
-            (config.genvi_root / "setup.cfg"),
         ]
     )
 
