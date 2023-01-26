@@ -60,38 +60,7 @@ flake8-tidy-imports.ban-relative-imports = "all"
 mccabe.max-complexity = 10
 pydocstyle.convention = "pep257"
 select = [
-    "ALL", # enable all rules
-    #        "A", # flake8-builtins
-    #        "ANN", # flake8-annotations
-    #        "B", # flake8-bugbear
-    #        "BLE", # flake8-blind-except
-    #        "C4", # flake8-comprehensions
-    #        "C90", # mccabe
-    #        "COM", # flake8-commas
-    #        "D", # pydocstyle
-    #        "E", # pycodestyle
-    #        "EM", # flake8-errmsg
-    #        "ERA", # flake8-eradicate
-    #        "EXE", # flake8-executable
-    #        "F", # pyflakes
-    #        "FBT", # flake8-boolean-trap
-    #        "I", # isort
-    #        "ISC", # flake8-implicit-str-concat
-    #        "N", # pep8-naming
-    #        "PGH", # pygrep-hooks
-    #        "PL", # pylint
-    #        "PT", # flake8-pytest-style
-    #        "PTH", # flake8-use-pathlib
-    #        "RET", # flake8-return
-    #        "RUF", # ruff-specific rules
-    #        "S", # flake8-bandit
-    #        "T10", # flake8-debugger
-    #        "T20", # flake8-print
-    #        "TID", # flake8-tidy-imports
-    #        "TRY", # tryceratops
-    #        "TYP", # flake8-type-checking
-    #        "UP", # pyupgrade
-    #        "W", # pycodestyle
+    "ALL", # enable all the rules
 ]
 ignore = [
     "ANN101", # Missing type annotation for `self` in method
@@ -110,22 +79,6 @@ ignore = [
 ]
 
 [tool.mypy]
-# Strict mode (mypy 0.961) enables the following flags:
-#  --check-untyped-defs
-#  --disallow-any-generics
-#  --disallow-incomplete-defs
-#  --disallow-subclassing-any
-#  --disallow-untyped-calls
-#  --disallow-untyped-decorators
-#  --disallow-untyped-defs
-#  --no-implicit-optional
-#  --no-implicit-reexport
-#  --strict-concatenate
-#  --strict-equality
-#  --warn-redundant-casts
-#  --warn-return-any
-#  --warn-unused-configs
-#  --warn-unused-ignores
 strict = true
 disallow_any_decorated = true
 disallow_any_explicit = true
