@@ -1,13 +1,17 @@
 import logging
-from typing import List
+from typing import TYPE_CHECKING
 
 import pytest
-from _pytest.capture import CaptureFixture
-from _pytest.logging import LogCaptureFixture
 from click.testing import CliRunner
-from pytest_mock import MockFixture
 
 from myproject.console.core import cli
+
+if TYPE_CHECKING:
+    from typing import List
+
+    from _pytest.capture import CaptureFixture
+    from _pytest.logging import LogCaptureFixture
+    from pytest_mock import MockFixture
 
 
 @pytest.mark.parametrize(
@@ -20,9 +24,9 @@ from myproject.console.core import cli
     ],
 )
 def test_main_log_levels(
-    capsys: CaptureFixture[str],
-    caplog: LogCaptureFixture,
-    args: List[str],
+    capsys: "CaptureFixture[str]",
+    caplog: "LogCaptureFixture",
+    args: "List[str]",
     log_level: str,
 ) -> None:
     runner = CliRunner()
@@ -41,7 +45,7 @@ def test_main_log_levels(
     assert std.err == ""
 
 
-def test_main_logging_setup_fails(mocker: MockFixture) -> None:
+def test_main_logging_setup_fails(mocker: "MockFixture") -> None:
     error_message = "boom things went wrong"
     error_source = "myproject.console.core.setup_console_logging"
     mocker.patch(error_source).side_effect = Exception(error_message)

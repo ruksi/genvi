@@ -1,10 +1,13 @@
 import logging
 import os
-from typing import Optional
+from typing import TYPE_CHECKING
 
 import click
 
 from myproject.console.reporting import setup_console_logging
+
+if TYPE_CHECKING:
+    from typing import Optional
 
 log = logging.getLogger(__name__)
 
@@ -34,7 +37,7 @@ log = logging.getLogger(__name__)
     help="Turn on quiet quirks mode, only showing errors and up.",
 )
 def cli(
-    log_level: Optional[str],
+    log_level: "Optional[str]",
 ) -> None:
     """
     Show debug information.

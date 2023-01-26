@@ -1,6 +1,9 @@
 import logging
 import sys
-from typing import Mapping
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from typing import Mapping
 
 
 class ColorFormatter(logging.Formatter):  # pragma: no cover
@@ -10,7 +13,7 @@ class ColorFormatter(logging.Formatter):  # pragma: no cover
     _bold_red = "\x1b[31;1m"
     _reset = "\x1b[0m"
     _msg_format = "%(message)s"
-    _formats: Mapping[int, str] = {
+    _formats: "Mapping[int, str]" = {
         logging.CRITICAL: _bold_red + _msg_format + _reset,
         logging.ERROR: _red + _msg_format + _reset,
         logging.WARNING: _yellow + _msg_format + _reset,

@@ -1,10 +1,14 @@
-from pathlib import Path
+from typing import TYPE_CHECKING
 
 import pytest
-from _pytest.capture import CaptureFixture
-from pytest_mock import MockFixture
 
 from magic.console.core import main
+
+if TYPE_CHECKING:
+    from pathlib import Path
+
+    from _pytest.capture import CaptureFixture
+    from pytest_mock import MockFixture
 
 VALID_ARGV = [
     "/mock/executable",
@@ -19,8 +23,8 @@ VALID_ARGV = [
 
 @pytest.fixture(autouse=True)
 def _patch_resolve_genvi_root(
-    mocker: MockFixture,
-    tmp_genvi_path: Path,
+    mocker: "MockFixture",
+    tmp_genvi_path: "Path",
 ) -> None:
     # also effectively initializes the `tmp_genvi_path` for all tests in this module
     target = "magic.console.config.resolve_genvi_root"
@@ -28,8 +32,8 @@ def _patch_resolve_genvi_root(
 
 
 def test_main(
-    mocker: MockFixture,
-    capsys: CaptureFixture[str],
+    mocker: "MockFixture",
+    capsys: "CaptureFixture[str]",
 ) -> None:
     mocker.patch("sys.argv", VALID_ARGV)
     assert main() == 0
@@ -39,8 +43,8 @@ def test_main(
 
 
 def test_main_no_arguments(
-    mocker: MockFixture,
-    capsys: CaptureFixture[str],
+    mocker: "MockFixture",
+    capsys: "CaptureFixture[str]",
 ) -> None:
     mocker.patch("builtins.input").return_value = ""
     mocker.patch("sys.argv", ["/mock/executable"])
@@ -51,8 +55,8 @@ def test_main_no_arguments(
 
 
 def test_main_not_interactive(
-    mocker: MockFixture,
-    capsys: CaptureFixture[str],
+    mocker: "MockFixture",
+    capsys: "CaptureFixture[str]",
 ) -> None:
     mocker.patch("builtins.input").side_effect = EOFError
     mocker.patch("sys.argv", ["/mock/executable"])
@@ -63,9 +67,9 @@ def test_main_not_interactive(
 
 
 def test_main_internal_error(
-    mocker: MockFixture,
-    capsys: CaptureFixture[str],
-    tmp_genvi_path: Path,
+    mocker: "MockFixture",
+    capsys: "CaptureFixture[str]",
+    tmp_genvi_path: "Path",
 ) -> None:
     (tmp_genvi_path / "Makefile").unlink()
     mocker.patch("sys.argv", VALID_ARGV)

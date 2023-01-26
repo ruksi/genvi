@@ -1,6 +1,9 @@
 import shutil
 import sys
-from typing import List
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from typing import List
 
 from magic.console.config import parse_config
 from magic.utils.files import (
@@ -20,7 +23,7 @@ def main() -> ErrorCode:
         return 1
 
 
-def run(arguments: List[str]) -> ErrorCode:
+def run(arguments: "List[str]") -> ErrorCode:
     config = parse_config(arguments[1:])
 
     rename_package(config)
@@ -58,6 +61,6 @@ def run(arguments: List[str]) -> ErrorCode:
     return 0
 
 
-def write_out(messages: List[str]) -> None:
+def write_out(messages: "List[str]") -> None:
     for message in messages:
         sys.stdout.write(f"{message}\n")

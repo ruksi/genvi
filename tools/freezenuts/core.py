@@ -11,14 +11,17 @@ Usage:
 
 import subprocess
 import sys
-from pathlib import Path
-from typing import List
+from typing import TYPE_CHECKING
 
 from packaging.requirements import Requirement
 from packaging.version import Version
 
+if TYPE_CHECKING:
+    from pathlib import Path
+    from typing import List
 
-def package_versions(project_name: str) -> List[Version]:
+
+def package_versions(project_name: str) -> "List[Version]":
     """Get package version history from PyPI using `pip`."""
     # possibly switch to `distlib`, raw requests or something else later
     # https://pip.pypa.io/en/stable/user_guide/#using-pip-from-your-program
@@ -56,7 +59,7 @@ def get_oldest_matching_requirement(requirement: Requirement) -> Requirement:
     return Requirement(f"{requirement.name}{extras}=={candidates[0]}")
 
 
-def get_oldest_requirements(requirements_file: Path) -> List[Requirement]:
+def get_oldest_requirements(requirements_file: "Path") -> "List[Requirement]":
     with requirements_file.open(encoding="utf-8") as file:
         lines = file.readlines()
     lines = [line.partition("#")[0].rstrip(" \n") for line in lines]

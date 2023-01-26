@@ -1,11 +1,10 @@
 import tempfile
 from pathlib import Path
-from typing import List, Optional
+from typing import TYPE_CHECKING
 
 import pytest
 from packaging.requirements import Requirement
 from packaging.version import Version
-from pytest_mock import MockFixture
 from typing_extensions import Protocol
 
 from tools.freezenuts.core import (
@@ -13,6 +12,11 @@ from tools.freezenuts.core import (
     get_oldest_requirements,
     package_versions,
 )
+
+if TYPE_CHECKING:
+    from typing import List, Optional
+
+    from pytest_mock import MockFixture
 
 REQUIREMENTS_CONTENT = """
 # comments
@@ -25,13 +29,13 @@ balthazar>=1.24,<1.28  # not
 
 
 class CheckOutputMock(Protocol):
-    def __call__(self, output: Optional[str]) -> None:
+    def __call__(self, output: "Optional[str]") -> None:
         ...
 
 
 @pytest.fixture(name="check_output_mock")
-def check_output_mocker(mocker: MockFixture) -> CheckOutputMock:
-    def setup_check_output_mocker(output: Optional[str] = None) -> None:
+def check_output_mocker(mocker: "MockFixture") -> CheckOutputMock:
+    def setup_check_output_mocker(output: "Optional[str]" = None) -> None:
         if output is not None:
             mocker.patch("subprocess.check_output").return_value = output.encode()
 
@@ -127,7 +131,7 @@ def test_requirement_deep_freezing(
 )
 def test_querying_package_versions(
     output: str,
-    expected: List[str],
+    expected: "List[str]",
     check_output_mock: CheckOutputMock,
 ) -> None:
     check_output_mock(output)

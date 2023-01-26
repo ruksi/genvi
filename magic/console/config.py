@@ -1,9 +1,12 @@
 import string
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
-from typing import List
+from typing import TYPE_CHECKING
 
 from magic.utils.errors import InternalError, ValidationError
+
+if TYPE_CHECKING:
+    from typing import List
 
 
 class Config(Namespace):
@@ -37,7 +40,7 @@ class Config(Namespace):
             raise InternalError("package root does not look like `genvi` root")
 
 
-def parse_config(arguments: List[str]) -> Config:
+def parse_config(arguments: "List[str]") -> Config:
     parser = ArgumentParser()
     parser.add_argument("--name", help="package name")
     parser.add_argument("--author", help="package author name")

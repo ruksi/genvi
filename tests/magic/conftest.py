@@ -1,12 +1,15 @@
-from pathlib import Path
+from typing import TYPE_CHECKING
 
 import pytest
 
 from magic.utils.consts import DEFAULT_AUTHOR, DEFAULT_PACKAGE_NAME
 
+if TYPE_CHECKING:
+    from pathlib import Path
+
 
 @pytest.fixture()
-def tmp_genvi_path(tmp_path: Path) -> Path:
+def tmp_genvi_path(tmp_path: "Path") -> "Path":
     # Create a mini version of what `genvi` directory looks like.
 
     (tmp_path / "Makefile").write_text(
