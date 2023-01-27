@@ -51,10 +51,7 @@ def get_oldest_matching_requirement(requirement: Requirement) -> Requirement:
 
     candidates = [c for c in candidates if c in requirement.specifier]
     if not candidates:
-        all_as_string = ", ".join([str(c) for c in all_candidates])
-        raise RuntimeError(
-            f"No valid candidate found for {requirement} in: {all_as_string}",
-        )
+        raise PackageNotFoundError(requirement, all_candidates)
 
     return Requirement(f"{requirement.name}{extras}=={candidates[0]}")
 
@@ -66,3 +63,9 @@ def get_oldest_requirements(requirements_file: "Path") -> "List[Requirement]":
     requirements_in = [Requirement(line) for line in lines if line]
     requirements_out = [get_oldest_matching_requirement(req) for req in requirements_in]
     return sorted(requirements_out, key=lambda r: r.name)
+
+
+class PackageNotFoundError(RuntimeError):
+    def __init__(self, requirement: Requirement, candidates: "List[Version]") -> None:
+        as_strings = ", ".join([str(c) for c in candidates])
+        super().__init__(f"No valid candidate found for {requirement} in: {as_strings}")

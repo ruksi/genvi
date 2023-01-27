@@ -3,7 +3,13 @@ from argparse import ArgumentParser, Namespace
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-from magic.utils.errors import InternalError, ValidationError
+from magic.utils.errors import (
+    BadProjectRootError,
+    EmptyError,
+    NoProjectRootError,
+    NotAllowedError,
+    NotLowAsciiError,
+)
 
 if TYPE_CHECKING:
     from typing import List
@@ -21,23 +27,18 @@ class Config(Namespace):
 
     def _validate_name(self) -> None:
         if not self.name:
-            raise ValidationError("package name cannot be empty")
+            raise EmptyError(thing="package name")
         if any(c not in string.ascii_lowercase for c in self.name):
-            raise ValidationError(
-                (
-                    "package name must consist of lowercase ASCII"
-                    f" ({string.ascii_lowercase})"
-                ),
-            )
+            raise NotLowAsciiError(thing="package name", value=self.name)
         if self.name in {"magic", "tests", "tools", "dist", "build"}:
-            raise ValidationError("package name is invalid")
+            raise NotAllowedError(thing="package name", value=self.name)
 
     def _validate_root(self) -> None:
         # do a few sanity checks...
         if not self.genvi_root.is_dir():
-            raise InternalError("package root must be an existing directory")
+            raise NoProjectRootError()
         if not Path(self.genvi_root, "Makefile").is_file():
-            raise InternalError("package root does not look like `genvi` root")
+            raise BadProjectRootError()
 
 
 def parse_config(arguments: "List[str]") -> Config:
