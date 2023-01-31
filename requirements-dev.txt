@@ -42,7 +42,7 @@ httpx==0.23.3
     # via hatch
 hyperlink==21.0.0
     # via hatch
-identify==2.5.16
+identify==2.5.17
     # via pre-commit
 idna==3.4
     # via
@@ -94,7 +94,7 @@ pathspec==0.11.0
     # via hatchling
 pexpect==4.8.0
     # via hatch
-pip==22.3.1
+pip==23.0
     # via pip-tools
 pip-tools==6.12.1
     # via -r requirements-dev.in
@@ -136,7 +136,7 @@ rfc3986[idna2008]==1.5.0
     # via httpx
 rich==13.3.1
     # via hatch
-ruff==0.0.237
+ruff==0.0.238
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
