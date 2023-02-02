@@ -20,4 +20,4 @@ class Animal(abc.ABC):
 
     @abc.abstractmethod
     def vocalize(self) -> str:
-        raise NotImplementedError()
+        raise NotImplementedError

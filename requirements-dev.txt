@@ -96,7 +96,7 @@ pexpect==4.8.0
     # via hatch
 pip==23.0
     # via pip-tools
-pip-tools==6.12.1
+pip-tools==6.12.2
     # via -r requirements-dev.in
 platformdirs==2.6.2
     # via
@@ -136,11 +136,11 @@ rfc3986[idna2008]==1.5.0
     # via httpx
 rich==13.3.1
     # via hatch
-ruff==0.0.238
+ruff==0.0.239
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
-setuptools==67.0.0
+setuptools==67.1.0
     # via
     #   nodeenv
     #   pip-tools

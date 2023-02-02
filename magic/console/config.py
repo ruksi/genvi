@@ -36,9 +36,9 @@ class Config(Namespace):
     def _validate_root(self) -> None:
         # do a few sanity checks...
         if not self.genvi_root.is_dir():
-            raise NoProjectRootError()
+            raise NoProjectRootError
         if not Path(self.genvi_root, "Makefile").is_file():
-            raise BadProjectRootError()
+            raise BadProjectRootError
 
 
 def parse_config(arguments: "List[str]") -> Config:
