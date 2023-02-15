@@ -159,7 +159,7 @@ tomlkit==0.11.6
     # via hatch
 typed-ast==1.5.4
     # via mypy
-typing-extensions==4.4.0
+typing-extensions==4.5.0
     # via
     #   -r requirements.txt
     #   anyio
@@ -186,7 +186,7 @@ zipp==3.13.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==23.0
     # via pip-tools
-setuptools==67.2.0
+setuptools==67.3.1
     # via
     #   nodeenv
     #   pip-tools
