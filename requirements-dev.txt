@@ -134,7 +134,7 @@ rfc3986[idna2008]==1.5.0
     # via httpx
 rich==13.3.1
     # via hatch
-ruff==0.0.249
+ruff==0.0.251
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
@@ -186,7 +186,7 @@ zipp==3.14.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==23.0.1
     # via pip-tools
-setuptools==67.3.3
+setuptools==67.4.0
     # via
     #   nodeenv
     #   pip-tools
