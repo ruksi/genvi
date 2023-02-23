@@ -18,7 +18,7 @@ click==8.1.3
     #   hatch
     #   pip-tools
     #   userpath
-coverage[toml]==7.1.0
+coverage[toml]==7.2.0
     # via pytest-cov
 cryptography==39.0.1
     # via secretstorage
@@ -71,7 +71,7 @@ jeepney==0.8.0
     #   secretstorage
 keyring==23.9.3
     # via hatch
-markdown-it-py==2.1.0
+markdown-it-py==2.2.0
     # via rich
 mdurl==0.1.2
     # via markdown-it-py
@@ -134,7 +134,7 @@ rfc3986[idna2008]==1.5.0
     # via httpx
 rich==13.3.1
     # via hatch
-ruff==0.0.251
+ruff==0.0.252
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
