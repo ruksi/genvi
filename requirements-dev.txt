@@ -20,7 +20,7 @@ click==8.1.3
     #   userpath
 coverage[toml]==7.2.1
     # via pytest-cov
-cryptography==39.0.1
+cryptography==39.0.2
     # via secretstorage
 distlib==0.3.6
     # via virtualenv
@@ -94,7 +94,7 @@ pathspec==0.11.0
     # via hatchling
 pexpect==4.8.0
     # via hatch
-pip-tools==6.12.2
+pip-tools==6.12.3
     # via -r requirements-dev.in
 platformdirs==2.6.2
     # via
