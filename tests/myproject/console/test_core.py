@@ -41,8 +41,8 @@ def test_main_log_levels(
 
     # didn't write __straight__ to stdout/stderr
     std = capsys.readouterr()
-    assert std.out == ""
-    assert std.err == ""
+    assert not std.out
+    assert not std.err
 
 
 def test_main_logging_setup_fails(mocker: "MockFixture") -> None:

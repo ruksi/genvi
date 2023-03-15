@@ -28,7 +28,7 @@ editables==0.3
     # via hatchling
 exceptiongroup==1.1.1
     # via pytest
-filelock==3.9.0
+filelock==3.9.1
     # via virtualenv
 h11==0.14.0
     # via httpcore
@@ -90,7 +90,7 @@ packaging==23.0
     #   hatch
     #   hatchling
     #   pytest
-pathspec==0.11.0
+pathspec==0.11.1
     # via hatchling
 pexpect==4.8.0
     # via hatch
@@ -134,7 +134,7 @@ rfc3986[idna2008]==1.5.0
     # via httpx
 rich==13.3.2
     # via hatch
-ruff==0.0.254
+ruff==0.0.256
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
@@ -176,7 +176,7 @@ virtualenv==20.16.2
     #   -r requirements-dev.in
     #   hatch
     #   pre-commit
-wheel==0.38.4
+wheel==0.40.0
     # via pip-tools
 zipp==3.15.0
     # via

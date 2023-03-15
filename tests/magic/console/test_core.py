@@ -39,7 +39,7 @@ def test_main(
     assert main() == 0
     std = capsys.readouterr()
     assert "Project 'monkey' has been created!" in std.out
-    assert std.err == ""
+    assert not std.err
 
 
 def test_main_no_arguments(
@@ -50,7 +50,7 @@ def test_main_no_arguments(
     mocker.patch("sys.argv", ["/mock/executable"])
     assert main() == 1
     std = capsys.readouterr()
-    assert std.out == ""
+    assert not std.out
     assert std.err == "package name cannot be empty\n"
 
 
@@ -62,7 +62,7 @@ def test_main_not_interactive(
     mocker.patch("sys.argv", ["/mock/executable"])
     assert main() == 1
     std = capsys.readouterr()
-    assert std.out == ""
+    assert not std.out
     assert std.err == "package name cannot be empty\n"
 
 
@@ -75,5 +75,5 @@ def test_main_internal_error(
     mocker.patch("sys.argv", VALID_ARGV)
     assert main() == 1
     std = capsys.readouterr()
-    assert std.out == ""
+    assert not std.out
     assert std.err == "package root does not look like `genvi` root\n"
