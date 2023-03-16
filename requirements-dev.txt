@@ -28,7 +28,7 @@ editables==0.3
     # via hatchling
 exceptiongroup==1.1.1
     # via pytest
-filelock==3.9.1
+filelock==3.10.0
     # via virtualenv
 h11==0.14.0
     # via httpcore
