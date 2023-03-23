@@ -28,7 +28,7 @@ editables==0.3
     # via hatchling
 exceptiongroup==1.1.1
     # via pytest
-filelock==3.10.0
+filelock==3.10.2
     # via virtualenv
 h11==0.14.0
     # via httpcore
@@ -134,7 +134,7 @@ rfc3986[idna2008]==1.5.0
     # via httpx
 rich==13.3.2
     # via hatch
-ruff==0.0.257
+ruff==0.0.258
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
