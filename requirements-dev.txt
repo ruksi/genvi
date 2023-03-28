@@ -28,7 +28,7 @@ editables==0.3
     # via hatchling
 exceptiongroup==1.1.1
     # via pytest
-filelock==3.10.6
+filelock==3.10.7
     # via virtualenv
 h11==0.14.0
     # via httpcore
@@ -132,7 +132,7 @@ pyyaml==6.0
     # via pre-commit
 rfc3986[idna2008]==1.5.0
     # via httpx
-rich==13.3.2
+rich==13.3.3
     # via hatch
 ruff==0.0.259
     # via -r requirements-dev.in
@@ -155,7 +155,7 @@ tomli==2.0.1
     #   pytest
 tomli-w==1.0.0
     # via hatch
-tomlkit==0.11.6
+tomlkit==0.11.7
     # via hatch
 typed-ast==1.5.4
     # via mypy
