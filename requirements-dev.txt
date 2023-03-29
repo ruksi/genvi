@@ -186,7 +186,7 @@ zipp==3.15.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==23.0.1
     # via pip-tools
-setuptools==67.6.0
+setuptools==67.6.1
     # via
     #   nodeenv
     #   pip-tools
