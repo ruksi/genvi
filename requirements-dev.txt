@@ -134,7 +134,7 @@ rfc3986[idna2008]==1.5.0
     # via httpx
 rich==13.3.3
     # via hatch
-ruff==0.0.259
+ruff==0.0.260
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
