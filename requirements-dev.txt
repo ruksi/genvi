@@ -34,9 +34,9 @@ hatch==1.7.0
     # via -r requirements-dev.in
 hatchling==1.14.0
     # via hatch
-httpcore==0.16.3
+httpcore==0.17.0
     # via httpx
-httpx==0.23.3
+httpx==0.24.0
     # via hatch
 hyperlink==21.0.0
     # via hatch
@@ -45,8 +45,8 @@ identify==2.5.22
 idna==3.4
     # via
     #   anyio
+    #   httpx
     #   hyperlink
-    #   rfc3986
 importlib-metadata==4.2.0
     # via
     #   -r requirements.txt
@@ -128,8 +128,6 @@ pytest-randomly==3.12.0
     # via -r requirements-dev.in
 pyyaml==6.0
     # via pre-commit
-rfc3986[idna2008]==1.5.0
-    # via httpx
 rich==13.3.3
     # via hatch
 ruff==0.0.261
