@@ -81,7 +81,7 @@ mypy-extensions==1.0.0
     # via mypy
 nodeenv==1.7.0
     # via pre-commit
-packaging==23.0
+packaging==23.1
     # via
     #   -r requirements-dev.in
     #   build
@@ -128,7 +128,7 @@ pytest-randomly==3.12.0
     # via -r requirements-dev.in
 pyyaml==6.0
     # via pre-commit
-rich==13.3.3
+rich==13.3.4
     # via hatch
 ruff==0.0.261
     # via -r requirements-dev.in
