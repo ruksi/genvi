@@ -26,7 +26,7 @@ editables==0.3
     # via hatchling
 exceptiongroup==1.1.1
     # via pytest
-filelock==3.11.0
+filelock==3.12.0
     # via virtualenv
 h11==0.14.0
     # via httpcore
@@ -108,7 +108,7 @@ ptyprocess==0.7.0
     # via pexpect
 pycparser==2.21
     # via cffi
-pygments==2.15.0
+pygments==2.15.1
     # via rich
 pyperclip==1.8.2
     # via hatch
@@ -153,7 +153,7 @@ tomli-w==1.0.0
     # via hatch
 tomlkit==0.11.7
     # via hatch
-trove-classifiers==2023.3.9
+trove-classifiers==2023.4.18
     # via hatchling
 typed-ast==1.5.4
     # via mypy
