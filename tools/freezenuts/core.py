@@ -27,7 +27,7 @@ def package_versions(project_name: str) -> "List[Version]":
     # https://pip.pypa.io/en/stable/user_guide/#using-pip-from-your-program
     # should we consider using `--platform` or `--python-version`?
     cmd = [sys.executable, "-m", "pip", "index", "versions", project_name]
-    output = subprocess.check_output(cmd, stderr=subprocess.PIPE).decode()
+    output = subprocess.check_output(cmd, stderr=subprocess.PIPE).decode()  # noqa: S603
     lines = output.split("\n")
     versions_line, *_ = filter(
         lambda line: line.startswith("Available versions: "),
