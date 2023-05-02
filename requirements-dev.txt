@@ -130,7 +130,7 @@ pyyaml==6.0
     # via pre-commit
 rich==13.3.5
     # via hatch
-ruff==0.0.263
+ruff==0.0.264
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
