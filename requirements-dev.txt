@@ -153,7 +153,7 @@ tomli-w==1.0.0
     # via hatch
 tomlkit==0.11.8
     # via hatch
-trove-classifiers==2023.4.29
+trove-classifiers==2023.5.2
     # via hatchling
 typed-ast==1.5.4
     # via mypy
