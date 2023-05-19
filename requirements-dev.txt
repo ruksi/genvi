@@ -34,9 +34,9 @@ hatch==1.7.0
     # via -r requirements-dev.in
 hatchling==1.17.0
     # via hatch
-httpcore==0.17.0
+httpcore==0.17.1
     # via httpx
-httpx==0.24.0
+httpx==0.24.1
     # via hatch
 hyperlink==21.0.0
     # via hatch
@@ -130,7 +130,7 @@ pyyaml==6.0
     # via pre-commit
 rich==13.3.5
     # via hatch
-ruff==0.0.267
+ruff==0.0.269
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
