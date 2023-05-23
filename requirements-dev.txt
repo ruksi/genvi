@@ -153,11 +153,11 @@ tomli-w==1.0.0
     # via hatch
 tomlkit==0.11.8
     # via hatch
-trove-classifiers==2023.5.2
+trove-classifiers==2023.5.22
     # via hatchling
 typed-ast==1.5.4
     # via mypy
-typing-extensions==4.5.0
+typing-extensions==4.6.0
     # via
     #   -r requirements.txt
     #   anyio
