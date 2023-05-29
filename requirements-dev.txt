@@ -1,4 +1,4 @@
-anyio==3.6.2
+anyio==3.7.0
     # via httpcore
 build==0.10.0
     # via pip-tools
@@ -25,7 +25,9 @@ distlib==0.3.6
 editables==0.3
     # via hatchling
 exceptiongroup==1.1.1
-    # via pytest
+    # via
+    #   anyio
+    #   pytest
 filelock==3.12.0
     # via virtualenv
 h11==0.14.0
