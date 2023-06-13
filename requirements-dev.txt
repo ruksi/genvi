@@ -28,7 +28,7 @@ exceptiongroup==1.1.1
     # via
     #   anyio
     #   pytest
-filelock==3.12.1
+filelock==3.12.2
     # via virtualenv
 h11==0.14.0
     # via httpcore
@@ -130,7 +130,7 @@ pytest-randomly==3.12.0
     # via -r requirements-dev.in
 pyyaml==6.0
     # via pre-commit
-rich==13.4.1
+rich==13.4.2
     # via hatch
 ruff==0.0.272
     # via -r requirements-dev.in
