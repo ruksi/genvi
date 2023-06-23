@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing import TYPE_CHECKING
 
 import pytest
@@ -17,7 +19,7 @@ if TYPE_CHECKING:
     ("author", "email"),
     [("", ""), ("Barry Bananas", "barry@example.com")],
 )
-def test_renaming_package(tmp_genvi_path: "Path", author: str, email: str) -> None:
+def test_renaming_package(tmp_genvi_path: Path, author: str, email: str) -> None:
     config = Config(
         name="monkey",
         author=author,
@@ -27,7 +29,7 @@ def test_renaming_package(tmp_genvi_path: "Path", author: str, email: str) -> No
     rename_package(config)
 
 
-def test_generating_readme(tmp_genvi_path: "Path") -> None:
+def test_generating_readme(tmp_genvi_path: Path) -> None:
     config = Config(
         name="monkey",
         author="",
@@ -39,7 +41,7 @@ def test_generating_readme(tmp_genvi_path: "Path") -> None:
     assert "$$name" not in readme_contents
 
 
-def test_stripping_files(tmp_path: "Path") -> None:
+def test_stripping_files(tmp_path: Path) -> None:
     test_file = tmp_path / "my_file"
     test_file.write_text(
         (

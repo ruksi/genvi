@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import logging
 from typing import TYPE_CHECKING
 
@@ -7,8 +9,6 @@ from click.testing import CliRunner
 from myproject.console.core import cli
 
 if TYPE_CHECKING:
-    from typing import List
-
     from _pytest.capture import CaptureFixture
     from _pytest.logging import LogCaptureFixture
     from pytest_mock import MockFixture
@@ -24,9 +24,9 @@ if TYPE_CHECKING:
     ],
 )
 def test_main_log_levels(
-    capsys: "CaptureFixture[str]",
-    caplog: "LogCaptureFixture",
-    args: "List[str]",
+    capsys: CaptureFixture[str],
+    caplog: LogCaptureFixture,
+    args: list[str],
     log_level: str,
 ) -> None:
     runner = CliRunner()
@@ -45,7 +45,7 @@ def test_main_log_levels(
     assert not std.err
 
 
-def test_main_logging_setup_fails(mocker: "MockFixture") -> None:
+def test_main_logging_setup_fails(mocker: MockFixture) -> None:
     error_message = "boom things went wrong"
     error_source = "myproject.console.core.setup_console_logging"
     mocker.patch(error_source).side_effect = Exception(error_message)
