@@ -9,6 +9,8 @@ Usage:
 
 """
 
+from __future__ import annotations
+
 import subprocess
 import sys
 from typing import TYPE_CHECKING
@@ -18,10 +20,9 @@ from packaging.version import Version
 
 if TYPE_CHECKING:
     from pathlib import Path
-    from typing import List
 
 
-def package_versions(project_name: str) -> "List[Version]":
+def package_versions(project_name: str) -> list[Version]:
     """Get package version history from PyPI using `pip`."""
     # possibly switch to `distlib`, raw requests or something else later
     # https://pip.pypa.io/en/stable/user_guide/#using-pip-from-your-program
@@ -56,7 +57,7 @@ def get_oldest_matching_requirement(requirement: Requirement) -> Requirement:
     return Requirement(f"{requirement.name}{extras}=={candidates[0]}")
 
 
-def get_oldest_requirements(requirements_file: "Path") -> "List[Requirement]":
+def get_oldest_requirements(requirements_file: Path) -> list[Requirement]:
     with requirements_file.open(encoding="utf-8") as file:
         lines = file.readlines()
     lines = [line.partition("#")[0].rstrip(" \n") for line in lines]
@@ -66,6 +67,6 @@ def get_oldest_requirements(requirements_file: "Path") -> "List[Requirement]":
 
 
 class PackageNotFoundError(RuntimeError):
-    def __init__(self, requirement: Requirement, candidates: "List[Version]") -> None:
+    def __init__(self, requirement: Requirement, candidates: list[Version]) -> None:
         as_strings = ", ".join([str(c) for c in candidates])
         super().__init__(f"No valid candidate found for {requirement} in: {as_strings}")

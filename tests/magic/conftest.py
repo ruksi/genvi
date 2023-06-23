@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing import TYPE_CHECKING
 
 import pytest
@@ -9,7 +11,7 @@ if TYPE_CHECKING:
 
 
 @pytest.fixture()
-def tmp_genvi_path(tmp_path: "Path") -> "Path":
+def tmp_genvi_path(tmp_path: Path) -> Path:
     # Create a mini version of what `genvi` directory looks like.
 
     (tmp_path / "Makefile").write_text(

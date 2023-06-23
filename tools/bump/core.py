@@ -1,10 +1,11 @@
+from __future__ import annotations
+
 import re
 from enum import Enum
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from pathlib import Path
-    from typing import Tuple
 
 
 # Tools for managing project semantic version numbering.
@@ -18,7 +19,7 @@ class SemanticPart(Enum):
     PATCH = "patch"
 
 
-def bump(version_file: "Path", bump_by: SemanticPart) -> None:
+def bump(version_file: Path, bump_by: SemanticPart) -> None:
     with version_file.open(encoding="utf-8") as file:
         content = file.read()
     content = bump_line(content, bump_by)
@@ -38,7 +39,7 @@ def bump_version(
     minor: int,
     patch: int,
     bump_by: SemanticPart,
-) -> "Tuple[int, int, int]":
+) -> tuple[int, int, int]:
     if bump_by == SemanticPart.PATCH:
         patch += 1
     if bump_by == SemanticPart.MINOR:

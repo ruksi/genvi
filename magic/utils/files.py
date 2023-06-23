@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import shutil
 from pathlib import Path
 from string import Template
@@ -9,7 +11,7 @@ if TYPE_CHECKING:
     from magic.console.config import Config
 
 
-def rename_package(config: "Config") -> None:
+def rename_package(config: Config) -> None:
     package_dir = config.genvi_root / DEFAULT_PACKAGE_NAME
     test_dir = config.genvi_root / "tests"
     github_dir = config.genvi_root / ".github"
@@ -40,7 +42,7 @@ def rename_package(config: "Config") -> None:
     )
 
 
-def generate_readme(config: "Config") -> str:
+def generate_readme(config: Config) -> str:
     substitutes = {
         "name": config.name,
     }

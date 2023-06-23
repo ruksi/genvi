@@ -1,7 +1,8 @@
+from __future__ import annotations
+
 import string
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
-from typing import TYPE_CHECKING
 
 from magic.utils.errors import (
     BadProjectRootError,
@@ -10,9 +11,6 @@ from magic.utils.errors import (
     NotAllowedError,
     NotLowAsciiError,
 )
-
-if TYPE_CHECKING:
-    from typing import List
 
 
 class Config(Namespace):
@@ -41,7 +39,7 @@ class Config(Namespace):
             raise BadProjectRootError
 
 
-def parse_config(arguments: "List[str]") -> Config:
+def parse_config(arguments: list[str]) -> Config:
     parser = ArgumentParser()
     parser.add_argument("--name", help="package name")
     parser.add_argument("--author", help="package author name")
