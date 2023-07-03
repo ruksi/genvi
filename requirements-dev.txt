@@ -94,7 +94,7 @@ pathspec==0.11.1
     # via hatchling
 pexpect==4.8.0
     # via hatch
-pip-tools==6.13.0
+pip-tools==6.14.0
     # via -r requirements-dev.in
 platformdirs==2.6.2
     # via
@@ -149,6 +149,7 @@ tomli==2.0.1
     #   coverage
     #   hatchling
     #   mypy
+    #   pip-tools
     #   pyproject-hooks
     #   pytest
 tomli-w==1.0.0
@@ -159,7 +160,7 @@ trove-classifiers==2023.5.24
     # via hatchling
 typed-ast==1.5.4
     # via mypy
-typing-extensions==4.7.0
+typing-extensions==4.7.1
     # via
     #   -r requirements.txt
     #   anyio
