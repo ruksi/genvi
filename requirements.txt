@@ -4,7 +4,7 @@ importlib-metadata==4.2.0
     # via
     #   -r requirements.in
     #   click
-typing-extensions==4.7.0
+typing-extensions==4.7.1
     # via
     #   -r requirements.in
     #   importlib-metadata
