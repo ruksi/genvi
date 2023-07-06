@@ -1,4 +1,4 @@
-anyio==3.7.0
+anyio==3.7.1
     # via httpcore
 build==0.10.0
     # via pip-tools
@@ -36,7 +36,7 @@ hatch==1.7.0
     # via -r requirements-dev.in
 hatchling==1.17.1
     # via hatch
-httpcore==0.17.2
+httpcore==0.17.3
     # via httpx
 httpx==0.24.1
     # via hatch
