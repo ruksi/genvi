@@ -2,7 +2,7 @@
 
 ## Development
 
-Development requires `python>=3.7` and `make`.
+Development requires `python>=3.8` and `make`.
 
 Setup development environment:
 
