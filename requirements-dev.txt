@@ -20,7 +20,7 @@ coverage[toml]==7.2.7
     # via pytest-cov
 cryptography==41.0.2
     # via secretstorage
-distlib==0.3.6
+distlib==0.3.7
     # via virtualenv
 editables==0.4
     # via hatchling
@@ -121,7 +121,7 @@ pytest-mock==3.11.1
     # via -r requirements-dev.in
 pytest-randomly==3.13.0
     # via -r requirements-dev.in
-pyyaml==6.0
+pyyaml==6.0.1
     # via pre-commit
 rich==13.4.2
     # via hatch
@@ -156,7 +156,7 @@ typing-extensions==4.7.1
     #   -r requirements.txt
     #   mypy
     #   rich
-userpath==1.8.0
+userpath==1.9.0
     # via hatch
 virtualenv==20.16.2
     # via
