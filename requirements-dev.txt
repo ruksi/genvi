@@ -42,7 +42,7 @@ httpx==0.24.1
     # via hatch
 hyperlink==21.0.0
     # via hatch
-identify==2.5.24
+identify==2.5.25
     # via pre-commit
 idna==3.4
     # via
@@ -87,7 +87,7 @@ pathspec==0.11.1
     # via hatchling
 pexpect==4.8.0
     # via hatch
-pip-tools==7.0.0
+pip-tools==7.1.0
     # via -r requirements-dev.in
 platformdirs==2.6.2
     # via
