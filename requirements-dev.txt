@@ -123,7 +123,7 @@ pytest-randomly==3.13.0
     # via -r requirements-dev.in
 pyyaml==6.0.1
     # via pre-commit
-rich==13.4.2
+rich==13.5.0
     # via hatch
 ruff==0.0.280
     # via -r requirements-dev.in
