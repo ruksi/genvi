@@ -18,7 +18,7 @@ click==8.1.3
     #   userpath
 coverage[toml]==7.2.7
     # via pytest-cov
-cryptography==41.0.2
+cryptography==41.0.3
     # via secretstorage
 distlib==0.3.7
     # via virtualenv
@@ -123,9 +123,9 @@ pytest-randomly==3.13.0
     # via -r requirements-dev.in
 pyyaml==6.0.1
     # via pre-commit
-rich==13.5.1
+rich==13.5.2
     # via hatch
-ruff==0.0.281
+ruff==0.0.282
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
