@@ -87,7 +87,7 @@ pathspec==0.11.2
     # via hatchling
 pexpect==4.8.0
     # via hatch
-pip-tools==7.2.0
+pip-tools==7.3.0
     # via -r requirements-dev.in
 platformdirs==2.6.2
     # via
@@ -125,7 +125,7 @@ pyyaml==6.0.1
     # via pre-commit
 rich==13.5.2
     # via hatch
-ruff==0.0.282
+ruff==0.0.283
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
