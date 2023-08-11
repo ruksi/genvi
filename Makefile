@@ -75,15 +75,15 @@ test.coverage: ensure.venv
 .PHONY: update
 # update dependency definitions after .in-file modifications
 update: ensure.venv
-	pip-compile --no-header --allow-unsafe --resolver=backtracking requirements.in
-	pip-compile --no-header --allow-unsafe --resolver=backtracking requirements-dev.in
+	pip-compile --no-header --allow-unsafe --strip-extras --resolver=backtracking requirements.in
+	pip-compile --no-header --allow-unsafe --strip-extras --resolver=backtracking requirements-dev.in
 	python -m tools.freezenuts requirements.in > requirements.out
 
 .PHONY: upgrade
 # upgrade all dependencies to the latest valid version
 upgrade: ensure.venv
-	pip-compile --upgrade --no-header --allow-unsafe --resolver=backtracking requirements.in
-	pip-compile --upgrade --no-header --allow-unsafe --resolver=backtracking requirements-dev.in
+	pip-compile --upgrade --no-header --strip-extras --allow-unsafe --resolver=backtracking requirements.in
+	pip-compile --upgrade --no-header --strip-extras --allow-unsafe --resolver=backtracking requirements-dev.in
 	python -m tools.freezenuts requirements.in > requirements.out
 	pre-commit autoupdate
 
