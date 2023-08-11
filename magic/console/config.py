@@ -44,7 +44,7 @@ def parse_config(arguments: list[str]) -> Config:
     parser.add_argument("--name", help="package name")
     parser.add_argument("--author", help="package author name")
     parser.add_argument("--email", help="package author email")
-    config = parser.parse_args(
+    config: Config = parser.parse_args(  # type: ignore[assignment]
         args=arguments,
         namespace=Config(genvi_root=resolve_genvi_root()),
     )
