@@ -125,11 +125,11 @@ pyyaml==6.0.1
     # via pre-commit
 rich==13.5.2
     # via hatch
-ruff==0.0.284
+ruff==0.0.285
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
-shellingham==1.5.2
+shellingham==1.5.3
     # via hatch
 sniffio==1.3.0
     # via
