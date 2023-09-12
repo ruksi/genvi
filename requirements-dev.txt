@@ -36,13 +36,13 @@ hatch==1.7.0
     # via -r requirements-dev.in
 hatchling==1.18.0
     # via hatch
-httpcore==0.17.3
+httpcore==0.18.0
     # via httpx
-httpx==0.24.1
+httpx==0.25.0
     # via hatch
 hyperlink==21.0.0
     # via hatch
-identify==2.5.27
+identify==2.5.28
     # via pre-commit
 idna==3.4
     # via
@@ -125,7 +125,7 @@ pyyaml==6.0.1
     # via pre-commit
 rich==13.5.2
     # via hatch
-ruff==0.0.287
+ruff==0.0.288
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
@@ -174,7 +174,7 @@ zipp==3.16.2
 # The following packages are considered to be unsafe in a requirements file:
 pip==23.2.1
     # via pip-tools
-setuptools==68.2.0
+setuptools==68.2.1
     # via
     #   nodeenv
     #   pip-tools

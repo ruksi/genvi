@@ -29,8 +29,7 @@ balthazar>=1.24,<1.28  # not
 
 
 class CheckOutputMock(Protocol):
-    def __call__(self, output: str | None) -> None:
-        ...
+    def __call__(self, output: str | None) -> None: ...
 
 
 @pytest.fixture(name="check_output_mock")
