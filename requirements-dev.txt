@@ -28,7 +28,7 @@ exceptiongroup==1.1.3
     # via
     #   anyio
     #   pytest
-filelock==3.12.3
+filelock==3.12.4
     # via virtualenv
 h11==0.14.0
     # via httpcore
@@ -154,7 +154,6 @@ trove-classifiers==2023.8.7
 typing-extensions==4.7.1
     # via
     #   -r requirements.txt
-    #   filelock
     #   mypy
     #   rich
 userpath==1.9.1
