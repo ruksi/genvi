@@ -42,7 +42,7 @@ httpx==0.25.0
     # via hatch
 hyperlink==21.0.0
     # via hatch
-identify==2.5.28
+identify==2.5.29
     # via pre-commit
 idna==3.4
     # via
@@ -125,7 +125,7 @@ pyyaml==6.0.1
     # via pre-commit
 rich==13.5.2
     # via hatch
-ruff==0.0.289
+ruff==0.0.290
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
