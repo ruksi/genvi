@@ -149,9 +149,9 @@ tomli-w==1.0.0
     # via hatch
 tomlkit==0.12.1
     # via hatch
-trove-classifiers==2023.8.7
+trove-classifiers==2023.9.19
     # via hatchling
-typing-extensions==4.7.1
+typing-extensions==4.8.0
     # via
     #   -r requirements.txt
     #   mypy
@@ -165,7 +165,7 @@ virtualenv==20.16.2
     #   pre-commit
 wheel==0.41.2
     # via pip-tools
-zipp==3.16.2
+zipp==3.17.0
     # via
     #   -r requirements.txt
     #   importlib-metadata
