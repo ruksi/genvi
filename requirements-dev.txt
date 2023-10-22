@@ -173,7 +173,7 @@ zipp==3.17.0
     #   importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==23.3
+pip==23.3.1
     # via pip-tools
 setuptools==68.2.2
     # via
