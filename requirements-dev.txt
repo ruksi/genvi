@@ -30,7 +30,7 @@ exceptiongroup==1.1.3
     # via
     #   anyio
     #   pytest
-filelock==3.12.4
+filelock==3.13.0
     # via virtualenv
 h11==0.14.0
     # via httpcore
