@@ -29,7 +29,7 @@ O <b>generation of vipers</b>, how can ye, being evil, speak good things?
 curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | bash
 ```
 
-## 📝 Requirements
+## 🤏 Requirements
 
 `python>=3.8`, `git` and `make`.
 
@@ -38,7 +38,7 @@ curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | 
 > "I would sacrifice anything for some good quality code."
 > by Anonymous Principal Engineer :woman_technologist:
 
-`genvi` (<i><b>gen</b>eration of <b>vi</b></i>pers :snake:) is a hyperopinionated
+`genvi` (<i><b>gen</b>eration of <b>vi</b></i>pers :snake:) is a hyper-opinionated
 tool for creating Python projects. It's strict, some could even say _too_ strict.
 Borderline __evil__.
 
@@ -54,7 +54,7 @@ Each new project is configured with:
 <br/>
 ✴️ occult project management though `make` for development
 <br/>
-♾️ plethora of 20+ style and type checkers included in `ruff` and `mypy`
+🫴 plethora of style and type checkers included in `ruff` and `mypy`
 
 If you want a more concrete example of a `genvi` project, you are looking at one.
 `genvi` itself follows the same rules and uses the same tools. Behind the scenes,
@@ -67,15 +67,15 @@ creating a new project renames a few files and rewrites a bit of content.
 
 Scratching my own itch, see [`ABOUT.md`](ABOUT.md) to learn more
 
-## 🦮 Usage
+## ✋ Usage
 
-### ⚡️ Quick
+### Quick
 
 ```bash
 curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | bash
 ```
 
-### ✋ Manual
+### Manual
 
 1. Decide the project name and clone this repository
 
@@ -92,7 +92,7 @@ curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | 
    make package=myproject
    ```
 
-## 📜 License
+## ✍️ License
 
 This project is released under the [MIT License](LICENSE).
 
