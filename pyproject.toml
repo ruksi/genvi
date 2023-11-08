@@ -49,6 +49,7 @@ packages = [
 ]
 
 [tool.ruff]
+preview = true
 line-length = 88
 target-version = "py37"
 flake8-tidy-imports.ban-relative-imports = "all"
@@ -60,10 +61,11 @@ select = [
 ignore = [
     "ANN101", # Missing type annotation for `self` in method
     "ANN102", # Missing type annotation for `cls` in classmethod
+    "COM812", # Missing trailing comma in Python 3.6+, may cause conflicts with formatter
+    "CPY001", # Missing copyright notice at top of file
     "D1", # Missing docstring in {location} (don't require but be strict if provided)
     "EM", # Exception must not use string literal, assign to variable first
     "ISC001", # Ignoring implicit string concatenation, may cause conflicts with formatter
-    "COM812", # Missing trailing comma in Python 3.6+, may cause conflicts with formatter
 ]
 
 [tool.ruff.per-file-ignores]

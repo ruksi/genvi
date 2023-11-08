@@ -17,4 +17,4 @@ class Human(Animal):
     scientific_name = "Homo sapiens"
 
     def vocalize(self) -> str:
-        return "*grunt*"
+        return f"{self.scientific_name}: *grunt*"

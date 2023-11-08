@@ -18,4 +18,4 @@ class CommonViper(Animal):
     scientific_name = "Vipera berus"
 
     def vocalize(self) -> str:
-        return "*hiss*"
+        return f"{self.scientific_name}: *hiss*"
