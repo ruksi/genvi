@@ -1,7 +1,7 @@
 [![workflow: ci](https://github.com/ruksi/genvi/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ruksi/genvi/actions?workflow=ci)
 [![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 [![pre-commit: enabled](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
 [![class: wizard](https://img.shields.io/badge/class-wizard-blue.svg)](https://github.com/ruksi/genvi)
 [![alignment: chaotic evil](https://img.shields.io/badge/alignment-chaotic%20evil-red.svg)](https://github.com/ruksi/genvi)
 
@@ -44,7 +44,7 @@ Borderline __evil__.
 
 Each new project is configured with:
 
-🐈‍⬛ eery `black` as the code style, single quoted
+🐈‍⬛ eery `ruff format` as the code style, single quoted
 <br/>
 🪝 sadistic `pre-commit hooks` to enforce conventions
 <br/>
@@ -54,7 +54,7 @@ Each new project is configured with:
 <br/>
 ✴️ occult project management though `make` for development
 <br/>
-♾️ plethora of 20+ design and type checkers like `flake8`, `pylint` and `mypy`
+♾️ plethora of 20+ style and type checkers included in `ruff` and `mypy`
 
 If you want a more concrete example of a `genvi` project, you are looking at one.
 `genvi` itself follows the same rules and uses the same tools. Behind the scenes,

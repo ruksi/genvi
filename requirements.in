@@ -7,7 +7,6 @@
 # from 2011.
 typing_extensions>=4.3,<5
 click>=8,<8.1.4
-    # `black` used in development requires >=8.0.0
     # 8.1.4 breaks `mypy` type checks: https://github.com/pallets/click/issues/2558
 importlib-metadata>=3.6.0,<4.3
     # lower bound from `keyring`, `flake8` doesn't accept any newer one... both from dev
