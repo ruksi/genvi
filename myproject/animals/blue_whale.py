@@ -13,4 +13,4 @@ class BlueWhale(Animal):
     scientific_name = "Balaenoptera musculus"
 
     def vocalize(self) -> str:
-        return "*WEEEAAAAAOOOUUU*"
+        return f"{self.scientific_name}: *WEEEAAAAAOOOUUU*"
