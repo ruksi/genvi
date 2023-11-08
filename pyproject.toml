@@ -51,7 +51,7 @@ packages = [
 [tool.ruff]
 preview = true
 line-length = 88
-target-version = "py37"
+target-version = "py38"
 flake8-tidy-imports.ban-relative-imports = "all"
 mccabe.max-complexity = 10
 pydocstyle.convention = "pep257"
