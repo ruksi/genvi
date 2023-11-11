@@ -38,7 +38,7 @@ hatch==1.7.0
     # via -r requirements-dev.in
 hatchling==1.18.0
     # via hatch
-httpcore==1.0.1
+httpcore==1.0.2
     # via httpx
 httpx==0.25.1
     # via hatch
@@ -72,7 +72,7 @@ mdurl==0.1.2
     # via markdown-it-py
 more-itertools==10.1.0
     # via jaraco-classes
-mypy==1.6.1
+mypy==1.7.0
     # via -r requirements-dev.in
 mypy-extensions==1.0.0
     # via mypy
