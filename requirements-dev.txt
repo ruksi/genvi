@@ -148,9 +148,9 @@ tomli==2.0.1
     #   pytest
 tomli-w==1.0.0
     # via hatch
-tomlkit==0.12.2
+tomlkit==0.12.3
     # via hatch
-trove-classifiers==2023.11.13
+trove-classifiers==2023.11.14
     # via hatchling
 typing-extensions==4.8.0
     # via
