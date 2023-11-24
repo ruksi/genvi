@@ -1,4 +1,4 @@
-anyio==4.0.0
+anyio==4.1.0
     # via httpx
 build==0.10.0
     # via pip-tools
@@ -72,7 +72,7 @@ mdurl==0.1.2
     # via markdown-it-py
 more-itertools==10.1.0
     # via jaraco-classes
-mypy==1.7.0
+mypy==1.7.1
     # via -r requirements-dev.in
 mypy-extensions==1.0.0
     # via mypy
@@ -150,7 +150,7 @@ tomli-w==1.0.0
     # via hatch
 tomlkit==0.12.3
     # via hatch
-trove-classifiers==2023.11.14
+trove-classifiers==2023.11.22
     # via hatchling
 typing-extensions==4.8.0
     # via
