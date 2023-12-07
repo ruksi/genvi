@@ -27,7 +27,7 @@ jobs:
         uses: ./.github/actions/setup-variables
 
       - name: Install Python ${{ env.LOWEST_PYTHON_VERSION }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ env.LOWEST_PYTHON_VERSION }}
           cache: 'pip'
