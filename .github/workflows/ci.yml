@@ -27,7 +27,7 @@ jobs:
       - name: Setup variables
         uses: ./.github/actions/setup-variables
       - name: Install Python ${{ env.LOWEST_PYTHON_VERSION }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ env.LOWEST_PYTHON_VERSION }}
           cache: 'pip'
@@ -67,7 +67,7 @@ jobs:
       - name: Setup variables
         uses: ./.github/actions/setup-variables
       - name: Install Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
           cache: 'pip'
@@ -93,7 +93,7 @@ jobs:
       - name: Setup variables
         uses: ./.github/actions/setup-variables
       - name: Install Python ${{ env.LOWEST_PYTHON_VERSION }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ env.LOWEST_PYTHON_VERSION }}
       - run: python -m pip install --upgrade coverage[toml]
@@ -121,7 +121,7 @@ jobs:
       - name: Setup variables
         uses: ./.github/actions/setup-variables
       - name: Install Python ${{ env.LOWEST_PYTHON_VERSION }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ env.LOWEST_PYTHON_VERSION }}
           cache: 'pip'
@@ -140,7 +140,7 @@ jobs:
       - name: Setup variables
         uses: ./.github/actions/setup-variables
       - name: Install Python ${{ env.LOWEST_PYTHON_VERSION }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ env.LOWEST_PYTHON_VERSION }}
           cache: 'pip'
@@ -181,7 +181,7 @@ jobs:
       - name: Setup variables
         uses: ./.github/actions/setup-variables
       - name: Install Python ${{ env.LOWEST_PYTHON_VERSION }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ env.LOWEST_PYTHON_VERSION }}
           cache: 'pip'
