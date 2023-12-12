@@ -34,9 +34,9 @@ filelock==3.13.1
     # via virtualenv
 h11==0.14.0
     # via httpcore
-hatch==1.7.0
+hatch==1.8.0
     # via -r requirements-dev.in
-hatchling==1.18.0
+hatchling==1.19.0
     # via hatch
 httpcore==1.0.2
     # via httpx
@@ -107,8 +107,6 @@ pycparser==2.21
     # via cffi
 pygments==2.17.2
     # via rich
-pyperclip==1.8.2
-    # via hatch
 pyproject-hooks==1.0.0
     # via build
 pytest==7.4.3
@@ -170,6 +168,8 @@ zipp==3.17.0
     # via
     #   -r requirements.txt
     #   importlib-metadata
+zstandard==0.22.0
+    # via hatch
 
 # The following packages are considered to be unsafe in a requirements file:
 pip==23.3.1
