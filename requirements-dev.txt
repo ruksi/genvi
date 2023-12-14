@@ -22,7 +22,7 @@ coverage==7.3.2
     #   pytest-cov
 cryptography==41.0.7
     # via secretstorage
-distlib==0.3.7
+distlib==0.3.8
     # via virtualenv
 editables==0.5
     # via hatchling
@@ -36,7 +36,7 @@ h11==0.14.0
     # via httpcore
 hatch==1.8.0
     # via -r requirements-dev.in
-hatchling==1.19.0
+hatchling==1.20.0
     # via hatch
 httpcore==1.0.2
     # via httpx
@@ -125,7 +125,7 @@ pyyaml==6.0.1
     # via pre-commit
 rich==13.7.0
     # via hatch
-ruff==0.1.7
+ruff==0.1.8
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
