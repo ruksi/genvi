@@ -34,7 +34,7 @@ filelock==3.13.1
     # via virtualenv
 h11==0.14.0
     # via httpcore
-hatch==1.9.0
+hatch==1.9.1
     # via -r requirements-dev.in
 hatchling==1.21.0
     # via hatch
@@ -175,7 +175,7 @@ zstandard==0.22.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==23.3.2
     # via pip-tools
-setuptools==69.0.2
+setuptools==69.0.3
     # via
     #   nodeenv
     #   pip-tools
