@@ -24,7 +24,7 @@ class ColorFormatter(logging.Formatter):  # pragma: no cover
         logging.NOTSET: _grey + _msg_format + _reset,
     }
 
-    def format(self, record: logging.LogRecord) -> str:  # noqa: A003
+    def format(self, record: logging.LogRecord) -> str:
         log_format = self._formats.get(record.levelno)
         formatter = logging.Formatter(log_format)
         result = formatter.format(record)
