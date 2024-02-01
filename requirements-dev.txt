@@ -20,7 +20,7 @@ coverage==7.4.1
     # via
     #   coverage
     #   pytest-cov
-cryptography==42.0.1
+cryptography==42.0.2
     # via secretstorage
 distlib==0.3.8
     # via virtualenv
@@ -148,7 +148,7 @@ tomli-w==1.0.0
     # via hatch
 tomlkit==0.12.3
     # via hatch
-trove-classifiers==2024.1.8
+trove-classifiers==2024.1.31
     # via hatchling
 typing-extensions==4.9.0
     # via
