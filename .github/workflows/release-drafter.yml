@@ -27,7 +27,7 @@ jobs:
     steps:
 
       - name: Update the release draft and autolabel pull requests
-        uses: release-drafter/release-drafter@v5
+        uses: release-drafter/release-drafter@v6
         with:
           disable-autolabeler: false
         env:
