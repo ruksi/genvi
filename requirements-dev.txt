@@ -2,7 +2,7 @@ anyio==4.2.0
     # via httpx
 build==0.10.0
     # via pip-tools
-certifi==2023.11.17
+certifi==2024.2.2
     # via
     #   httpcore
     #   httpx
@@ -125,7 +125,7 @@ pyyaml==6.0.1
     # via pre-commit
 rich==13.7.0
     # via hatch
-ruff==0.1.15
+ruff==0.2.0
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
@@ -173,7 +173,7 @@ zstandard==0.22.0
     # via hatch
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==23.3.2
+pip==24.0
     # via pip-tools
 setuptools==69.0.3
     # via
