@@ -19,7 +19,7 @@ categories:
     label: 📝 Documentation
 
   - title: 💄 Adornments
-    label: 💄 Visual
+    label: 💅 Visual
 
   - title: ⛑️️ Maintenance
     collapse-after: 3
@@ -28,7 +28,7 @@ categories:
       - 🔨 Build
       - 🏗️ Infrastructure
       - ♻️ Refactoring
-      - ⛏️ Removal
+      - 🔥 Removal
       - 🛠 Tooling
       - 🧹 Upkeep
 
@@ -156,7 +156,7 @@ autolabeler:
       - '/🧪/i'
       - '/🪝/i'
 
-  - label: 💄 Visual
+  - label: 💅 Visual
     files:
       - '*.gif'
       - '*.jpeg'

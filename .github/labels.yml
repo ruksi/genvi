@@ -1,4 +1,3 @@
-
 # Main Types
 
 - name: 🐛 Bug
@@ -47,8 +46,8 @@
   description: Work on refactoring or reformatting code
   color: '409B44'
 
-- name: ⛏️ Removal
-  description: Removal or deprecation of things
+- name: 🔥 Removal
+  description: Removal of things
   color: 'EE6C00'
 
 - name: 🔒️ Security
@@ -63,8 +62,8 @@
   description: Updating dependencies or other maintenance
   color: 'BBB490'
 
-- name: 💄 Visual
-  description: Work on visual interfaces, styles or assets
+- name: 💅 Visual
+  description: Work on interfaces, styles or assets
   color: '930843'
 
 # Maintainer Flow
@@ -86,7 +85,7 @@
   color: 'D876E3'
 
 - name: 🪨 Blocked
-  description: Waiting on another issue or something
+  description: Waiting on another implementation or something
   color: '99CCCC'
 
 # Issue Priority
@@ -94,10 +93,6 @@
 - name: 🚨 High Priority
   description: One of the utmost importance
   color: 'FF0000'
-
-- name: 😎 Nice to Have
-  description: The issue is awesome but not essential
-  color: '020202'
 
 # Closing Reasons (if other than done)
 
@@ -110,11 +105,6 @@
   description: This issue or pull request already exists
   color: '97A5BE'
   from_name: 'duplicate'
-
-- name: 🙃 Invalid
-  description: Acknowledged but something seems wrong
-  color: 'AAAAAA'
-  from_name: 'invalid'
 
 # Call-outs
 
