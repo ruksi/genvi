@@ -52,9 +52,11 @@ packages = [
 preview = true
 line-length = 88
 target-version = "py38"
-flake8-tidy-imports.ban-relative-imports = "all"
-mccabe.max-complexity = 10
+
+[tool.ruff.lint]
 pydocstyle.convention = "pep257"
+mccabe.max-complexity = 10
+flake8-tidy-imports.ban-relative-imports = "all"
 select = [
     "ALL", # enable all the rules
 ]
@@ -68,7 +70,7 @@ ignore = [
     "ISC001", # Ignoring implicit string concatenation, may cause conflicts with formatter
 ]
 
-[tool.ruff.per-file-ignores]
+[tool.ruff.lint.per-file-ignores]
 "**/tests/**" = [
     "ANN201", # Missing return type annotation for public function
     "S101", # Use of `assert` detected
