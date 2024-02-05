@@ -61,8 +61,6 @@ select = [
     "ALL", # enable all the rules
 ]
 ignore = [
-    "ANN101", # Missing type annotation for `self` in method
-    "ANN102", # Missing type annotation for `cls` in classmethod
     "COM812", # Missing trailing comma in Python 3.6+, may cause conflicts with formatter
     "CPY001", # Missing copyright notice at top of file
     "D1", # Missing docstring in {location} (don't require but be strict if provided)
