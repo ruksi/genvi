@@ -57,9 +57,7 @@ target-version = "py38"
 pydocstyle.convention = "pep257"
 mccabe.max-complexity = 10
 flake8-tidy-imports.ban-relative-imports = "all"
-select = [
-    "ALL", # enable all the rules
-]
+select = ["ALL"]
 ignore = [
     "COM812", # Missing trailing comma in Python 3.6+, may cause conflicts with formatter
     "CPY001", # Missing copyright notice at top of file
