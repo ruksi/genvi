@@ -44,7 +44,7 @@ httpx==0.26.0
     # via hatch
 hyperlink==21.0.0
     # via hatch
-identify==2.5.33
+identify==2.5.34
     # via pre-commit
 idna==3.6
     # via
@@ -175,7 +175,7 @@ zstandard==0.22.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==24.0
     # via pip-tools
-setuptools==69.0.3
+setuptools==69.1.0
     # via
     #   nodeenv
     #   pip-tools
