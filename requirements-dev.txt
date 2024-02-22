@@ -20,7 +20,7 @@ coverage==7.4.2
     # via
     #   coverage
     #   pytest-cov
-cryptography==42.0.3
+cryptography==42.0.4
     # via secretstorage
 distlib==0.3.8
     # via virtualenv
@@ -38,9 +38,9 @@ hatch==1.9.3
     # via -r requirements-dev.in
 hatchling==1.21.1
     # via hatch
-httpcore==1.0.3
+httpcore==1.0.4
     # via httpx
-httpx==0.26.0
+httpx==0.27.0
     # via hatch
 hyperlink==21.0.0
     # via hatch
