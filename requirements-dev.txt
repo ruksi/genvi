@@ -127,7 +127,7 @@ pyyaml==6.0.1
     # via pre-commit
 rich==13.7.1
     # via hatch
-ruff==0.2.2
+ruff==0.3.0
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
@@ -158,7 +158,7 @@ typing-extensions==4.10.0
     #   anyio
     #   mypy
     #   rich
-userpath==1.9.1
+userpath==1.9.2
     # via hatch
 virtualenv==20.16.2
     # via
