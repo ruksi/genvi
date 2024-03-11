@@ -72,13 +72,13 @@ mdurl==0.1.2
     # via markdown-it-py
 more-itertools==10.2.0
     # via jaraco-classes
-mypy==1.8.0
+mypy==1.9.0
     # via -r requirements-dev.in
 mypy-extensions==1.0.0
     # via mypy
 nodeenv==1.8.0
     # via pre-commit
-packaging==23.2
+packaging==24.0
     # via
     #   -r requirements-dev.in
     #   build
@@ -111,7 +111,7 @@ pyproject-hooks==1.0.0
     # via
     #   build
     #   pip-tools
-pytest==8.0.2
+pytest==8.1.1
     # via
     #   -r requirements-dev.in
     #   pytest-cov
@@ -127,7 +127,7 @@ pyyaml==6.0.1
     # via pre-commit
 rich==13.7.1
     # via hatch
-ruff==0.3.1
+ruff==0.3.2
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
