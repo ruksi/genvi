@@ -167,7 +167,7 @@ virtualenv==20.16.2
     #   pre-commit
 wheel==0.43.0
     # via pip-tools
-zipp==3.17.0
+zipp==3.18.0
     # via
     #   -r requirements.txt
     #   importlib-metadata
@@ -177,7 +177,7 @@ zstandard==0.22.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==24.0
     # via pip-tools
-setuptools==69.1.1
+setuptools==69.2.0
     # via
     #   nodeenv
     #   pip-tools
