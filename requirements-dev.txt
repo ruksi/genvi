@@ -30,7 +30,7 @@ exceptiongroup==1.2.0
     # via
     #   anyio
     #   pytest
-filelock==3.13.1
+filelock==3.13.3
     # via virtualenv
 h11==0.14.0
     # via httpcore
@@ -117,7 +117,7 @@ pytest==8.1.1
     #   pytest-cov
     #   pytest-mock
     #   pytest-randomly
-pytest-cov==4.1.0
+pytest-cov==5.0.0
     # via -r requirements-dev.in
 pytest-mock==3.14.0
     # via -r requirements-dev.in
@@ -150,7 +150,7 @@ tomli-w==1.0.0
     # via hatch
 tomlkit==0.12.4
     # via hatch
-trove-classifiers==2024.3.3
+trove-classifiers==2024.3.25
     # via hatchling
 typing-extensions==4.10.0
     # via
