@@ -58,7 +58,7 @@ importlib-metadata==4.2.0
     #   pytest-randomly
 iniconfig==2.0.0
     # via pytest
-jaraco-classes==3.3.1
+jaraco-classes==3.4.0
     # via keyring
 jeepney==0.8.0
     # via
@@ -103,7 +103,7 @@ pre-commit==3.5.0
     # via -r requirements-dev.in
 ptyprocess==0.7.0
     # via pexpect
-pycparser==2.21
+pycparser==2.22
     # via cffi
 pygments==2.17.2
     # via rich
@@ -127,7 +127,7 @@ pyyaml==6.0.1
     # via pre-commit
 rich==13.7.1
     # via hatch
-ruff==0.3.4
+ruff==0.3.5
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
