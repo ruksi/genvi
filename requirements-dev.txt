@@ -26,7 +26,7 @@ distlib==0.3.8
     # via virtualenv
 editables==0.5
     # via hatchling
-exceptiongroup==1.2.0
+exceptiongroup==1.2.1
     # via
     #   anyio
     #   pytest
@@ -127,7 +127,7 @@ pyyaml==6.0.1
     # via pre-commit
 rich==13.7.1
     # via hatch
-ruff==0.3.7
+ruff==0.4.0
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
