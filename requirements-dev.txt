@@ -44,7 +44,7 @@ httpx==0.27.0
     # via hatch
 hyperlink==21.0.0
     # via hatch
-identify==2.5.35
+identify==2.5.36
     # via pre-commit
 idna==3.7
     # via
@@ -95,7 +95,7 @@ platformdirs==2.6.2
     # via
     #   hatch
     #   virtualenv
-pluggy==1.4.0
+pluggy==1.5.0
     # via
     #   hatchling
     #   pytest
@@ -127,7 +127,7 @@ pyyaml==6.0.1
     # via pre-commit
 rich==13.7.1
     # via hatch
-ruff==0.4.0
+ruff==0.4.1
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
