@@ -4,5 +4,5 @@ importlib-metadata==4.2.0
     # via -r requirements.in
 typing-extensions==4.11.0
     # via -r requirements.in
-zipp==3.18.1
+zipp==3.18.2
     # via importlib-metadata
