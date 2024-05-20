@@ -111,7 +111,7 @@ pyproject-hooks==1.1.0
     # via
     #   build
     #   pip-tools
-pytest==8.2.0
+pytest==8.2.1
     # via
     #   -r requirements-dev.in
     #   pytest-cov
