@@ -127,7 +127,7 @@ pyyaml==6.0.1
     # via pre-commit
 rich==13.7.1
     # via hatch
-ruff==0.4.4
+ruff==0.4.5
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
@@ -149,7 +149,7 @@ tomli-w==1.0.0
     # via hatch
 tomlkit==0.12.5
     # via hatch
-trove-classifiers==2024.5.17
+trove-classifiers==2024.5.22
     # via hatchling
 typing-extensions==4.11.0
     # via
