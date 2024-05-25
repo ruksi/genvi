@@ -151,7 +151,7 @@ tomlkit==0.12.5
     # via hatch
 trove-classifiers==2024.5.22
     # via hatchling
-typing-extensions==4.11.0
+typing-extensions==4.12.0
     # via
     #   -r requirements.txt
     #   anyio
