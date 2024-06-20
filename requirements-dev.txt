@@ -30,7 +30,7 @@ exceptiongroup==1.2.1
     # via
     #   anyio
     #   pytest
-filelock==3.15.1
+filelock==3.15.3
     # via virtualenv
 h11==0.14.0
     # via httpcore
@@ -176,5 +176,5 @@ zstandard==0.22.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==24.0
     # via pip-tools
-setuptools==70.0.0
+setuptools==70.1.0
     # via pip-tools
