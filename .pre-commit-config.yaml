@@ -35,9 +35,9 @@ repos:
     hooks:
 
       # use system ruff as it should be installed for the IDE integration anyway
-      - id: ruff
-        name: ruff
-        entry: ruff
+      - id: ruff-check
+        name: ruff-check
+        entry: ruff check
         args: [
           '--force-exclude',
           '--fix',
