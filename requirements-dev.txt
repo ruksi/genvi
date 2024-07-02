@@ -149,7 +149,7 @@ tomli-w==1.0.0
     # via hatch
 tomlkit==0.12.5
     # via hatch
-trove-classifiers==2024.5.22
+trove-classifiers==2024.7.1
     # via hatchling
 typing-extensions==4.12.2
     # via
@@ -176,5 +176,5 @@ zstandard==0.22.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==24.1.1
     # via pip-tools
-setuptools==70.1.1
+setuptools==70.2.0
     # via pip-tools
