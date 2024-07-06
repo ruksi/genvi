@@ -10,7 +10,7 @@ if TYPE_CHECKING:
     from pathlib import Path
 
 
-@pytest.fixture()
+@pytest.fixture
 def tmp_genvi_path(tmp_path: Path) -> Path:
     # Create a mini version of what `genvi` directory looks like.
 
