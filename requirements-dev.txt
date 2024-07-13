@@ -16,7 +16,7 @@ click==8.1.3
     #   hatch
     #   pip-tools
     #   userpath
-coverage==7.5.4
+coverage==7.6.0
     # via
     #   coverage
     #   pytest-cov
@@ -26,7 +26,7 @@ distlib==0.3.8
     # via virtualenv
 editables==0.5
     # via hatchling
-exceptiongroup==1.2.1
+exceptiongroup==1.2.2
     # via
     #   anyio
     #   pytest
@@ -147,7 +147,7 @@ tomli==2.0.1
     #   pytest
 tomli-w==1.0.0
     # via hatch
-tomlkit==0.12.5
+tomlkit==0.13.0
     # via hatch
 trove-classifiers==2024.7.2
     # via hatchling
@@ -176,5 +176,5 @@ zstandard==0.22.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==24.1.2
     # via pip-tools
-setuptools==70.2.0
+setuptools==70.3.0
     # via pip-tools
