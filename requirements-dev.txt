@@ -127,7 +127,7 @@ pyyaml==6.0.1
     # via pre-commit
 rich==13.7.1
     # via hatch
-ruff==0.5.1
+ruff==0.5.2
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
@@ -170,7 +170,7 @@ zipp==3.19.2
     # via
     #   -r requirements.txt
     #   importlib-metadata
-zstandard==0.22.0
+zstandard==0.23.0
     # via hatch
 
 # The following packages are considered to be unsafe in a requirements file:
