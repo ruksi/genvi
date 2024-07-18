@@ -176,5 +176,5 @@ zstandard==0.23.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==24.1.2
     # via pip-tools
-setuptools==70.3.0
+setuptools==71.0.1
     # via pip-tools
