@@ -127,7 +127,7 @@ pyyaml==6.0.1
     # via pre-commit
 rich==13.7.1
     # via hatch
-ruff==0.5.2
+ruff==0.5.3
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
@@ -176,5 +176,5 @@ zstandard==0.23.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==24.1.2
     # via pip-tools
-setuptools==71.0.1
+setuptools==71.0.3
     # via pip-tools
