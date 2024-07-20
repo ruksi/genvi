@@ -72,7 +72,7 @@ mdurl==0.1.2
     # via markdown-it-py
 more-itertools==10.3.0
     # via jaraco-classes
-mypy==1.10.1
+mypy==1.11.0
     # via -r requirements-dev.in
 mypy-extensions==1.0.0
     # via mypy
@@ -176,5 +176,5 @@ zstandard==0.23.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==24.1.2
     # via pip-tools
-setuptools==71.0.3
+setuptools==71.0.4
     # via pip-tools
