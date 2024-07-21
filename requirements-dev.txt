@@ -20,7 +20,7 @@ coverage==7.6.0
     # via
     #   coverage
     #   pytest-cov
-cryptography==42.0.8
+cryptography==43.0.0
     # via secretstorage
 distlib==0.3.8
     # via virtualenv
@@ -111,7 +111,7 @@ pyproject-hooks==1.1.0
     # via
     #   build
     #   pip-tools
-pytest==8.2.2
+pytest==8.3.1
     # via
     #   -r requirements-dev.in
     #   pytest-cov
@@ -127,7 +127,7 @@ pyyaml==6.0.1
     # via pre-commit
 rich==13.7.1
     # via hatch
-ruff==0.5.3
+ruff==0.5.4
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
