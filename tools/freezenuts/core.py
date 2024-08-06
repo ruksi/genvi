@@ -23,7 +23,12 @@ if TYPE_CHECKING:
 
 
 def package_versions(project_name: str) -> list[Version]:
-    """Get package version history from PyPI using `pip`."""
+    """
+    Get package version history from PyPI using `pip`.
+
+    Returns:
+        A list of versions, sorted from oldest to newest.
+    """
     # possibly switch to `distlib`, raw requests or something else later
     # https://pip.pypa.io/en/stable/user_guide/#using-pip-from-your-program
     # should we consider using `--platform` or `--python-version`?
@@ -36,7 +41,7 @@ def package_versions(project_name: str) -> list[Version]:
     )
     _, _, *version_texts = versions_line.split(" ")
     version_texts = [vt.rstrip(",") for vt in version_texts]
-    return sorted(Version(vt) for vt in version_texts)  # oldest -> newest
+    return sorted(Version(vt) for vt in version_texts)
 
 
 def get_oldest_matching_requirement(requirement: Requirement) -> Requirement:
