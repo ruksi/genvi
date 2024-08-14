@@ -147,7 +147,7 @@ tomli==2.0.1
     #   pytest
 tomli-w==1.0.0
     # via hatch
-tomlkit==0.13.0
+tomlkit==0.13.1
     # via hatch
 trove-classifiers==2024.7.2
     # via hatchling
@@ -176,5 +176,5 @@ zstandard==0.23.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==24.2
     # via pip-tools
-setuptools==72.1.0
+setuptools==72.2.0
     # via pip-tools
