@@ -40,7 +40,7 @@ hatchling==1.21.1
     # via hatch
 httpcore==1.0.5
     # via httpx
-httpx==0.27.0
+httpx==0.27.2
     # via hatch
 hyperlink==21.0.0
     # via hatch
@@ -176,5 +176,5 @@ zstandard==0.23.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==24.2
     # via pip-tools
-setuptools==73.0.1
+setuptools==74.0.0
     # via pip-tools
