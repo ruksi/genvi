@@ -2,7 +2,7 @@ anyio==4.4.0
     # via httpx
 build==0.10.0
     # via pip-tools
-certifi==2024.7.4
+certifi==2024.8.30
     # via
     #   httpcore
     #   httpx
@@ -127,7 +127,7 @@ pyyaml==6.0.2
     # via pre-commit
 rich==13.8.0
     # via hatch
-ruff==0.6.2
+ruff==0.6.3
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
