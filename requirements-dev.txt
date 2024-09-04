@@ -20,7 +20,7 @@ coverage==7.6.1
     # via
     #   coverage
     #   pytest-cov
-cryptography==43.0.0
+cryptography==43.0.1
     # via secretstorage
 distlib==0.3.8
     # via virtualenv
@@ -176,5 +176,5 @@ zstandard==0.23.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==24.2
     # via pip-tools
-setuptools==74.1.0
+setuptools==74.1.1
     # via pip-tools
