@@ -70,7 +70,7 @@ markdown-it-py==3.0.0
     # via rich
 mdurl==0.1.2
     # via markdown-it-py
-more-itertools==10.4.0
+more-itertools==10.5.0
     # via jaraco-classes
 mypy==1.11.2
     # via -r requirements-dev.in
@@ -127,7 +127,7 @@ pyyaml==6.0.2
     # via pre-commit
 rich==13.8.0
     # via hatch
-ruff==0.6.3
+ruff==0.6.4
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
@@ -176,5 +176,5 @@ zstandard==0.23.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==24.2
     # via pip-tools
-setuptools==74.1.1
+setuptools==74.1.2
     # via pip-tools
