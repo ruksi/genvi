@@ -23,17 +23,18 @@ O <b>generation of vipers</b>, how can ye, being evil, speak good things?
 </p>
 <br/>
 
-## ⚡️ Quickstart
+## ⚡️ TL;DR: ⚡️
 
 ```bash
 curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | bash
+# and follow the instructions
 ```
 
-## 🤏 Requirements
+## Requirements
 
 `python>=3.8`, `git` and `make`.
 
-## 👉️ What?
+## What?
 
 > "I would sacrifice anything for some good quality code."
 > by Anonymous Principal Engineer :woman_technologist:
@@ -60,22 +61,20 @@ If you want a more concrete example of a `genvi` project, you are looking at one
 `genvi` itself follows the same rules and uses the same tools. Behind the scenes,
 creating a new project renames a few files and rewrites a bit of content.
 
-## 🤔 Why?
+## Why?
 
 > "Who would want to manage a project like this?"
 > by Anonymous Gnu :water_buffalo:
 
 Scratching my own itch, see [`ABOUT.md`](ABOUT.md) to learn more
 
-## ✋ Usage
-
-### Quick
+## Quick Setup
 
 ```bash
 curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | bash
 ```
 
-### Manual
+## Manual Setup
 
 1. Decide the project name and clone this repository
 
@@ -92,11 +91,11 @@ curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | 
    make package=myproject
    ```
 
-## ✍️ License
+## License
 
 This project is released under the [MIT License](LICENSE).
 
-## 🧑‍💻 Contributions
+## Contributions
 
 Sure, [`the README template`](magic/utils/readme_template.md) should get you started
 as `genvi` itself works like the projects it generates.
