@@ -40,8 +40,7 @@ curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | 
 > by Anonymous Principal Engineer :woman_technologist:
 
 `genvi` (<i><b>gen</b>eration of <b>vi</b></i>pers :snake:) is a hyper-opinionated
-tool for creating Python projects. It's strict, some could even say _too_ strict.
-Borderline __evil__.
+tool for creating Python projects. It's strict, maybe _too_ strict, borderline __evil__.
 
 Each new project is configured with:
 
@@ -56,10 +55,6 @@ Each new project is configured with:
 ✴️ occult project management though `make` for development
 <br/>
 🫴 plethora of style and type checkers included in `ruff` and `mypy`
-
-If you want a more concrete example of a `genvi` project, you are looking at one.
-`genvi` itself follows the same rules and uses the same tools. Behind the scenes,
-creating a new project renames a few files and rewrites a bit of content.
 
 ## Why?
 
@@ -76,19 +71,20 @@ curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | 
 
 ## Manual Setup
 
-1. Decide the project name and clone this repository
+1. Choose a combined project/package name
+   * [Only use lowercase ASCII __letters and numbers__; nothing else](https://peps.python.org/pep-0008/#package-and-module-names)
+   * This example uses `artproject`
+2. Clone this repository
 
    ```bash
-   git clone git@github.com:ruksi/genvi.git my-project
-   cd my-project
+   git clone git@github.com:ruksi/genvi.git artproject
+   cd artproject
    ```
 
-2. Decide a clean package name, run the wizard and follow instruction
+3. Run the wizard and follow instruction
 
    ```bash
-   # package name should be something you can `import` in Python
-   # preferably just lowercase ASCII letters
-   make package=myproject
+   python -m magic --name="artproject" --author="Arthur" --email="arthur@example.com"
    ```
 
 ## License
