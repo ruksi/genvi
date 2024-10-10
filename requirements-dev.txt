@@ -22,7 +22,7 @@ coverage==7.6.1
     #   pytest-cov
 cryptography==43.0.1
     # via secretstorage
-distlib==0.3.8
+distlib==0.3.9
     # via virtualenv
 editables==0.5
     # via hatchling
