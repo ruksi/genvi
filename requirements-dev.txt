@@ -174,7 +174,7 @@ zstandard==0.23.0
     # via hatch
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==24.2
+pip==24.3.1
     # via pip-tools
 setuptools==75.2.0
     # via pip-tools
