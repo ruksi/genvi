@@ -1,9 +1,10 @@
 -r requirements.in
 -c requirements.txt
+build
 hatch
 packaging
-pip-tools
 pre-commit
+uv
 virtualenv==20.16.2  # used by `pre-commit`, later versions cause version clash when installing `importlib-metadata`
 
 # testing
