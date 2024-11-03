@@ -27,6 +27,7 @@ venv:
 # abort if running outside of a virtual environment
 # override with `NO_VENV=1 make ...`
 ensure.venv:
+	pip install uv -c requirements-dev.txt
 	if [ $(NO_VENV) ]; then exit 0; fi;
 	IS_VENV=`python -m tools.is_virtualenv`
 	if [ $$IS_VENV != 'True' ]; then
@@ -45,12 +46,20 @@ dev: ensure.venv dev.python dev.hooks
 .PHONY: dev.python
 # install Python dependencies for development
 dev.python: ensure.venv
-	pip install -r requirements-dev.txt
+	if [ $(NO_VENV) ]; then
+		uv pip install --system -r requirements-dev.txt
+	else
+		uv pip install -r requirements-dev.txt
+	fi;
 
 .PHONY: dev.python.outdated
 # install valid but outdated production requirements for development
 dev.python.outdated: ensure.venv
-	pip install -r requirements.out
+	if [ $(NO_VENV) ]; then
+		uv pip install --system -r requirements.out
+	else
+		uv pip install -r requirements.out
+	fi;
 
 .PHONY: dev.hooks
 # install pre-commit hooks for development
@@ -75,15 +84,15 @@ test.coverage: ensure.venv
 .PHONY: update
 # update dependency definitions after .in-file modifications
 update: ensure.venv
-	pip-compile --no-header --allow-unsafe --strip-extras --resolver=backtracking requirements.in
-	pip-compile --no-header --allow-unsafe --strip-extras --resolver=backtracking requirements-dev.in
+	uv pip compile --no-header requirements.in > requirements.txt
+	uv pip compile --no-header requirements-dev.in > requirements-dev.txt
 	python -m tools.freezenuts requirements.in > requirements.out
 
 .PHONY: upgrade
 # upgrade all dependencies to the latest valid version
 upgrade: ensure.venv
-	pip-compile --upgrade --no-header --strip-extras --allow-unsafe --resolver=backtracking requirements.in
-	pip-compile --upgrade --no-header --strip-extras --allow-unsafe --resolver=backtracking requirements-dev.in
+	uv pip compile --upgrade --no-header requirements.in > requirements.txt
+	uv pip compile --upgrade --no-header requirements-dev.in > requirements-dev.txt
 	python -m tools.freezenuts requirements.in > requirements.out
 	pre-commit autoupdate
 
@@ -99,13 +108,21 @@ run: ensure.venv
 # install the package to current the virtual environment as an editable,
 # and add all the configured executables to the environment `/bin`
 install: ensure.venv
-	pip install -e .
+	if [ $(NO_VENV) ]; then
+		uv pip install --system -e .
+	else
+		uv pip install -e .
+	fi;
 	echo -e '\nTry running `myproject` in the command line'
 
 .PHONY: uninstall
 # uninstall any `pip` installation of this package, but doesn't touch dependencies
 uninstall: ensure.venv
-	pip uninstall -y myproject
+	if [ $(NO_VENV) ]; then
+		uv pip uninstall --system myproject
+	else
+		uv pip uninstall myproject
+	fi;
 
 
 
