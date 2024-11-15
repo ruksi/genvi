@@ -154,7 +154,7 @@ typing-extensions==4.12.2
     #   rich
 userpath==1.9.2
     # via hatch
-uv==0.5.1
+uv==0.5.2
     # via -r requirements-dev.in
 virtualenv==20.16.2
     # via
