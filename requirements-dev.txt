@@ -2,7 +2,7 @@ anyio==4.5.2
     # via httpx
 build==0.10.0
     # via -r requirements-dev.in
-certifi==2024.8.30
+certifi==2024.12.14
     # via
     #   httpcore
     #   httpx
