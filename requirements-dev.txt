@@ -122,7 +122,7 @@ pyyaml==6.0.2
     # via pre-commit
 rich==13.9.4
     # via hatch
-ruff==0.8.3
+ruff==0.8.4
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
@@ -152,7 +152,7 @@ typing-extensions==4.12.2
     #   rich
 userpath==1.9.2
     # via hatch
-uv==0.5.10
+uv==0.5.11
     # via -r requirements-dev.in
 virtualenv==20.16.2
     # via
