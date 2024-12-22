@@ -6,6 +6,7 @@ SHELL := bash
 
 NO_VENV?=
 export UV_SYSTEM_PYTHON=$(if $(NO_VENV),$(NO_VENV),0)
+export UV_PYTHON=3.8
 
 ifndef VERBOSE
 # Usage:
@@ -19,10 +20,9 @@ help:
 	echo 'Check README for usage examples'
 
 .PHONY: venv
-# create a virtual environment, defaults to builtin `venv` but you can use `virtualenv` package just as well
+# create a virtual environment in the current directory
 venv:
-	python -m venv venv/
-	echo -e '\nVirtual environment created at `venv/`; activate it with `source venv/bin/activate`'
+	uv venv
 
 .PHONY: ensure.venv
 # abort if running outside of a virtual environment

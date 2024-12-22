@@ -5,6 +5,7 @@
 .coverage
 .coverage.*
 .idea
+.venv
 __pycache__
 build
 dist
