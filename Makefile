@@ -5,6 +5,7 @@ SHELL := bash
 .ONESHELL:
 
 NO_VENV?=
+export UV_SYSTEM_PYTHON=$(if $(NO_VENV),$(NO_VENV),0)
 
 ifndef VERBOSE
 # Usage:
@@ -27,7 +28,6 @@ venv:
 # abort if running outside of a virtual environment
 # override with `NO_VENV=1 make ...`
 ensure.venv:
-	pip install uv -c requirements-dev.txt
 	if [ $(NO_VENV) ]; then exit 0; fi;
 	IS_VENV=`python -m tools.is_virtualenv`
 	if [ $$IS_VENV != 'True' ]; then
@@ -46,20 +46,12 @@ dev: ensure.venv dev.python dev.hooks
 .PHONY: dev.python
 # install Python dependencies for development
 dev.python: ensure.venv
-	if [ $(NO_VENV) ]; then
-		uv pip install --system -r requirements-dev.txt
-	else
-		uv pip install -r requirements-dev.txt
-	fi;
+	uv pip install -r requirements-dev.txt
 
 .PHONY: dev.python.outdated
 # install valid but outdated production requirements for development
 dev.python.outdated: ensure.venv
-	if [ $(NO_VENV) ]; then
-		uv pip install --system -r requirements.out
-	else
-		uv pip install -r requirements.out
-	fi;
+	uv pip install -r requirements.out
 
 .PHONY: dev.hooks
 # install pre-commit hooks for development
@@ -108,21 +100,13 @@ run: ensure.venv
 # install the package to current the virtual environment as an editable,
 # and add all the configured executables to the environment `/bin`
 install: ensure.venv
-	if [ $(NO_VENV) ]; then
-		uv pip install --system -e .
-	else
-		uv pip install -e .
-	fi;
+	uv pip install -e .
 	echo -e '\nTry running `myproject` in the command line'
 
 .PHONY: uninstall
 # uninstall any `pip` installation of this package, but doesn't touch dependencies
 uninstall: ensure.venv
-	if [ $(NO_VENV) ]; then
-		uv pip uninstall --system myproject
-	else
-		uv pip uninstall myproject
-	fi;
+	uv pip uninstall myproject
 
 
 
