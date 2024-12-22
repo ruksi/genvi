@@ -9,7 +9,7 @@ Setup development environment:
 ```bash
 # activate a virtual environment as you prefer; or simply:
 make venv
-source venv/bin/activate
+source .venv/bin/activate
 # install development dependencies:
 make dev
 ```
