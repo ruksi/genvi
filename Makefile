@@ -6,7 +6,6 @@ SHELL := bash
 
 NO_VENV?=
 export UV_SYSTEM_PYTHON=$(if $(NO_VENV),$(NO_VENV),0)
-export UV_PYTHON=3.8
 
 ifndef VERBOSE
 # Usage:
@@ -76,15 +75,15 @@ test.coverage: ensure.venv
 .PHONY: update
 # update dependency definitions after .in-file modifications
 update: ensure.venv
-	uv pip compile --no-header requirements.in > requirements.txt
-	uv pip compile --no-header requirements-dev.in > requirements-dev.txt
+	UV_PYTHON=3.8 uv pip compile --no-header requirements.in > requirements.txt
+	UV_PYTHON=3.8 uv pip compile --no-header requirements-dev.in > requirements-dev.txt
 	python -m tools.freezenuts requirements.in > requirements.out
 
 .PHONY: upgrade
 # upgrade all dependencies to the latest valid version
 upgrade: ensure.venv
-	uv pip compile --upgrade --no-header requirements.in > requirements.txt
-	uv pip compile --upgrade --no-header requirements-dev.in > requirements-dev.txt
+	UV_PYTHON=3.8 uv pip compile --upgrade --no-header requirements.in > requirements.txt
+	UV_PYTHON=3.8 uv pip compile --upgrade --no-header requirements-dev.in > requirements-dev.txt
 	python -m tools.freezenuts requirements.in > requirements.out
 	pre-commit autoupdate
 

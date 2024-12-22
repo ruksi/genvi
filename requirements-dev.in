@@ -3,6 +3,7 @@
 build
 hatch
 packaging
+pip
 pre-commit
 virtualenv==20.16.2  # used by `pre-commit`, later versions cause version clash when installing `importlib-metadata`
 
