@@ -33,8 +33,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ env.LOWEST_PYTHON_VERSION }}
-          cache: 'pip'
-          cache-dependency-path: '**/requirements*.*'
 
       - name: Upgrade all dependencies
         run: make dev upgrade
