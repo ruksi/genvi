@@ -104,7 +104,7 @@ ptyprocess==0.7.0
     # via pexpect
 pycparser==2.22
     # via cffi
-pygments==2.18.0
+pygments==2.19.0
     # via rich
 pyproject-hooks==1.2.0
     # via build
@@ -124,7 +124,7 @@ pyyaml==6.0.2
     # via pre-commit
 rich==13.9.4
     # via hatch
-ruff==0.8.4
+ruff==0.8.6
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
