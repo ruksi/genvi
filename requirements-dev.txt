@@ -2,7 +2,7 @@ anyio==4.5.2
     # via httpx
 build==0.10.0
     # via -r requirements-dev.in
-certifi==2024.12.14
+certifi==2025.1.31
     # via
     #   httpcore
     #   httpx
@@ -124,7 +124,7 @@ pyyaml==6.0.2
     # via pre-commit
 rich==13.9.4
     # via hatch
-ruff==0.9.3
+ruff==0.9.4
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
