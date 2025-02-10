@@ -88,7 +88,7 @@ pathspec==0.12.1
     # via hatchling
 pexpect==4.9.0
     # via hatch
-pip==25.0
+pip==25.0.1
     # via -r requirements-dev.in
 platformdirs==2.6.2
     # via
