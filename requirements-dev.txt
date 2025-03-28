@@ -145,7 +145,7 @@ tomlkit==0.13.2
     # via hatch
 trove-classifiers==2025.3.19.19
     # via hatchling
-typing-extensions==4.12.2
+typing-extensions==4.13.0
     # via
     #   -c requirements.txt
     #   -r requirements.in
