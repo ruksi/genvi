@@ -36,7 +36,7 @@ hatch==1.9.7
     # via -r requirements-dev.in
 hatchling==1.21.1
     # via hatch
-httpcore==1.0.7
+httpcore==1.0.8
     # via httpx
 httpx==0.28.1
     # via hatch
@@ -124,7 +124,7 @@ pyyaml==6.0.2
     # via pre-commit
 rich==14.0.0
     # via hatch
-ruff==0.11.4
+ruff==0.11.5
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
@@ -143,9 +143,9 @@ tomli-w==1.0.0
     # via hatch
 tomlkit==0.13.2
     # via hatch
-trove-classifiers==2025.3.19.19
+trove-classifiers==2025.4.11.15
     # via hatchling
-typing-extensions==4.13.1
+typing-extensions==4.13.2
     # via
     #   -c requirements.txt
     #   -r requirements.in
