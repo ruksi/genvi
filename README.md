@@ -32,7 +32,7 @@ curl -fSL https://raw.githubusercontent.com/ruksi/genvi/main/magic/conjure.sh | 
 
 ## Requirements
 
-`python>=3.8`, `uv`, `git` and `make`.
+`python>=3.9`, `uv`, `git` and `make`.
 
 ## What?
 

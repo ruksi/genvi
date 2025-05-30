@@ -1,4 +1,4 @@
-anyio==4.5.2
+anyio==4.9.0
     # via httpx
 build==0.10.0
     # via -r requirements-dev.in
@@ -16,7 +16,7 @@ click==8.1.3
     #   -r requirements.in
     #   hatch
     #   userpath
-coverage==7.6.1
+coverage==7.8.2
     # via pytest-cov
 cryptography==45.0.3
     # via secretstorage
@@ -28,7 +28,7 @@ exceptiongroup==1.3.0
     # via
     #   anyio
     #   pytest
-filelock==3.16.1
+filelock==3.18.0
     # via virtualenv
 h11==0.16.0
     # via httpcore
@@ -42,7 +42,7 @@ httpx==0.28.1
     # via hatch
 hyperlink==21.0.0
     # via hatch
-identify==2.6.1
+identify==2.6.12
     # via pre-commit
 idna==3.10
     # via
@@ -69,9 +69,9 @@ markdown-it-py==3.0.0
     # via rich
 mdurl==0.1.2
     # via markdown-it-py
-more-itertools==10.5.0
+more-itertools==10.7.0
     # via jaraco-classes
-mypy==1.14.1
+mypy==1.16.0
     # via -r requirements-dev.in
 mypy-extensions==1.1.0
     # via mypy
@@ -85,20 +85,22 @@ packaging==25.0
     #   hatchling
     #   pytest
 pathspec==0.12.1
-    # via hatchling
+    # via
+    #   hatchling
+    #   mypy
 pexpect==4.9.0
     # via hatch
-pip==25.0.1
+pip==25.1.1
     # via -r requirements-dev.in
 platformdirs==2.6.2
     # via
     #   hatch
     #   virtualenv
-pluggy==1.5.0
+pluggy==1.6.0
     # via
     #   hatchling
     #   pytest
-pre-commit==3.5.0
+pre-commit==4.2.0
     # via -r requirements-dev.in
 ptyprocess==0.7.0
     # via pexpect
@@ -114,11 +116,11 @@ pytest==8.3.5
     #   pytest-cov
     #   pytest-mock
     #   pytest-randomly
-pytest-cov==5.0.0
+pytest-cov==6.1.1
     # via -r requirements-dev.in
 pytest-mock==3.14.1
     # via -r requirements-dev.in
-pytest-randomly==3.15.0
+pytest-randomly==3.16.0
     # via -r requirements-dev.in
 pyyaml==6.0.2
     # via pre-commit
@@ -139,7 +141,7 @@ tomli==2.2.1
     #   hatchling
     #   mypy
     #   pytest
-tomli-w==1.0.0
+tomli-w==1.2.0
     # via hatch
 tomlkit==0.13.2
     # via hatch
@@ -160,7 +162,7 @@ virtualenv==20.16.2
     #   -r requirements-dev.in
     #   hatch
     #   pre-commit
-zipp==3.20.2
+zipp==3.22.0
     # via
     #   -c requirements.txt
     #   importlib-metadata
