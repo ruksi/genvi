@@ -21,7 +21,7 @@ help:
 .PHONY: venv
 # create a virtual environment in the current directory
 venv:
-	uv venv
+	UV_PYTHON=3.9 uv venv
 
 .PHONY: ensure.venv
 # abort if running outside of a virtual environment
@@ -75,15 +75,15 @@ test.coverage: ensure.venv
 .PHONY: update
 # update dependency definitions after .in-file modifications
 update: ensure.venv
-	UV_PYTHON=3.8 uv pip compile --no-header requirements.in > requirements.txt
-	UV_PYTHON=3.8 uv pip compile --no-header requirements-dev.in > requirements-dev.txt
+	UV_PYTHON=3.9 uv pip compile --no-header requirements.in > requirements.txt
+	UV_PYTHON=3.9 uv pip compile --no-header requirements-dev.in > requirements-dev.txt
 	python -m tools.freezenuts requirements.in > requirements.out
 
 .PHONY: upgrade
 # upgrade all dependencies to the latest valid version
 upgrade: ensure.venv
-	UV_PYTHON=3.8 uv pip compile --upgrade --no-header requirements.in > requirements.txt
-	UV_PYTHON=3.8 uv pip compile --upgrade --no-header requirements-dev.in > requirements-dev.txt
+	UV_PYTHON=3.9 uv pip compile --upgrade --no-header requirements.in > requirements.txt
+	UV_PYTHON=3.9 uv pip compile --upgrade --no-header requirements-dev.in > requirements-dev.txt
 	python -m tools.freezenuts requirements.in > requirements.out
 	pre-commit autoupdate
 
