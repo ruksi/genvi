@@ -107,10 +107,12 @@ ptyprocess==0.7.0
 pycparser==2.22
     # via cffi
 pygments==2.19.1
-    # via rich
+    # via
+    #   pytest
+    #   rich
 pyproject-hooks==1.2.0
     # via build
-pytest==8.3.5
+pytest==8.4.0
     # via
     #   -r requirements-dev.in
     #   pytest-cov
@@ -147,7 +149,7 @@ tomlkit==0.13.2
     # via hatch
 trove-classifiers==2025.5.9.12
     # via hatchling
-typing-extensions==4.13.2
+typing-extensions==4.14.0
     # via
     #   -c requirements.txt
     #   -r requirements.in
