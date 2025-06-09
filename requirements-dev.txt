@@ -128,7 +128,7 @@ pyyaml==6.0.2
     # via pre-commit
 rich==14.0.0
     # via hatch
-ruff==0.11.12
+ruff==0.11.13
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
@@ -145,7 +145,7 @@ tomli==2.2.1
     #   pytest
 tomli-w==1.2.0
     # via hatch
-tomlkit==0.13.2
+tomlkit==0.13.3
     # via hatch
 trove-classifiers==2025.5.9.12
     # via hatchling
@@ -164,7 +164,7 @@ virtualenv==20.16.2
     #   -r requirements-dev.in
     #   hatch
     #   pre-commit
-zipp==3.22.0
+zipp==3.23.0
     # via
     #   -c requirements.txt
     #   importlib-metadata
