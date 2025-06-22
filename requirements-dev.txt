@@ -107,7 +107,7 @@ ptyprocess==0.7.0
     # via pexpect
 pycparser==2.22
     # via cffi
-pygments==2.19.1
+pygments==2.19.2
     # via
     #   pytest
     #   rich
