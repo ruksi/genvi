@@ -2,7 +2,7 @@ anyio==4.9.0
     # via httpx
 build==0.10.0
     # via -r requirements-dev.in
-certifi==2025.7.9
+certifi==2025.7.14
     # via
     #   httpcore
     #   httpx
@@ -71,7 +71,7 @@ mdurl==0.1.2
     # via markdown-it-py
 more-itertools==10.7.0
     # via jaraco-classes
-mypy==1.16.1
+mypy==1.17.0
     # via -r requirements-dev.in
 mypy-extensions==1.1.0
     # via mypy
