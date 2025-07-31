@@ -90,7 +90,7 @@ pathspec==0.12.1
     #   mypy
 pexpect==4.9.0
     # via hatch
-pip==25.1.1
+pip==25.2
     # via -r requirements-dev.in
 platformdirs==2.6.2
     # via
@@ -129,7 +129,7 @@ pyyaml==6.0.2
     # via pre-commit
 rich==14.1.0
     # via hatch
-ruff==0.12.5
+ruff==0.12.7
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
