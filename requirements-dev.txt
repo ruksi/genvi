@@ -168,5 +168,5 @@ zipp==3.23.0
     # via
     #   -c requirements.txt
     #   importlib-metadata
-zstandard==0.23.0
+zstandard==0.24.0
     # via hatch
