@@ -148,7 +148,7 @@ tomli-w==1.2.0
     # via hatch
 tomlkit==0.13.3
     # via hatch
-trove-classifiers==2025.8.6.13
+trove-classifiers==2025.8.26.11
     # via hatchling
 typing-extensions==4.15.0
     # via
