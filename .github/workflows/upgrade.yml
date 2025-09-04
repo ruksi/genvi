@@ -30,7 +30,7 @@ jobs:
         uses: astral-sh/setup-uv@v6
 
       - name: Install Python ${{ env.LOWEST_PYTHON_VERSION }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: ${{ env.LOWEST_PYTHON_VERSION }}
 
