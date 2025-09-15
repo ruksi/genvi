@@ -6,7 +6,7 @@ certifi==2025.8.3
     # via
     #   httpcore
     #   httpx
-cffi==1.17.1
+cffi==2.0.0
     # via cryptography
 cfgv==3.4.0
     # via pre-commit
@@ -71,7 +71,7 @@ mdurl==0.1.2
     # via markdown-it-py
 more-itertools==10.8.0
     # via jaraco-classes
-mypy==1.17.1
+mypy==1.18.1
     # via -r requirements-dev.in
 mypy-extensions==1.1.0
     # via mypy
@@ -105,7 +105,7 @@ pre-commit==4.3.0
     # via -r requirements-dev.in
 ptyprocess==0.7.0
     # via pexpect
-pycparser==2.22
+pycparser==2.23
     # via cffi
 pygments==2.19.2
     # via
@@ -119,17 +119,17 @@ pytest==8.4.2
     #   pytest-cov
     #   pytest-mock
     #   pytest-randomly
-pytest-cov==6.3.0
+pytest-cov==7.0.0
     # via -r requirements-dev.in
 pytest-mock==3.15.0
     # via -r requirements-dev.in
-pytest-randomly==3.16.0
+pytest-randomly==4.0.1
     # via -r requirements-dev.in
 pyyaml==6.0.2
     # via pre-commit
 rich==14.1.0
     # via hatch
-ruff==0.12.12
+ruff==0.13.0
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
@@ -148,7 +148,7 @@ tomli-w==1.2.0
     # via hatch
 tomlkit==0.13.3
     # via hatch
-trove-classifiers==2025.8.26.11
+trove-classifiers==2025.9.11.17
     # via hatchling
 typing-extensions==4.15.0
     # via
@@ -168,5 +168,5 @@ zipp==3.23.0
     # via
     #   -c requirements.txt
     #   importlib-metadata
-zstandard==0.24.0
+zstandard==0.25.0
     # via hatch
