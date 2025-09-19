@@ -71,7 +71,7 @@ mdurl==0.1.2
     # via markdown-it-py
 more-itertools==10.8.0
     # via jaraco-classes
-mypy==1.18.1
+mypy==1.18.2
     # via -r requirements-dev.in
 mypy-extensions==1.1.0
     # via mypy
@@ -129,7 +129,7 @@ pyyaml==6.0.2
     # via pre-commit
 rich==14.1.0
     # via hatch
-ruff==0.13.0
+ruff==0.13.1
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
