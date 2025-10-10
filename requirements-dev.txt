@@ -127,7 +127,7 @@ pytest-randomly==4.0.1
     # via -r requirements-dev.in
 pyyaml==6.0.3
     # via pre-commit
-rich==14.1.0
+rich==14.2.0
     # via hatch
 ruff==0.14.0
     # via -r requirements-dev.in
