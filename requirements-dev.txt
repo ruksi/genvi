@@ -44,7 +44,7 @@ hyperlink==21.0.0
     # via hatch
 identify==2.6.15
     # via pre-commit
-idna==3.10
+idna==3.11
     # via
     #   anyio
     #   httpx
