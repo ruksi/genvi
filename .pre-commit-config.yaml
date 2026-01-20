@@ -2,14 +2,13 @@
 fail_fast: true
 
 repos:
-
   - repo: meta
     hooks:
       - id: check-hooks-apply
       - id: check-useless-excludes
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: 'v6.0.0'
+    rev: "v6.0.0"
     hooks:
       - id: check-added-large-files
       - id: check-ast
@@ -27,30 +26,24 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: 'v0.45.0'
+    rev: "v0.47.0"
     hooks:
       - id: markdownlint-fix
 
   - repo: local
     hooks:
-
       # use system ruff as it should be installed for the IDE integration anyway
       - id: ruff-check
         name: ruff-check
         entry: ruff check
-        args: [
-          '--force-exclude',
-          '--fix',
-        ]
+        args: ["--force-exclude", "--fix"]
         language: system
         types_or: [python, pyi]
 
       - id: ruff-format
         name: ruff-format
         entry: ruff format
-        args: [
-          '--force-exclude',
-        ]
+        args: ["--force-exclude"]
         language: system
         types_or: [python, pyi]
 
@@ -58,10 +51,6 @@ repos:
       - id: mypy
         name: mypy
         entry: mypy
-        args: [
-          '--install-types',
-          '--non-interactive',
-          '--scripts-are-modules',
-        ]
+        args: ["--install-types", "--non-interactive", "--scripts-are-modules"]
         language: system
         types_or: [python, pyi]
