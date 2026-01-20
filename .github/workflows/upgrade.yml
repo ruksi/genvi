@@ -2,26 +2,24 @@ name: upgrade
 
 on:
   schedule:
-    - cron: '53 1 * * *'  # at 01:53 UTC
+    - cron: "53 1 * * *" # at 01:53 UTC
 
 permissions:
   contents: read
 
 env:
-  UPGRADE_BRANCH: 'robot/upgrades'
+  UPGRADE_BRANCH: "robot/upgrades"
 
 jobs:
-
   upgrade:
     permissions:
-      contents: write       # for pushing the upgrades to the upgrade branch
-      pull-requests: write  # for creating the pull request
-      actions: write        # for triggering CI on the pull request
+      contents: write # for pushing the upgrades to the upgrade branch
+      pull-requests: write # for creating the pull request
+      actions: write # for triggering CI on the pull request
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Setup variables
         uses: ./.github/actions/setup-variables
