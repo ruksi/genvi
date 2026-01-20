@@ -11,14 +11,12 @@ permissions:
   contents: read
 
 jobs:
-
   label-sync:
-    permissions: write-all  # https://github.com/community/community/discussions/13565
+    permissions: write-all # https://github.com/community/community/discussions/13565
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Synchronize GitHub labels
         uses: crazy-max/ghaction-github-labeler@v5.3.0
