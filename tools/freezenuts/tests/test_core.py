@@ -50,8 +50,7 @@ def test_file_parsing(check_output_mock: CheckOutputMock) -> None:
     )
     with tempfile.NamedTemporaryFile() as temporary_file:
         ptf = Path(temporary_file.name)
-        with ptf.open(encoding="utf-8", mode="w") as file:
-            file.write(REQUIREMENTS_CONTENT)
+        ptf.write_text(REQUIREMENTS_CONTENT, encoding="utf-8")
         requirements = [str(r) for r in get_oldest_requirements(ptf)]
         expected = [
             str(Requirement(r))
