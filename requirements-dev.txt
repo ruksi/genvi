@@ -65,7 +65,7 @@ jeepney==0.9.0
     #   secretstorage
 keyring==23.9.3
     # via hatch
-librt==0.7.8
+librt==0.8.0
     # via mypy
 markdown-it-py==3.0.0
     # via rich
@@ -131,7 +131,7 @@ pyyaml==6.0.3
     # via pre-commit
 rich==14.3.2
     # via hatch
-ruff==0.15.0
+ruff==0.15.1
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
