@@ -129,9 +129,9 @@ pytest-randomly==4.0.1
     # via -r requirements-dev.in
 pyyaml==6.0.3
     # via pre-commit
-rich==14.3.2
+rich==14.3.3
     # via hatch
-ruff==0.15.1
+ruff==0.15.2
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
