@@ -94,7 +94,7 @@ jobs:
         with:
           python-version: ${{ env.LOWEST_PYTHON_VERSION }}
       - run: uv pip install --upgrade coverage[toml]
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
       - name: Check for coverage threshold
         run: |
           python -m coverage combine coverage-data-*
