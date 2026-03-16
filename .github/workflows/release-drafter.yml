@@ -1,7 +1,6 @@
 name: release-drafter
 
 on:
-
   # update release draft when master changes
   push:
     branches: [main, master]
@@ -18,17 +17,20 @@ permissions:
   contents: read
 
 jobs:
-
   release-draft-update:
     permissions:
-      contents: write       # for creating the release draft
-      pull-requests: write  # for the autolabeler
+      # for creating the release draft
+      contents: write
+      # for the autolabeler
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
-
-      - name: Update the release draft and autolabel pull requests
-        uses: release-drafter/release-drafter@v6
+      - name: Update the release draft
+        uses: release-drafter/release-drafter@7
         with:
-          disable-autolabeler: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Autolabel pull requests
+        uses: release-drafter/release-drafter/autolabeler@7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
