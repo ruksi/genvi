@@ -17,12 +17,10 @@ permissions:
   contents: read
 
 jobs:
-  release-draft-update:
+  update-release-draft:
+    if: github.event_name == 'push'
     permissions:
-      # for creating the release draft
       contents: write
-      # for the autolabeler
-      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - name: Update the release draft
@@ -30,6 +28,12 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+  autolabel-pr:
+    if: github.event_name == 'pull_request'
+    permissions:
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
       - name: Autolabel pull requests
         uses: release-drafter/release-drafter/autolabeler@v7
         with:
