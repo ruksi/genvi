@@ -2,7 +2,7 @@ anyio==4.12.1
     # via httpx
 build==0.10.0
     # via -r requirements-dev.in
-certifi==2026.2.25
+certifi==2026.4.22
     # via
     #   httpcore
     #   httpx
@@ -18,11 +18,11 @@ click==8.1.3
     #   userpath
 coverage==7.10.7
     # via pytest-cov
-cryptography==46.0.5
+cryptography==47.0.0
     # via secretstorage
 distlib==0.4.0
     # via virtualenv
-editables==0.5
+editables==0.6
     # via hatchling
 exceptiongroup==1.3.1
     # via
@@ -44,7 +44,7 @@ hyperlink==21.0.0
     # via hatch
 identify==2.6.15
     # via pre-commit
-idna==3.11
+idna==3.15
     # via
     #   anyio
     #   httpx
@@ -65,7 +65,7 @@ jeepney==0.9.0
     #   secretstorage
 keyring==23.9.3
     # via hatch
-librt==0.8.1
+librt==0.11.0
     # via mypy
 markdown-it-py==3.0.0
     # via rich
@@ -79,14 +79,14 @@ mypy-extensions==1.1.0
     # via mypy
 nodeenv==1.10.0
     # via pre-commit
-packaging==26.0
+packaging==26.2
     # via
     #   -r requirements-dev.in
     #   build
     #   hatch
     #   hatchling
     #   pytest
-pathspec==1.0.4
+pathspec==1.1.1
     # via
     #   hatchling
     #   mypy
@@ -109,7 +109,7 @@ ptyprocess==0.7.0
     # via pexpect
 pycparser==2.23
     # via cffi
-pygments==2.19.2
+pygments==2.20.0
     # via
     #   pytest
     #   rich
@@ -129,15 +129,15 @@ pytest-randomly==4.0.1
     # via -r requirements-dev.in
 pyyaml==6.0.3
     # via pre-commit
-rich==14.3.3
+rich==15.0.0
     # via hatch
-ruff==0.15.7
+ruff==0.15.13
     # via -r requirements-dev.in
 secretstorage==3.3.3
     # via keyring
 shellingham==1.5.4
     # via hatch
-tomli==2.4.0
+tomli==2.4.1
     # via
     #   build
     #   coverage
@@ -146,9 +146,9 @@ tomli==2.4.0
     #   pytest
 tomli-w==1.2.0
     # via hatch
-tomlkit==0.14.0
+tomlkit==0.15.0
     # via hatch
-trove-classifiers==2026.1.14.14
+trove-classifiers==2026.5.7.17
     # via hatchling
 typing-extensions==4.15.0
     # via
@@ -165,7 +165,7 @@ virtualenv==20.16.2
     #   -r requirements-dev.in
     #   hatch
     #   pre-commit
-zipp==3.23.0
+zipp==3.23.1
     # via
     #   -c requirements.txt
     #   importlib-metadata
