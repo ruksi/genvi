@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Update the release draft
-        uses: release-drafter/release-drafter@v7
+        uses: release-drafter/release-drafter@v7.6.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -35,6 +35,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Autolabel pull requests
-        uses: release-drafter/release-drafter/autolabeler@v7
+        uses: release-drafter/release-drafter/autolabeler@v7.6.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
